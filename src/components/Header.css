@@ -1,0 +1,145 @@
+.header-container {
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #6f6f7b;
+  padding: 20px;
+  height: 360px;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  margin-top: -50px;
+}
+
+.top-nav {
+  width: 100%;
+  height: 35px;
+  padding-right: 20px;
+  display: flex;
+  background-color: transparent;
+  justify-content: flex-end;
+  border-bottom: 2px solid white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  transition: top 0.3s;
+}
+
+.top-nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav ul li {
+  margin-left: 14px;
+}
+
+.top-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 15px;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.top-nav ul li a:hover {
+  color: white;
+  background-color: black;
+}
+
+.search-icon {
+  font-size: 25px;
+  margin-right: 60px;
+  margin-top: 2px;
+  height: auto;
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+  cursor: pointer;
+  fill: white;
+}
+
+.search-icon:hover {
+  background-color: #be5a0e;
+  transform: scale(1.2);
+}
+
+.main-nav {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #6f6f7b;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.main-nav.sticky {
+  background-color: lime;
+}
+
+.main-nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.main-nav ul li {
+  margin-left: 20px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  text-decoration: underline;
+  text-decoration-color: #be5a0e;
+  text-underline-offset: 20px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-title {
+  text-align: left;
+  margin-right: 10px;
+}
+
+.header-title h1,
+.header-title h2 {
+  margin: 0;
+  color: white;
+}
+
+.header-title h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-title h2 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.header-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}

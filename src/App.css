@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.popup {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Start hidden */
+  width: 450px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: right 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.popup-visible .popup {
+  right: 0;
+}
+
+.vertical-icons-container {
+  position: fixed;
+  top: 0;
+  right: -10px; /* Align with popup */
+  height: 100%;
+  width: 70px; /* Adjust as needed */
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 1100;
+  transition: right 0.3s;
+  border: 1px solid gray;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.popup-visible .vertical-icons-container {
+  right: 450px;
+}
+
+.popup-toggle-button {
+  background-color: white;
+  color: #be5a0e;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  border-radius: 100%;
+  margin-bottom: 10px;
+  font-size: 34px;
+  border: none;
+  margin-right: 60px;
+  margin-top: -30px;
+  margin-bottom: -30px;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 35px;
+}
+
+.vertical-icons a {
+  margin: 10px 0;
+  text-decoration: none;
+  color: #3a3b5a;
+  transition: color 0.3s;
+}
+
+.vertical-icons a:hover {
+  color: #f39200;
+  cursor: pointer;
+}
+
+.popup-content h3 {
+  margin-top: 10px;
+}
+
+.popup-content select,
+.popup-content input,
+.popup-content button {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container input[type="text"] {
+  flex-grow: 1;
+  margin-right: 5px;
+  padding: 8px;
+  font-style: italic;
+  font-size: 14px; /* Adjust font size as needed */
+  color: #333; /* Adjust color as needed */
+}
+
+.filter-container button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #3a3b5a; /* Purple background */
+  border: none;
   color: white;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.filter-container button:hover {
+  background-color: #f39200; /* Orange on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popup-section {
+  margin-top: 20px;
+}
+
+.popup-section p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.popup-section p span {
+  color: #3a3b5a; /* Adjust color as needed */
+}
+
+.popup-section p span.time {
+  color: #4caf50; /* Green color for time */
+}
+
+.popup-section h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #3a3b5a; /* Adjust color as needed */
+}
+
+.popup-section p span.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.popup-section p span.green-dot {
+  background-color: #4caf50;
+}
+
+.popup-section p span.red-dot {
+  background-color: #f44336;
+}
+
+.view-all {
+  color: #f39200; /* Orange color for links */
+  text-decoration: none;
+}
+
+.view-all:hover {
+  text-decoration: underline;
 }

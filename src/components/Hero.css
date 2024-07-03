@@ -1,0 +1,49 @@
+.hero-container {
+  margin-top: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(55, 24, 55); /* Purple background color */
+  padding: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent items from wrapping to the next line */
+  color: red;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700; /* Adjust weight as needed */
+}
+
+.hero-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.flight-info-container {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  margin-top: 10px;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.flight-info {
+  display: inline-block; /* Display items inline */
+  text-align: left; /* Align text to the left */
+  margin-right: 30px; /* Adjust margin between items */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.flight-info img {
+  width: 225px; /* Adjust image width as needed */
+  height: 275px;
+  margin-bottom: 10px;
+}
