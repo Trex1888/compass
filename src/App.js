@@ -108,8 +108,8 @@ const AppContent = ({
 
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
-      <Header />'
-      <div className="app-container">
+      <Header />
+      <div>
         <Popup
           isPopupVisible={isPopupVisible}
           togglePopup={togglePopup}
@@ -185,6 +185,7 @@ const AppContent = ({
         <SectionLinks />
         <Footer />
       </div>
+      <div></div>
     </div>
   );
 };

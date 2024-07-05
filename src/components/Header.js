@@ -8,7 +8,8 @@ const Header = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 0) {
+    if (offset > 50) {
+      // Adjust the offset value as needed
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -79,21 +80,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// .top-container {
-//   font: 400 16px / 1.5 "Montserrat", sans-serif;
-//   position: relative; /* Changed from fixed to relative */
-//   top: 0;
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   height: 350px;
-//   margin-top: -150px;
-//   aspect-ratio: 15 / 3;
-//   clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   z-index: 5; /* Lower z-index to stay below other elements */
-// }
