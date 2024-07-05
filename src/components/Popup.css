@@ -1,0 +1,220 @@
+.popup {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: right 0.3s;
+}
+
+.popup-visible .popup {
+  right: 0;
+  scrollbar-color: #be5a0e #f5f5f5;
+  scrollbar-width: thin;
+}
+
+.popup-content {
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.popup-content h3 {
+  margin-top: 10px;
+  color: #3a3b5a;
+  font-weight: 600;
+}
+
+.popup-content select,
+.popup-content input,
+.popup-content button {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: -5px;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #36294a;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px #36294a;
+  color: #36294a;
+  font-weight: bold;
+}
+
+.popup-content select:hover,
+.popup-content select:focus {
+  cursor: pointer;
+}
+
+.popup-section a {
+  color: #be5a0e;
+  font-weight: 600;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container input[type="text"] {
+  flex-grow: 1;
+  flex: 0.6;
+  margin-right: 5px;
+  padding: 8px;
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #36294a;
+  border-radius: 5px;
+}
+
+.filter-container button {
+  padding: 8px 12px;
+  flex: 0.4;
+  cursor: pointer;
+  color: white;
+  background-color: #36294a;
+  font-weight: 400;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.filter-container button:hover {
+  background-color: #be5a0e;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.popup-section {
+  margin-top: 20px;
+}
+
+.popup-section .table-header,
+.popup-section .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.popup-section .table-row span {
+  color: #3a3b5a;
+  font-weight: bold;
+}
+
+.popup-section .table-row span.time.green-time {
+  color: #4caf50;
+}
+
+.popup-section .table-row span.time.orange-time {
+  color: #be5a0e;
+}
+
+.popup-section .table-row span.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.popup-section .table-row span.green-dot {
+  background-color: #4caf50;
+}
+
+.popup-section .table-row span.orange-dot {
+  background-color: #be5a0e;
+}
+
+.view-all {
+  color: #f39200;
+  text-decoration: none;
+}
+
+.vertical-icons-container {
+  position: fixed;
+  top: 0;
+  right: -15px;
+  height: 100%;
+  width: 60px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  transition: right 0.3s;
+  border: 2px solid lightgrey;
+}
+
+.popup-visible .vertical-icons-container {
+  right: 450px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.popup-toggle-button {
+  background-color: white;
+  color: #be5a0e;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  border-radius: 100%;
+  margin-bottom: 10px;
+  margin-right: 70px;
+  font-size: 34px;
+  border: none;
+  margin-top: -30px;
+  margin-bottom: -30px;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 35px;
+}
+
+.vertical-icons a {
+  text-decoration: none;
+  color: #3a3b5a;
+  transition: color 0.3s;
+}
+
+.vertical-icons a:hover {
+  color: #be5a0e;
+  cursor: pointer;
+}
+
+.table-row {
+  text-align: left;
+  padding-right: -20px;
+}
+
+.table-row .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: transparent;
+}
+
+.table-row.green-row .progress-bar {
+  background-color: #4caf50;
+}
+
+.table-row.orange-row .progress-bar {
+  background-color: #be5a0e;
+}

@@ -1,14 +1,28 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { IoIosSearch } from "react-icons/io";
 
-const Header = ({ backgroundImage }) => {
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div
-      className="header-container"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <nav className="top-nav">
+    <div className="header-container">
+      <nav className={`top-nav ${isScrolled ? "hidden" : ""}`}>
         <ul>
           <li>
             <Link to="/at-the-airport/shuttle-tracking">Shuttle Tracking</Link>
@@ -28,7 +42,7 @@ const Header = ({ backgroundImage }) => {
         </ul>
       </nav>
 
-      <nav className="main-nav">
+      <nav className={`main-nav ${isScrolled ? "sticky" : ""}`}>
         <ul>
           <li className="logo-title">
             <Link to="/" className="header-link">
@@ -37,7 +51,7 @@ const Header = ({ backgroundImage }) => {
                 <h2>International Airport</h2>
               </div>
               <img
-                src="../images/plane.jpg"
+                src={require("../images/plane.jpg")}
                 alt="Plane Logo"
                 className="header-logo"
               />
@@ -66,17 +80,20 @@ const Header = ({ backgroundImage }) => {
 
 export default Header;
 
-// background-color: rgba(0, 0, 31, 0.5);
-
-// .header-container {
+// .top-container {
 //   font: 400 16px / 1.5 "Montserrat", sans-serif;
-//   position: relative;
+//   position: relative; /* Changed from fixed to relative */
+//   top: 0;
+//   width: 100%;
 //   display: flex;
 //   flex-direction: column;
 //   align-items: center;
-//   background-color: rgba(0, 0, 31, 0.5);
-//   padding: 20px;
-//   height: 360px;
-//   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-//   margin-top: -50px;
+//   height: 350px;
+//   margin-top: -150px;
+//   aspect-ratio: 15 / 3;
+//   clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   z-index: 5; /* Lower z-index to stay below other elements */
 // }

@@ -1,35 +1,49 @@
 .header-container {
   font: 400 16px / 1.5 "Montserrat", sans-serif;
   position: relative;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #6f6f7b;
-  padding: 20px;
-  height: 360px;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-  margin-top: -50px;
+  height: 500px;
+  margin-top: -150px;
+  aspect-ratio: 15 / 3;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: green;
+  z-index: 1; /* Ensure it stays below nav elements */
 }
 
 .top-nav {
   width: 100%;
   height: 35px;
-  padding-right: 20px;
   display: flex;
-  background-color: transparent;
   justify-content: flex-end;
+  padding-right: 35px;
+  background-color: transparent;
   border-bottom: 2px solid white;
-  position: sticky;
+  position: fixed; /* Fixed position to stay at the top */
   top: 0;
-  z-index: 2;
-  transition: top 0.3s;
+  z-index: 3; /* Ensure it appears above the header-container */
+}
+
+.top-nav.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header-title h1 {
+  color: white;
 }
 
 .top-nav ul {
-  list-style-type: none;
   display: flex;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .top-nav ul li {
@@ -40,24 +54,20 @@
   color: white;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 400;
   padding: 10px 15px;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  transition: color 0.5s, background-color 0.5s;
 }
 
 .top-nav ul li a:hover {
-  color: white;
   background-color: black;
 }
 
 .search-icon {
   font-size: 25px;
-  margin-right: 60px;
-  margin-top: 2px;
-  height: auto;
-  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+  margin-right: 70px;
   cursor: pointer;
-  fill: white;
+  color: white;
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 .search-icon:hover {
@@ -67,25 +77,34 @@
 
 .main-nav {
   width: 100%;
-  padding: 10px 0;
-  background-color: #6f6f7b;
+  height: 450px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
   position: sticky;
-  top: 0;
-  z-index: 1;
-  transition: background-color 0.3s;
+  z-index: 2;
 }
 
 .main-nav.sticky {
-  background-color: lime;
+  position: fixed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a nice box shadow */
+  top: 0; /* Move to the top when scrolled */
+  background-color: white; /* Change background color when sticky */
+  z-index: 3; /* Ensure it stays above the top-container */
+  height: 65px; /* Change the height when sticky */
+  padding: 0 20px; /* Add padding to ensure content doesn't jump */
+  transition: background-color 0.3s, height 0s, color 0.3s, padding 0.3s; /* Ensure smooth transitions */
 }
 
 .main-nav ul {
-  list-style-type: none;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 80px;
+  padding: 0;
+  list-style-type: none;
 }
 
 .main-nav ul li {
@@ -93,10 +112,16 @@
 }
 
 .main-nav ul li a {
+  color: white; /* Initially white */
   text-decoration: none;
-  color: white;
   padding: 10px;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+
+.main-nav.sticky ul li a {
+  color: #6f6f7b; /* Change color when sticky */
 }
 
 .main-nav ul li a:hover {
@@ -118,7 +143,6 @@
 }
 
 .header-title {
-  text-align: left;
   margin-right: 10px;
 }
 
@@ -126,6 +150,11 @@
 .header-title h2 {
   margin: 0;
   color: white;
+}
+
+.main-nav.sticky .header-title h1,
+.main-nav.sticky .header-title h2 {
+  color: #6f6f7b;
 }
 
 .header-title h1 {

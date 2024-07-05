@@ -1,0 +1,94 @@
+.board-agendas-minutes-container {
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.board-agendas-minutes-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.board-agendas-minutes-content h1 {
+  font-size: 36px;
+  color: black;
+  font-weight: 400;
+}
+
+.board-agendas-minutes-content p {
+  color: #333;
+  margin: 20px 0;
+}
+
+.subscribe-section {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.subscribe-section input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.subscribe-section button {
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.minutes-agenda {
+  margin-top: 40px;
+}
+
+.minutes-agenda h2 {
+  color: #662985;
+  margin-bottom: 20px;
+}
+
+.minutes-agenda-item {
+  margin-bottom: 30px;
+}
+
+.minutes-agenda-item h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.minutes-agenda-item p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.minutes-agenda-item a {
+  color: #be5a0e;
+  text-decoration: none;
+}
+
+.minutes-agenda-item a:hover {
+  text-decoration: underline;
+}
+
+.load-more-button {
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+}

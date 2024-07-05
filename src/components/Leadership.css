@@ -1,0 +1,116 @@
+.authority-leadership-container {
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.authority-leadership-sidebar {
+  width: 20%;
+  margin-right: 30px;
+  margin-top: -25px;
+}
+
+.authority-leadership-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.authority-leadership-sidebar a {
+  color: #6f6f7b;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.authority-leadership-sidebar a.active {
+  font-weight: bold;
+  position: relative;
+  color: black;
+}
+
+.authority-leadership-sidebar a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 2px;
+  background-color: #662985;
+}
+
+.authority-leadership-sidebar a.active:hover {
+  color: #9090a0;
+}
+
+.authority-leadership-sidebar a:hover {
+  color: #323e66;
+}
+
+.authority-leadership-content {
+  width: 80%;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.authority-leadership-header {
+  text-align: left;
+  padding: 20px 0;
+  margin-top: -110px;
+}
+
+.authority-leadership-header h1 {
+  font-size: 36px;
+  color: black;
+  font-weight: 400;
+}
+
+.authority-leadership-header p {
+  color: #333;
+  margin: 20px 0;
+}
+
+.authority-leadership-button {
+  background-color: #be5a0e;
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  margin: 10px;
+  width: 240px;
+  font-size: 16px;
+}
+
+.authority-leadership-button:hover {
+  background-color: #390d68;
+}
+
+.authority-leadership-section {
+  margin-bottom: 30px;
+}
+
+.authority-leadership-section h2 {
+  color: #662985;
+  margin-bottom: 20px;
+}
+
+.authority-leadership-section p {
+  color: #333;
+  font-weight: normal;
+}
+
+.authority-leadership-link {
+  color: #be5a0e;
+  text-decoration: none;
+}
+
+.authority-leadership-link:hover {
+  text-decoration: underline;
+}

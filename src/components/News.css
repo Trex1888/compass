@@ -1,0 +1,129 @@
+.news-container {
+  padding: 50px;
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+}
+
+.news-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.news-header h1 {
+  font-size: 36px;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.news-header p {
+  color: #6f6f7b;
+  margin-bottom: 10px;
+}
+
+.newsletter-signup {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.newsletter-signup input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  width: 300px;
+}
+
+.newsletter-signup button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #be5a0e;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.35s ease;
+}
+
+.newsletter-signup button:hover {
+  background-color: #390d68;
+}
+
+.news-category {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.news-category select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.news-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.news-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  text-align: left;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.news-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.news-item h2 {
+  font-size: 24px;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.news-item p {
+  color: #6f6f7b;
+  margin-bottom: 10px;
+}
+
+.news-item a {
+  color: #be5a0e;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+  color: #390d68;
+}
+
+.news-item:hover {
+  transform: translateY(-10px);
+}
+
+.load-more {
+  display: block;
+  margin: 30px auto;
+  padding: 14px 20px;
+  font-size: 16px;
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+}
+
+.load-more:hover {
+  background-color: #390d68;
+}
