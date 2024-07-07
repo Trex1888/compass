@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./About.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -8,6 +8,7 @@ import { CiParking1 } from "react-icons/ci";
 const About = ({ scrollToSection, openPopup }) => {
   const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,11 +71,26 @@ const About = ({ scrollToSection, openPopup }) => {
             region and state. And we facilitate incredible opportunities for
             businesses in the region.
           </p>
-          <button className="about-button">Board Leadership</button>
-          <button className="second-button">
+          <button
+            className="about-button"
+            onClick={() => navigate("/about-us/authority-leadership")}
+          >
+            Board Leadership
+          </button>
+          <button
+            className="second-button"
+            onClick={() =>
+              navigate("/about-us/authority-leadership/board-agendas-minutes")
+            }
+          >
             Board Meeting Agendas and Minutes
           </button>
         </div>
+
+        <img
+          src="https://www.flydsm.com/filesimages/ABOUT%20US/Old%20Terminal.png"
+          alt=""
+        />
 
         <div className="about-section">
           <h2>DSM History</h2>

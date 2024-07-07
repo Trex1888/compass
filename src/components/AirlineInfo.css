@@ -1,0 +1,110 @@
+.flights-travel-container {
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  display: flex;
+  z-index: 1;
+}
+
+.flights-sidebar {
+  width: 20%;
+  padding: 20px;
+}
+
+.flights-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.flights-sidebar .flights-link {
+  color: #6f6f7b;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.flights-sidebar .flights-link.active {
+  font-weight: bold;
+  position: relative;
+  color: black;
+}
+
+.flights-sidebar .flights-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 2px;
+  background-color: #662985;
+}
+
+.flights-sidebar .flights-link.active:hover {
+  color: #9090a0;
+}
+
+.flights-sidebar .flights-link:hover {
+  color: #323e66;
+}
+
+.flights-content {
+  width: 69%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;
+  margin-right: 50px;
+}
+
+.flights-header {
+  text-align: left;
+}
+
+.flights-header h1 {
+  font-size: 36px;
+  color: black;
+  font-weight: 400;
+}
+
+.flights-header p {
+  color: #333;
+  margin: 20px 0;
+  max-width: 950px;
+}
+
+.airline-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.airline-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: calc(25% - 40px); /* Adjusted to make them narrower */
+  height: 250px; /* Adjusted to make them taller */
+  margin-bottom: -75px;
+}
+
+.airline-card h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.airline-card p {
+  font-size: 1em;
+  color: #666;
+  margin: 5px 0;
+}
+
+.airline-card a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.airline-card a:hover {
+  text-decoration: underline;
+}

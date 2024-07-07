@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 
-import houstonImage from "../images/vegas.jpg";
+import houstonImage from "../images/dsm4.png";
 import dsmImage from "../images/dsm3.jpg";
 
 const Hero = () => {

@@ -23,8 +23,17 @@ import Leadership from "./components/Leadership";
 import News from "./components/News";
 import Staff from "./components/Staff";
 import Agenda from "./components/Agenda";
+import AirlineInfo from "./components/AirlineInfo";
+import FlightStatus from "./components/FlightStatus";
+import NonStop from "./components/NonStop";
 
-import parkImage from "./images/park.jpg";
+import TsaSecurity from "./components/TsaSecurity";
+import CheckIn from "./components/CheckIn";
+import Lost from "./components/Lost";
+import Faqs from "./components/Faqs";
+import RealId from "./components/RealId";
+
+import aboutImage from "./images/about.jpg";
 import flightsAndTravelImage from "./images/flightsandtravel.jpg";
 import travlerImage from "./images/luggage.jpg";
 import airportBusinessImage from "./images/airport1.jpg";
@@ -75,7 +84,7 @@ const AppContent = ({
   const getLocationBackground = (location) => {
     switch (location.pathname) {
       case "/about-us":
-        return { backgroundImage: `url(${parkImage})` };
+        return { backgroundImage: `url(${aboutImage})` };
 
       case "/flights-and-travel":
         return { backgroundImage: `url(${flightsAndTravelImage})` };
@@ -181,8 +190,78 @@ const AppContent = ({
               />
             }
           />
-          <Route path="/flights-and-travel" element={<FlightsAndTravel />} />
-          <Route path="/traveler-info" element={<TravelerInfo />} />
+          <Route
+            path="/flights-and-travel/*"
+            element={
+              <FlightsAndTravel
+                scrollToSection={scrollToSection}
+                openPopup={openPopup}
+              />
+            }
+          />
+          <Route
+            path="/traveler-info/*"
+            element={
+              <TravelerInfo
+                scrollToSection={scrollToSection}
+                openPopup={openPopup}
+              />
+            }
+          />
+          <Route
+            path="/traveler-info/tsa-security"
+            element={
+              <TsaSecurity
+                scrollToSection={scrollToSection}
+                openPopup={openPopup}
+              />
+            }
+          />
+          <Route
+            path="/traveler-info/check-in"
+            element={
+              <CheckIn
+                scrollToSection={scrollToSection}
+                openPopup={openPopup}
+              />
+            }
+          />
+          <Route
+            path="/traveler-info/lost-and-found"
+            element={
+              <Lost scrollToSection={scrollToSection} openPopup={openPopup} />
+            }
+          />
+          <Route
+            path="/traveler-info/faq"
+            element={
+              <Faqs scrollToSection={scrollToSection} openPopup={openPopup} />
+            }
+          />
+          <Route
+            path="/traveler-info/real-id"
+            element={
+              <RealId scrollToSection={scrollToSection} openPopup={openPopup} />
+            }
+          />
+          <Route
+            path="/flights-and-travel/airline-information"
+            element={
+              <AirlineInfo
+                scrollToSection={scrollToSection}
+                openPopup={openPopup}
+              />
+            }
+          />
+          <Route
+            path="/flights-and-travel/flight-status"
+            element={<FlightStatus />}
+          />
+          <Route
+            path="/flights-and-travel/nonstop-destinations"
+            element={<NonStop />}
+          />
+
           <Route path="/airport-business" element={<AirportBusiness />} />
           <Route path="/lift-dsm" element={<LiftDSM />} />
         </Routes>

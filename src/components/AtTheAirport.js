@@ -10,58 +10,59 @@ import General from "./General";
 import Human from "./Human";
 import Title9 from "./Title9";
 import Parking from "./Parking";
-import "./AtTheAirport.css"; // Assuming you have a CSS file for this component
+import "./AtTheAirport.css";
 
 const AtTheAirport = ({ scrollToSection, openPopup }) => {
   const location = useLocation();
 
   return (
     <div className="at-the-airport-container">
-      <div className="shuttle-sidebar">
+      <div className="sidebar">
         <ul>
           <li>
             <Link
               to="/at-the-airport/parking"
               className={
-                location.pathname === "/at-the-airport/parking"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                location.pathname === "/at-the-airport/parking" ? "active" : ""
               }
             >
               Parking
             </Link>
           </li>
+
           <li>
             <Link
               to="/at-the-airport/shuttle-tracking"
               className={
                 location.pathname === "/at-the-airport/shuttle-tracking"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Shuttle Tracking
             </Link>
           </li>
+
           <li>
             <Link
               to="/at-the-airport/ground-transportation"
               className={
                 location.pathname === "/at-the-airport/ground-transportation"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Ground Transportation
             </Link>
           </li>
+
           <li>
             <Link
               to="/at-the-airport/maps-directions"
               className={
                 location.pathname === "/at-the-airport/maps-directions"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Maps & Directions
@@ -71,9 +72,7 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
             <Link
               to="/at-the-airport/dining"
               className={
-                location.pathname === "/at-the-airport/dining"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                location.pathname === "/at-the-airport/dining" ? "active" : ""
               }
             >
               Dining
@@ -84,8 +83,8 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               to="/at-the-airport/services-amenities"
               className={
                 location.pathname === "/at-the-airport/services-amenities"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Services & Amenities
@@ -96,8 +95,8 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               to="/at-the-airport/accessibility"
               className={
                 location.pathname === "/at-the-airport/accessibility"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Accessibility - ADA & Title VI
@@ -108,8 +107,8 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               to="/at-the-airport/general-aviation"
               className={
                 location.pathname === "/at-the-airport/general-aviation"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               General Aviation
@@ -120,8 +119,8 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               to="/at-the-airport/stop-human-trafficking"
               className={
                 location.pathname === "/at-the-airport/stop-human-trafficking"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Stop Human Trafficking
@@ -133,8 +132,8 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               className={
                 location.pathname ===
                 "/at-the-airport/title-vi-airport-nondiscrimination-program"
-                  ? "shuttle-link active"
-                  : "shuttle-link"
+                  ? "active"
+                  : ""
               }
             >
               Title VI Airport Nondiscrimination Program
@@ -142,7 +141,7 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
           </li>
         </ul>
       </div>
-      <div className="shuttle-content">
+      <div className="content">
         <Routes>
           <Route
             path="shuttle-tracking"

@@ -10,11 +10,7 @@ const Header = ({ backgroundStyle }) => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    setIsScrolled(offset > 50);
   };
 
   useEffect(() => {
@@ -23,6 +19,17 @@ const Header = ({ backgroundStyle }) => {
   }, []);
 
   const menuItems = {
+    "flights-and-travel": [
+      {
+        path: "/flights-and-travel/airline-information",
+        label: "Airline Information",
+      },
+      { path: "/flights-and-travel/flight-status", label: "Flight Status" },
+      {
+        path: "/flights-and-travel/nonstop-destinations",
+        label: "Nonstop Destinations",
+      },
+    ],
     "at-the-airport": [
       { path: "/at-the-airport/parking", label: "Parking" },
       { path: "/at-the-airport/shuttle-tracking", label: "Shuttle Tracking" },
@@ -138,7 +145,11 @@ const Header = ({ backgroundStyle }) => {
             </NavLink>
             {hoveredLink === "flights-and-travel" && (
               <div className="dropdown-menu">
-                {/* Add appropriate options for Flights and Travel if needed */}
+                {menuItems["flights-and-travel"].map((item) => (
+                  <NavLink key={item.path} to={item.path}>
+                    {item.label}
+                  </NavLink>
+                ))}
               </div>
             )}
           </li>
@@ -153,9 +164,7 @@ const Header = ({ backgroundStyle }) => {
               Traveler Info
             </NavLink>
             {hoveredLink === "traveler-info" && (
-              <div className="dropdown-menu">
-                {/* Add appropriate options for Traveler Info if needed */}
-              </div>
+              <div className="dropdown-menu"></div>
             )}
           </li>
           <li
@@ -224,9 +233,7 @@ const Header = ({ backgroundStyle }) => {
               Airport Business
             </NavLink>
             {hoveredLink === "airport-business" && (
-              <div className="dropdown-menu">
-                {/* Add appropriate options for Airport Business if needed */}
-              </div>
+              <div className="dropdown-menu"></div>
             )}
           </li>
           <li
@@ -240,9 +247,7 @@ const Header = ({ backgroundStyle }) => {
               Lift DSM
             </NavLink>
             {hoveredLink === "lift-dsm" && (
-              <div className="dropdown-menu">
-                {/* Add appropriate options for Lift DSM if needed */}
-              </div>
+              <div className="dropdown-menu"></div>
             )}
           </li>
         </ul>

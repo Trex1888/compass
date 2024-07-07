@@ -163,12 +163,11 @@
   background-color: white;
   z-index: 20;
   display: flex;
-  width: 300px;
+  width: 335px;
   flex-direction: column;
   border-radius: 1px;
   min-width: 200px;
   height: auto;
-  border-bottom: 2px solid blue;
 }
 
 .dropdown-menu a {
