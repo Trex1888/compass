@@ -35,8 +35,8 @@ const Home = ({ scrollToSection, openPopup }) => {
   return (
     <div className="home">
       <div className="home-content">
-        <h2>DES MOINES INTERNATIONAL</h2>
-        <h2 className="second">AIRPORT</h2>
+        <h3>DES MOINES INTERNATIONAL AIRPORT</h3>
+
         <div className="button-container">
           <div className="section-links-container1">
             <div className="section-links1">

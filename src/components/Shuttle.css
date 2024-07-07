@@ -1,0 +1,112 @@
+.shuttle-tracking-container {
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+
+.shuttle-content {
+  width: 80%;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: -85px;
+  margin-left: -55px;
+}
+
+.shuttle-header {
+  text-align: left;
+}
+
+.shuttle-header h1 {
+  font-size: 36px;
+  color: black;
+  font-weight: 400;
+}
+
+.shuttle-header p {
+  color: #333;
+  margin: 20px 0;
+  max-width: 950px;
+}
+
+.shuttle-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: 2px;
+  margin-bottom: 35px;
+}
+
+.shuttle-button {
+  background-color: #be5a0e; /* Default background color */
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  font-size: 18px;
+}
+
+.shuttle-button.grey-blue-route {
+  width: 220px;
+}
+
+.shuttle-button.red-route {
+  width: 190px;
+}
+
+.shuttle-button:hover {
+  background-color: #390d68;
+}
+
+.shuttle-map {
+  text-align: center;
+}
+
+.shuttle-map img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1px;
+  margin-left: -225px;
+  margin-bottom: -20px;
+}
+
+.section-links-container3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  gap: 40px;
+  height: 200px;
+  width: 100%;
+  margin-bottom: -100px;
+}
+
+.section-links3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 125px;
+}
+
+.link-item3 {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: transform 0.3s, color 0.3s;
+  transition: all 0.5s ease-out 0.25s;
+  border: 1px solid rgb(180, 178, 178);
+}
+
+.link-item3:hover {
+  cursor: pointer;
+  color: #be5a0e;
+}

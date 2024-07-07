@@ -3,7 +3,7 @@
   padding: 50px;
   display: flex;
   flex-direction: row;
-  z-index: 1; /* Ensure it stays below nav elements */
+  z-index: 1;
 }
 
 .careers-sidebar {
@@ -74,6 +74,7 @@
 .careers-header p {
   color: #333;
   margin: 20px 0;
+  max-width: 950px;
 }
 
 .careers-button {
@@ -84,9 +85,10 @@
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.35s ease;
-  margin: 10px;
-  width: 240px;
-  font-size: 16px;
+  margin-left: 5px;
+  margin-bottom: 35px;
+  width: 290px;
+  font-size: 18px;
 }
 
 .careers-button:hover {
@@ -94,21 +96,28 @@
 }
 
 .careers-section {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 
 .careers-section h2 {
-  color: #662985;
+  color: black;
+  font-weight: 700;
   margin-bottom: 20px;
+  font-size: 28px;
 }
 
 .careers-section h3 {
   color: #be5a0e;
+  font-size: 20px;
+  margin-bottom: -15px;
 }
 
 .careers-section p {
   color: #333;
-  font-weight: normal;
+  font-weight: bold;
+  max-width: 950px;
+  margin-bottom: -15px;
+  font-size: 17px;
 }
 
 .careers-link {
@@ -118,4 +127,45 @@
 
 .careers-link:hover {
   text-decoration: underline;
+}
+
+.section-links-container2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  height: 200px;
+  width: 100%;
+}
+
+.section-links2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 125px;
+  margin-right: 150px;
+}
+
+.link-item2 {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: transform 0.3s, color 0.3s;
+  transition: all 0.5s ease-out 0.25s;
+  border: 1px solid rgb(180, 178, 178);
+}
+
+.link-item1:hover {
+  color: #be5a0e;
+}
+
+.link-item1:hover {
+  cursor: pointer;
+  color: #be5a0e;
 }

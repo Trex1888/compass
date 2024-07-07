@@ -9,14 +9,12 @@
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   height: 100vh;
-  margin-top: -360px;
 }
 
-.home-content h2 {
-  font-weight: 400;
-  font-size: 36px;
-  margin: 0;
-  text-align: center;
+.home-content h3 {
+  font-weight: bold;
+  margin-top: 175px;
+  margin-right: 500px;
 }
 
 .home-content .second {

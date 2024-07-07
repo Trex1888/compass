@@ -128,8 +128,8 @@ const Careers = ({ scrollToSection, openPopup }) => {
           <p>Hudson News (gift shop): Send email to: Amy Beeghley</p>
         </div>
 
-        <div className="section-links-container1">
-          <div className="section-links1">
+        <div className="section-links-container2">
+          <div className="section-links2">
             <div
               className="link-item1"
               onClick={() => handleButtonClick("Flight-Status")}

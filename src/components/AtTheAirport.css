@@ -1,0 +1,59 @@
+.at-the-airport-container {
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+
+.shuttle-sidebar {
+  width: 20%;
+  margin-right: 30px;
+}
+
+.shuttle-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.shuttle-sidebar .shuttle-link {
+  color: #6f6f7b;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.shuttle-sidebar .shuttle-link.active {
+  font-weight: bold;
+  position: relative;
+  color: black;
+}
+
+.shuttle-sidebar .shuttle-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 2px;
+  background-color: #662985;
+}
+
+.shuttle-sidebar .shuttle-link.active:hover {
+  color: #9090a0;
+}
+
+.shuttle-sidebar .shuttle-link:hover {
+  color: #323e66;
+}
+
+.shuttle-content {
+  width: 80%;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: left;
+}

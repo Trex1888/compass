@@ -8,7 +8,6 @@ import {
 import "./App.css";
 import LiftDSM from "./components/LiftDSM";
 import About from "./components/About";
-import Shuttle from "./components/Shuttle";
 import Careers from "./components/Careers";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -26,11 +25,11 @@ import Staff from "./components/Staff";
 import Agenda from "./components/Agenda";
 
 import parkImage from "./images/park.jpg";
-import airportImage from "./images/airport.jpg";
+import flightsAndTravelImage from "./images/flightsandtravel.jpg";
 import travlerImage from "./images/luggage.jpg";
 import airportBusinessImage from "./images/airport1.jpg";
 import liftDsmImage from "./images/dsm3.jpg";
-import people from "./images/2people.jpg";
+import people from "./images/peep.jpg";
 
 const App = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -79,7 +78,7 @@ const AppContent = ({
         return { backgroundImage: `url(${parkImage})` };
 
       case "/flights-and-travel":
-        return { backgroundImage: `url(${airportImage})` };
+        return { backgroundImage: `url(${flightsAndTravelImage})` };
 
       case "/traveler-info":
         return { backgroundImage: `url(${travlerImage})` };
@@ -96,11 +95,17 @@ const AppContent = ({
       case "/lift-dsm":
         return { backgroundImage: `url(${liftDsmImage})` };
 
+      case "/contact":
+        return { backgroundColor: "#e9e9e9;" };
+
+      case "/careers":
+        return { backgroundColor: "#e9e9e9;" };
+
       case "/":
-        return { backgroundColor: "transparent" };
+        return { background: "none" };
 
       default:
-        return { backgroundColor: "gray" };
+        return { background: "none" };
     }
   };
 
@@ -108,7 +113,7 @@ const AppContent = ({
 
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
-      <Header />
+      <Header backgroundStyle={backgroundStyle} />
       <div>
         <Popup
           isPopupVisible={isPopupVisible}
@@ -123,9 +128,9 @@ const AppContent = ({
             }
           />
           <Route
-            path="/at-the-airport/shuttle-tracking"
+            path="/at-the-airport/*"
             element={
-              <Shuttle
+              <AtTheAirport
                 scrollToSection={scrollToSection}
                 openPopup={openPopup}
               />
@@ -141,15 +146,6 @@ const AppContent = ({
             path="/about-us/careers"
             element={
               <Careers
-                scrollToSection={scrollToSection}
-                openPopup={openPopup}
-              />
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <Contact
                 scrollToSection={scrollToSection}
                 openPopup={openPopup}
               />
@@ -176,16 +172,23 @@ const AppContent = ({
             path="/about-us/authority-leadership/staff"
             element={<Staff />}
           />
+          <Route
+            path="/contact"
+            element={
+              <Contact
+                scrollToSection={scrollToSection}
+                openPopup={openPopup}
+              />
+            }
+          />
           <Route path="/flights-and-travel" element={<FlightsAndTravel />} />
           <Route path="/traveler-info" element={<TravelerInfo />} />
-          <Route path="/at-the-airport" element={<AtTheAirport />} />
           <Route path="/airport-business" element={<AirportBusiness />} />
           <Route path="/lift-dsm" element={<LiftDSM />} />
         </Routes>
         <SectionLinks />
         <Footer />
       </div>
-      <div></div>
     </div>
   );
 };

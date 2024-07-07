@@ -145,7 +145,7 @@
 .vertical-icons-container {
   position: fixed;
   top: 0;
-  right: -15px;
+  right: -10px;
   height: 100%;
   width: 60px;
   background-color: white;
@@ -155,7 +155,7 @@
   justify-content: center;
   z-index: 1100;
   transition: right 0.3s;
-  border: 2px solid lightgrey;
+  border-left: 2px solid lightgrey;
 }
 
 .popup-visible .vertical-icons-container {

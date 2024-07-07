@@ -1,11 +1,14 @@
 .news-container {
   padding: 50px;
   font: 400 16px / 1.5 "Montserrat", sans-serif;
+  max-width: 1100px;
 }
 
 .news-header {
   text-align: center;
   margin-bottom: 40px;
+  text-align: left;
+  margin-left: 55px;
 }
 
 .news-header h1 {
@@ -17,6 +20,7 @@
 .news-header p {
   color: #6f6f7b;
   margin-bottom: 10px;
+  max-width: 1150px;
 }
 
 .newsletter-signup {
@@ -64,17 +68,18 @@
 .news-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+  justify-content: space-between; /* Adjust this to control the space between items */
+  margin-left: 40px;
 }
 
 .news-item {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: calc(33.333% - 20px);
+  width: calc(33% - 0px); /* Adjust this to control the width of the items */
   text-align: left;
   padding: 20px;
+  margin-right: -50px;
+  margin-bottom: 20px; /* Adjust this to control the vertical space between items */
   transition: transform 0.3s ease;
 }
 
