@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./News.css";
+import "../styles/News.css";
 import eventsImage from "../images/news1.jpg";
 import pressImage from "../images/news.jpg";
 import statsImage from "../images/minutes.jpg";

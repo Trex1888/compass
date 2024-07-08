@@ -1,5 +1,5 @@
 import React from "react";
-import "./Agenda.css";
+import "../styles/Agenda.css";
 
 const Agenda = () => {
   return (

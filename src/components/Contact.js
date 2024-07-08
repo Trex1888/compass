@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Contact.css";
+import "../styles/Contact.css";
 import { IoCarOutline, IoChatboxEllipsesOutline } from "react-icons/io5";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import { AiOutlineInbox, AiOutlineFolderOpen } from "react-icons/ai";

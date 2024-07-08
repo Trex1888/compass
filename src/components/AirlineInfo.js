@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./AirlineInfo.css";
+import "../styles/AirlineInfo.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Header.css";
+import "../styles/Header.css";
 import { IoIosSearch } from "react-icons/io";
 
 const Header = ({ backgroundStyle }) => {
@@ -19,17 +19,6 @@ const Header = ({ backgroundStyle }) => {
   }, []);
 
   const menuItems = {
-    "flights-and-travel": [
-      {
-        path: "/flights-and-travel/airline-information",
-        label: "Airline Information",
-      },
-      { path: "/flights-and-travel/flight-status", label: "Flight Status" },
-      {
-        path: "/flights-and-travel/nonstop-destinations",
-        label: "Nonstop Destinations",
-      },
-    ],
     "at-the-airport": [
       { path: "/at-the-airport/parking", label: "Parking" },
       { path: "/at-the-airport/shuttle-tracking", label: "Shuttle Tracking" },
@@ -67,6 +56,103 @@ const Header = ({ backgroundStyle }) => {
       {
         path: "/at-the-airport/title-vi-airport-nondiscrimination-program",
         label: "Title VI Airport Nondiscrimination Program",
+      },
+    ],
+    "traveler-info": [
+      {
+        path: "/traveler-info/tsa-security",
+        label: "TSA & Security",
+        submenu: [
+          {
+            path: "/traveler-info/tsa-security/precheck-global-entry",
+            label: "TSA Precheck & Global Entry",
+          },
+        ],
+      },
+      { path: "/traveler-info/check-in", label: "Check-in Information" },
+      {
+        path: "/traveler-info/lost-and-found",
+        label: "Lost & Found",
+        submenu: [
+          {
+            path: "/traveler-info/lost-and-found/lost-item-report",
+            label: "Lost Item Report",
+          },
+        ],
+      },
+      { path: "/traveler-info/faq", label: "Frequently Asked Questions" },
+      { path: "/traveler-info/real-id", label: "REAL ID" },
+    ],
+    "flights-and-travel": [
+      {
+        path: "/flights-and-travel/airline-information",
+        label: "Airline Information",
+      },
+      { path: "/flights-and-travel/flight-status", label: "Flight Status" },
+      {
+        path: "/flights-and-travel/nonstop-destinations",
+        label: "Nonstop Destinations",
+      },
+    ],
+    "airport-business": [
+      {
+        path: "/airport-business/contractor-resources",
+        label: "Contractor Resources",
+      },
+      {
+        path: "/airport-business/bid-procurement-rfps",
+        label: "Bid Procurement & RFPs",
+      },
+      {
+        path: "/airport-business/badging",
+        label: "Badging",
+        submenu: [
+          {
+            path: "/airport-business/badging/badge-applications-renewal",
+            label: "Badge Application & Renewals",
+          },
+          {
+            path: "/airport-business/badging/badge-faqs",
+            label: "Badging FAQ's",
+          },
+        ],
+      },
+      {
+        path: "/about-us/news",
+        label: "News & Statistics",
+      },
+      {
+        path: "/airport-business/operations",
+        label: "Operations",
+        submenu: [
+          {
+            path: "/airport-business/operations/unmanned-aerial-systems",
+            label: "Unmanned Aerial Systems",
+          },
+          {
+            path: "/airport-business/operations/airport-driver-training",
+            label: "Airport Driver Training",
+          },
+          {
+            path: "/airport-business/operations/rules-regulations",
+            label: "Rules, Regulations, Policies and Procedures",
+          },
+          {
+            path: "/airport-business/operations/aircraft-noise-program",
+            label: "Aircraft Noise Program",
+          },
+        ],
+      },
+      { path: "/airport-business/permits-forms", label: "Permits & Forms" },
+      {
+        path: "/airport-business/tenant-resources",
+        label: "Tenant Resources",
+        submenu: [
+          {
+            path: "/airport-business/tenant-resources/air-service-development",
+            label: "Air Service Development",
+          },
+        ],
       },
     ],
   };
@@ -164,7 +250,50 @@ const Header = ({ backgroundStyle }) => {
               Traveler Info
             </NavLink>
             {hoveredLink === "traveler-info" && (
-              <div className="dropdown-menu"></div>
+              <div className="dropdown-menu">
+                {showSubmenu ? (
+                  <>
+                    <div
+                      className="submenu-header"
+                      onClick={handleBackToMainMenu}
+                    >
+                      <span className="back-icon">{"<"}</span>
+                      <span className="submenu-title">
+                        {showSubmenu === "tsa-security"
+                          ? "TSA & Security"
+                          : "Lost & Found"}
+                      </span>
+                    </div>
+                    {menuItems["traveler-info"]
+                      .find((item) => item.label.toLowerCase() === showSubmenu)
+                      .submenu.map((subItem) => (
+                        <NavLink key={subItem.path} to={subItem.path}>
+                          {subItem.label}
+                        </NavLink>
+                      ))}
+                  </>
+                ) : (
+                  menuItems["traveler-info"].map((item) => (
+                    <div key={item.path} className="dropdown-item">
+                      {item.submenu ? (
+                        <div className="dropdown-item-with-submenu">
+                          <NavLink to={item.path}>{item.label}</NavLink>
+                          <span
+                            onClick={(e) =>
+                              handleSubmenuToggle(e, item.label.toLowerCase())
+                            }
+                            className="submenu-toggle show-submenu-toggle"
+                          >
+                            | &gt;
+                          </span>
+                        </div>
+                      ) : (
+                        <NavLink to={item.path}>{item.label}</NavLink>
+                      )}
+                    </div>
+                  ))
+                )}
+              </div>
             )}
           </li>
           <li
@@ -233,7 +362,44 @@ const Header = ({ backgroundStyle }) => {
               Airport Business
             </NavLink>
             {hoveredLink === "airport-business" && (
-              <div className="dropdown-menu"></div>
+              <div className="dropdown-menu">
+                {showSubmenu ? (
+                  <>
+                    <div
+                      className="submenu-header"
+                      onClick={handleBackToMainMenu}
+                    >
+                      <span className="back-icon">{"<"}</span>
+                      <span className="submenu-title">{showSubmenu}</span>
+                    </div>
+                    {menuItems["airport-business"]
+                      .find((item) => item.label === showSubmenu)
+                      .submenu.map((subItem) => (
+                        <NavLink key={subItem.path} to={subItem.path}>
+                          {subItem.label}
+                        </NavLink>
+                      ))}
+                  </>
+                ) : (
+                  menuItems["airport-business"].map((item) => (
+                    <div key={item.path} className="dropdown-item">
+                      {item.submenu ? (
+                        <div className="dropdown-item-with-submenu">
+                          <NavLink to={item.path}>{item.label}</NavLink>
+                          <span
+                            onClick={(e) => handleSubmenuToggle(e, item.label)}
+                            className="submenu-toggle show-submenu-toggle"
+                          >
+                            | &gt;
+                          </span>
+                        </div>
+                      ) : (
+                        <NavLink to={item.path}>{item.label}</NavLink>
+                      )}
+                    </div>
+                  ))
+                )}
+              </div>
             )}
           </li>
           <li

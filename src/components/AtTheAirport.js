@@ -10,7 +10,7 @@ import General from "./General";
 import Human from "./Human";
 import Title9 from "./Title9";
 import Parking from "./Parking";
-import "./AtTheAirport.css";
+import "../styles/AtTheAirport.css";
 
 const AtTheAirport = ({ scrollToSection, openPopup }) => {
   const location = useLocation();

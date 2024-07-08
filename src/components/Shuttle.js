@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Shuttle.css";
+import "../styles/Shuttle.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";

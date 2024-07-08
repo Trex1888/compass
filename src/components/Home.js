@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
+import "../styles/Home.css";
 import Hero from "./Hero";
 import Hero1 from "./Hero1";
 import Hero2 from "./Hero2";

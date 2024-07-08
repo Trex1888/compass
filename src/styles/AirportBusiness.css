@@ -1,0 +1,160 @@
+.airport-business-container {
+  display: flex;
+}
+
+.airport-business-sidebar {
+  width: 250px;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.airport-business-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.airport-business-sidebar li,
+h1 {
+  padding: 0;
+  font-size: 2em;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #36294a;
+  font-family: "Montserrat";
+}
+
+.airport-business-sidebar .flights-link {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.airport-business-sidebar .flights-link.active,
+.airport-business-sidebar .flights-link:hover {
+  color: black;
+}
+
+.airport-business-sidebar .sub-link {
+  text-decoration: none;
+  color: #666;
+  font-weight: normal;
+  display: block;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+.airport-business-sidebar .sub-link.active,
+.airport-business-sidebar .sub-link:hover {
+  color: white;
+
+  margin-left: 25px;
+}
+
+.airport-business-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.airport-business-content p {
+  color: #2d2d2d !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0.93em !important;
+  line-height: 1.5 !important;
+}
+
+.button-links {
+  margin-top: 20px;
+}
+
+.section {
+  margin-bottom: 10px;
+}
+
+.section button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background: white;
+  color: #36294a;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.section button.active {
+  background: #36294a;
+  color: white;
+}
+
+.section button:hover {
+  background: #36294a;
+  color: white;
+  transform: scale(1.05);
+}
+
+.section button .plus-sign {
+  font-size: 24px;
+  color: #36294a;
+  transition: transform 0.3s;
+}
+
+.section button.active .plus-sign {
+  color: white;
+}
+
+.section button:hover .plus-sign {
+  transform: scale(1.2);
+}
+
+.section-content {
+  background: #f5f5f5;
+  padding: 15px;
+  border: 2px solid #36294a;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  font-size: 16px;
+}
+
+.section-content ul {
+  padding-left: 20px;
+}
+
+.section-content a.development-plan-link,
+.section-content a.t-hangar-map-link,
+.section-content a.minimum-standards-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #be5a0e;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.section-content a.development-plan-link:hover,
+.section-content a.t-hangar-map-link:hover,
+.section-content a.minimum-standards-link:hover {
+  background-color: #f39200;
+}
+
+.airport-business-content h1 {
+  color: #3a3b5a;
+}
+
+.airport-business-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}

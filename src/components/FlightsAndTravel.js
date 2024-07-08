@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-import "./AirlineInfo.css";
+import "../styles/AirlineInfo.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";
@@ -112,7 +112,7 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
               </Link>
             </div>
           </div>
-          <div className="flights-section orange reverse">
+          <div className="flights-section orange">
             <div className="flights-section-content">
               <p>Check the status of an arriving or departing flight.</p>
               <Link

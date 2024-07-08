@@ -1,19 +1,9 @@
-/* Ensure header stays above everything else */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-/* Main container for the page */
 .flight-status-container {
   font-family: "Montserrat", sans-serif;
   text-align: center;
-  margin-top: 80px; /* Ensure there's space for the header */
+  margin-top: 80px;
 }
 
-/* Container for the image */
 .mainContainer {
   width: 100%;
   height: 300px;
@@ -24,20 +14,15 @@ header {
   background: linear-gradient(to bottom, #d1e8ff, #ffffff);
 }
 
-/* Styling for the image */
 .mainContainer img {
   width: 700px;
   position: relative;
-  transition: transform 0.5s ease; /* Smooth transition for tilting */
+  transition: transform 0.5s ease;
 }
 
-/* Text container */
 .flight-status-text {
   margin-top: 20px;
   color: #333;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .flight-status-text h1 {
@@ -66,7 +51,6 @@ header {
   background-color: #323e66;
 }
 
-/* Active and inactive filter buttons */
 .filter-button.active {
   background-color: #000000;
   font-weight: bold;
@@ -76,58 +60,53 @@ header {
   background-color: #9e9e9e;
 }
 
-/* Filter inputs */
 .filter-inputs {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
-.filter-inputs select,
-.filter-inputs input {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-/* Flight table styles */
 .flight-table {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .flight-table table {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 
 .flight-table th,
 .flight-table td {
   padding: 10px;
-  text-align: left;
+  border: 1px solid #ddd;
 }
 
 .flight-table th {
   background-color: #f4f4f4;
 }
 
-.flight-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
 .status-dot {
-  height: 10px;
   width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .status-dot.green {
   background-color: green;
 }
 
-.status-dot.orange {
-  background-color: orange;
+.status-dot.red {
+  background-color: red;
+}
+
+.flight-table td.green {
+  color: green;
+}
+
+.flight-table td.red {
+  color: red;
 }
