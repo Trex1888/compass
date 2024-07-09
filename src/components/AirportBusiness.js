@@ -36,6 +36,14 @@ const AirportBusiness = () => {
           </li>
           <li>
             <Link
+              to="/airport-business/bid-procurement-rfps"
+              className={getLinkClass("/airport-business/contractor-resources")}
+            >
+              Bid Procurement & RFPs
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/airport-business/badging"
               className={getLinkClass("/airport-business/badging")}
             >

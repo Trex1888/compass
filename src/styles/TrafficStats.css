@@ -1,0 +1,96 @@
+.traffic-stats-container {
+  padding: 50px;
+  font: 400 16px / 1.5 "Montserrat", sans-serif;
+  margin: 0 auto;
+  background-color: #b8effa;
+}
+
+.traffic-stats-header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: -125px;
+  z-index: 1;
+  width: 100%;
+}
+
+.traffic-stats-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 1px;
+  border: 15px solid white;
+  margin-top: -60px;
+}
+
+.traffic-stats-content {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.traffic-stats-content h1 {
+  font-size: 32px;
+  color: #4a4a4a;
+  font-weight: 400;
+  margin-bottom: 15px;
+  margin-top: -60px;
+}
+
+.traffic-stats-content p {
+  color: #6f6f7b;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+.stats-button {
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  width: 200px;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  margin-bottom: 32px;
+}
+
+.stats-button:hover {
+  background-color: #390d68;
+}
+
+.back-link {
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.back-link:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .traffic-stats-container {
+    padding: 20px;
+  }
+
+  .traffic-stats-content h1 {
+    font-size: 28px;
+  }
+
+  .stats-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .traffic-stats-content h1 {
+    font-size: 24px;
+  }
+
+  .stats-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

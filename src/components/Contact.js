@@ -41,7 +41,7 @@ const Contact = ({ scrollToSection, openPopup }) => {
           For specific inquiries regarding media, lost and found, or airline
           information, please see the contact information below. Please review
           the
-          <a href="airport-business">
+          <a href="airport-business/operations/aircraft-noise-program">
             <strong> Aircraft Noise Program </strong>
           </a>
           for comments related to noise.
@@ -53,14 +53,27 @@ const Contact = ({ scrollToSection, openPopup }) => {
           <input
             type="text"
             placeholder="Full Name"
-            className="contact-input"
+            class="contact-input full-name-input"
           />
+
           <select className="contact-input">
             <option value="">Select Subject</option>
-            <option value="general">General Inquiry</option>
-            <option value="media">Media</option>
-            <option value="lost-and-found">Lost and Found</option>
-            <option value="airline-info">Airline Information</option>
+            <option value="general">General</option>
+            <option value="general">Airport Administration</option>
+            <option value="media">
+              Building Maintenance - Janitorial Services
+            </option>
+            <option value="lost-and-found">
+              Construction & Planning Activities
+            </option>
+            <option value="airline-info">Operations - Safety</option>
+            <option value="airline-info">Parking - SP+</option>
+            <option value="airline-info">Restaurants & Concessions</option>
+            <option value="airline-info">Rental Cars</option>
+            <option value="airline-info">Tours</option>
+            <option value="airline-info">
+              Transportation Security Administration (TSA)
+            </option>
           </select>
           <input
             type="email"
@@ -94,7 +107,13 @@ const Contact = ({ scrollToSection, openPopup }) => {
           </div>
 
           <div className="bottom">
-            <a href="traveler-info">Directions</a>
+            <a
+              href="https://www.google.com/maps/place/Des+Moines+International+Airport/@41.5739738,-93.7487149,12z/data=!3m1!5s0x87eea211d4253329:0x6a181194b3c68f7c!4m6!3m5!1s0x87eea1f80909570b:0x80179b8d59f567a!8m2!3d41.532841!4d-93.6586392!16zL20vMDR4amh2?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Directions
+            </a>
           </div>
         </div>
       </div>

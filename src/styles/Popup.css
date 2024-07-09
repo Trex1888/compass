@@ -164,20 +164,21 @@
 }
 
 .popup-toggle-button {
-  background-color: white;
-  color: #be5a0e;
-  cursor: pointer;
-  padding: 8px;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-  border-radius: 100%;
-  margin-bottom: 10px;
-  margin-right: 70px;
-  font-size: 34px;
-  border: none;
-  margin-top: -30px;
-  margin-bottom: -30px;
-  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(0, 0, 0, 0.1),
-    0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white !important;
+  color: #be5a0e !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  transition: color 0.5s ease-in-out !important;
+  background-color: 0.5s ease-in-out !important;
+  border-radius: 100% !important;
+  margin-bottom: 10px !important;
+  margin-right: 70px !important;
+  font-size: 34px !important;
+  border: none !important;
+  margin-top: -30px !important;
+  margin-bottom: -30px !important;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1) 0px -4px 8px rgba(0, 0, 0, 0.1) 0px
+    4px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
 .vertical-icons {

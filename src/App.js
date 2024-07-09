@@ -4,7 +4,6 @@ import {
   Route,
   Routes,
   useLocation,
-  Link,
 } from "react-router-dom";
 import "./App.css";
 import LiftDSM from "./components/LiftDSM";
@@ -47,6 +46,8 @@ import Services from "./components/Services";
 import Operations from "./components/Operations";
 import Permits from "./components/Permits";
 import Tenants from "./components/Tenant";
+import Agenda1 from "./components/Agenda1";
+import Minutes from "./components/Minutes";
 
 import aboutImage from "./images/about.jpg";
 import flightsAndTravelImage from "./images/flightsandtravel.jpg";
@@ -55,6 +56,7 @@ import airportBusinessImage from "./images/airport1.jpg";
 import liftDsmImage from "./images/dsm3.jpg";
 import people from "./images/peep.jpg";
 import dsm from "./images/dsm1.jpg";
+import TrafficStats from "./components/TrafficStats";
 
 const App = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -168,16 +170,17 @@ const AppContent = ({
 
   const backgroundStyle = getLocationBackground(location);
 
-  const shouldRenderSidebar = !location.pathname.includes(
-    "/airport-business/bid-procurement-rfps"
+  const isTrafficStatistics = location.pathname.includes(
+    "about-us/news/june-2024-airport-traffic-statistics"
   );
 
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
-      <Header backgroundStyle={backgroundStyle} />
+      <Header
+        isTrafficStatistics={isTrafficStatistics}
+        backgroundStyle={backgroundStyle}
+      />
       <div className="main-container">
-        {shouldRenderSidebar &&
-          location.pathname.startsWith("/airport-business") && <Sidebar />}
         <div className="content">
           <Popup
             isPopupVisible={isPopupVisible}
@@ -236,9 +239,19 @@ const AppContent = ({
               element={<Agenda />}
             />
             <Route
+              path="/about-us/authority-leadership/board-agendas-minutes/agenda/:title"
+              element={<Agenda1 />}
+            />
+            <Route
+              path="/about-us/authority-leadership/board-agendas-minutes/minutes/:title"
+              element={<Minutes />}
+            />
+            <Route
               path="/about-us/authority-leadership/staff"
               element={<Staff />}
             />
+            <Route path="/about-us/news/:title" element={<TrafficStats />} />
+
             <Route
               path="/contact"
               element={
@@ -430,161 +443,6 @@ const AppContent = ({
       </div>
       <SectionLinks />
       <Footer />
-    </div>
-  );
-};
-
-const Sidebar = () => {
-  const location = useLocation();
-
-  const getLinkClass = (path) => {
-    return location.pathname === path ? "flights-link active" : "flights-link";
-  };
-
-  return (
-    <div className="airport-business-sidebar">
-      <ul>
-        <li>
-          <Link
-            to="/airport-business/contractor-resources"
-            className={getLinkClass("/airport-business/contractor-resources")}
-          >
-            Contractor Resources
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/airport-business/bid-procurement-rfps"
-            className={getLinkClass("/airport-business/bid-procurement-rfps")}
-          >
-            Bid Procurement & RFPs
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/airport-business/badging"
-            className={getLinkClass("/airport-business/badging")}
-          >
-            Badging
-          </Link>
-          {location.pathname.startsWith("/airport-business/badging") && (
-            <ul>
-              <li>
-                <Link
-                  to="/airport-business/badging/badge-applications-renewal"
-                  className={getLinkClass(
-                    "/airport-business/badging/badge-applications-renewal"
-                  )}
-                >
-                  Badge Applications & Renewal
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/airport-business/badging/badge-faqs"
-                  className={getLinkClass(
-                    "/airport-business/badging/badge-faqs"
-                  )}
-                >
-                  Badging FAQs
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li>
-          <Link
-            to="/about-us/news"
-            className={getLinkClass("/airport-business/news")}
-          >
-            News & Statistics
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/airport-business/operations"
-            className={getLinkClass("/airport-business/operations")}
-          >
-            Operations
-          </Link>
-          {location.pathname.startsWith("/airport-business/operations") && (
-            <ul>
-              <li>
-                <Link
-                  to="/airport-business/operations/unmanned-aerial-systems"
-                  className={getLinkClass(
-                    "/airport-business/operations/unmanned-aerial-systems"
-                  )}
-                >
-                  Unmanned Aerial Systems
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/airport-business/operations/airport-driver-training"
-                  className={getLinkClass(
-                    "/airport-business/operations/airport-driver-training"
-                  )}
-                >
-                  Airport Driver Training
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/airport-business/operations/rules-regulations"
-                  className={getLinkClass(
-                    "/airport-business/operations/rules-regulations"
-                  )}
-                >
-                  Rules, Regulations, Policies and Procedures
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/airport-business/operations/aircraft-noise-program"
-                  className={getLinkClass(
-                    "/airport-business/operations/aircraft-noise-program"
-                  )}
-                >
-                  Aircraft Noise Program
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li>
-          <Link
-            to="/airport-business/permits-forms"
-            className={getLinkClass("/airport-business/permits-forms")}
-          >
-            Permits & Forms
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/airport-business/tenant-resources"
-            className={getLinkClass("/airport-business/tenant-resources")}
-          >
-            Tenant Resources
-          </Link>
-          {location.pathname.startsWith(
-            "/airport-business/tenant-resources"
-          ) && (
-            <ul>
-              <li>
-                <Link
-                  to="/airport-business/tenant-resources/air-service-development"
-                  className={getLinkClass(
-                    "/airport-business/tenant-resources/air-service-development"
-                  )}
-                >
-                  Air Service Development
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
-      </ul>
     </div>
   );
 };

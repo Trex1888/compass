@@ -8,14 +8,14 @@
 }
 
 .staff-content {
-  max-width: 800px;
-  margin: 0 auto;
+  margin-left: 75px;
 }
 
 .staff-content h1 {
   font-size: 36px;
   color: black;
   font-weight: 400;
+  margin-top: 0px;
 }
 
 .staff-content h2 {

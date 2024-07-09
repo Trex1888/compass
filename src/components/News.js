@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
 import "../styles/News.css";
 import eventsImage from "../images/news1.jpg";
 import pressImage from "../images/news.jpg";
@@ -6,119 +7,77 @@ import statsImage from "../images/minutes.jpg";
 
 const News = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
 
   const newsData = {
     Events: [
       {
-        title: "Event 1",
-        date: "January 1, 2022",
-        description: "Description for Event 1",
-        image: eventsImage,
-      },
-      {
-        title: "Event 2",
-        date: "February 1, 2022",
-        description: "Description for Event 2",
-        image: eventsImage,
-      },
-      {
-        title: "Event 3",
-        date: "March 1, 2022",
-        description: "Description for Event 3",
-        image: eventsImage,
-      },
-      {
-        title: "Event 4",
-        date: "April 1, 2022",
-        description: "Description for Event 4",
-        image: eventsImage,
-      },
-      {
-        title: "Event 5",
-        date: "May 1, 2022",
-        description: "Description for Event 5",
-        image: eventsImage,
-      },
-      {
-        title: "Event 6",
-        date: "June 1, 2022",
-        description: "Description for Event 6",
+        title: "Latest Event",
+        date: "January 12, 2024",
         image: eventsImage,
       },
     ],
     "Passenger Statistics": [
       {
-        title: "Passenger Statistics 1",
-        date: "January 1, 2022",
-        description: "Description for Passenger Statistics 1",
+        title: "June 2024 Airport Traffic Statistics",
+        date: "June 1, 2024",
         image: statsImage,
       },
       {
-        title: "Passenger Statistics 2",
-        date: "February 1, 2022",
-        description: "Description for Passenger Statistics 2",
+        title: "May 2024 Airport Traffic Statistics",
+        date: "May 1, 2024",
         image: statsImage,
       },
       {
-        title: "Passenger Statistics 3",
-        date: "March 1, 2022",
-        description: "Description for Passenger Statistics 3",
+        title: "April 2024 Airport Traffic Statistics",
+        date: "April 1, 2024",
         image: statsImage,
       },
       {
-        title: "Passenger Statistics 4",
-        date: "April 1, 2022",
-        description: "Description for Passenger Statistics 4",
+        title: "March 2024 Airport Traffic Statistics",
+        date: "March 1, 2024",
         image: statsImage,
       },
       {
-        title: "Passenger Statistics 5",
-        date: "May 1, 2022",
-        description: "Description for Passenger Statistics 5",
+        title: "February 2024 Airport Traffic Statistics",
+        date: "February 1, 2024",
         image: statsImage,
       },
       {
-        title: "Passenger Statistics 6",
-        date: "June 1, 2022",
-        description: "Description for Passenger Statistics 6",
+        title: "January 2024 Airport Traffic Statistics",
+        date: "January 1, 2024",
         image: statsImage,
       },
     ],
     "Press Releases": [
       {
-        title: "Press Release 1",
-        date: "January 1, 2022",
-        description: "Description for Press Release 1",
+        title: "New Terminal Expansion Announced",
+        date: "June 1, 2024",
         image: pressImage,
       },
       {
-        title: "Press Release 2",
-        date: "February 1, 2022",
-        description: "Description for Press Release 2",
+        title: "Record-Breaking Passenger Numbers",
+        date: "April 15, 2024",
         image: pressImage,
       },
       {
-        title: "Press Release 3",
-        date: "March 1, 2022",
-        description: "Description for Press Release 3",
+        title: "Airport Receives Environmental Excellence Award",
+        date: "February 28, 2024",
         image: pressImage,
       },
       {
-        title: "Press Release 4",
-        date: "April 1, 2022",
-        description: "Description for Press Release 4",
+        title: "New Nonstop Flights to Europe",
+        date: "December 5, 2023",
         image: pressImage,
       },
       {
-        title: "Press Release 5",
-        date: "May 1, 2022",
-        description: "Description for Press Release 5",
+        title: "Autumn Travel Tips from DSM Airport",
+        date: "October 20, 2023",
         image: pressImage,
       },
       {
-        title: "Press Release 6",
-        date: "June 1, 2022",
-        description: "Description for Press Release 6",
+        title: "Summer Travel Advisory",
+        date: "June 30, 2023",
         image: pressImage,
       },
     ],
@@ -137,6 +96,19 @@ const News = () => {
     setSelectedCategory(event.target.value);
   };
 
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
+  };
+
+  const handleNewsItemClick = (title) => {
+    const slug = createSlug(title);
+    navigate(`/about-us/news/${slug}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="news-container">
       <div className="news-header">
@@ -151,14 +123,26 @@ const News = () => {
           Sign-up for email notification to catch the latest news and
           announcements, enplanement statistics, and events.
         </p>
+        <div className="p-strong">
+          <p>
+            <strong>Sign Up for Content Notifications</strong>
+          </p>
+        </div>
         <div className="newsletter-signup">
           <input type="email" placeholder="Email Address" />
           <button>Subscribe</button>
         </div>
       </div>
-      <div className="news-category">
-        <select value={selectedCategory} onChange={handleCategoryChange}>
-          <option value="">Category</option>
+      <div className="news-category-container">
+        <h1 className="news-title">News</h1>
+        <select
+          className="news-category"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+        >
+          <option value="" className="placeholder-option">
+            Category
+          </option>
           <option value="Events">Events</option>
           <option value="Passenger Statistics">Passenger Statistics</option>
           <option value="Press Releases">Press Releases</option>
@@ -166,12 +150,20 @@ const News = () => {
       </div>
       <div className="news-items">
         {filteredNews.map((newsItem, index) => (
-          <div className="news-item" key={index}>
+          <div
+            className="news-item"
+            key={index}
+            onClick={() => handleNewsItemClick(newsItem.title)}
+            style={{ cursor: "pointer" }}
+          >
             <img src={newsItem.image} alt={newsItem.title} />
             <h2>{newsItem.title}</h2>
-            <p>{newsItem.date}</p>
-            <p>{newsItem.description}</p>
-            <button href="#">Learn More →</button>
+            <NavLink
+              to={`/about-us/news/${createSlug(newsItem.title)}`}
+              className="learn-more-link"
+            >
+              Learn More <span>→</span>
+            </NavLink>
           </div>
         ))}
       </div>

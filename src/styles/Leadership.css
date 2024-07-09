@@ -72,7 +72,7 @@
 
 .authority-leadership-header p {
   color: #333;
-  margin: 20px 0;
+  margin-right: 45px;
 }
 
 .authority-leadership-button {
@@ -80,15 +80,29 @@
   color: #fff;
   padding: 14px 20px;
   border: none;
-  border-radius: 2px;
+  border-radius: 1px;
   cursor: pointer;
   transition: background-color 0.35s ease;
-  margin: 10px;
-  width: 240px;
-  font-size: 16px;
+  margin: 5px 0;
+  width: 400px;
+  font-size: 18px;
 }
 
-.authority-leadership-button:hover {
+.authority-leadership1-button {
+  background-color: #be5a0e;
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  width: 300px;
+  font-size: 18px;
+  margin: 40px 10px 50px 10px;
+}
+
+.authority-leadership-button:hover,
+.authority-leadership1-button:hover {
   background-color: #390d68;
 }
 
@@ -97,8 +111,9 @@
 }
 
 .authority-leadership-section h2 {
-  color: #662985;
   margin-bottom: 20px;
+  font-size: x-large;
+  font-weight: 500;
 }
 
 .authority-leadership-section p {
@@ -113,4 +128,66 @@
 
 .authority-leadership-link:hover {
   text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.divider {
+  border-top: 1px solid #a09797;
+  max-width: 975px;
+  margin: 5px 0;
+}
+
+.section-links-container2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  width: 100%;
+  margin-top: -110px;
+}
+
+.section-links2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.link-item2 {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: transform 0.3s, color 0.3s;
+  transition: all 0.5s ease-out 0.25s;
+  border: 1px solid rgb(180, 178, 178);
+}
+
+.link-item2:hover {
+  cursor: pointer;
+  color: #be5a0e;
+}
+
+@media (max-width: 768px) {
+  .authority-leadership-container {
+    flex-direction: column;
+  }
+
+  .authority-leadership-sidebar {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .authority-leadership-content {
+    width: 100%;
+    padding: 20px;
+  }
 }

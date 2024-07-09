@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Leadership.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -28,6 +28,12 @@ const Leadership = ({ scrollToSection, openPopup }) => {
   const handleButtonClick = (sectionId) => {
     scrollToSection(sectionId);
     openPopup();
+  };
+
+  const navigate = useNavigate();
+
+  const handleButtonClick1 = () => {
+    navigate("/about-us/authority-leadership/staff");
   };
 
   return (
@@ -68,11 +74,22 @@ const Leadership = ({ scrollToSection, openPopup }) => {
             air service and make air travel to and from Des Moines more
             convenient and pleasurable.
           </p>
+          <p>
+            The DSM Airport Authority Board holds regular meetings on the 2nd
+            Tuesday of each month at 9:00 a.m. CT in the Board Room, 2nd Floor,
+            Main Terminal. For more information, call Mary Benson at (515)
+            256-5100, or
+            <a href="/">
+              <strong> send us a message</strong>
+            </a>
+            .
+          </p>
           <button className="authority-leadership-button">
             2024 Regular Board Meeting Schedule
           </button>
         </div>
-
+        <div className="divider"></div>
+        <div className="divider"></div>
         <div className="authority-leadership-section">
           <h2>Authority Board Members</h2>
           <p>Jake Christensen, Board Chair</p>
@@ -82,31 +99,38 @@ const Leadership = ({ scrollToSection, openPopup }) => {
           <p>Jessica Feeney, Member</p>
         </div>
 
-        <div className="section-links-container1">
-          <div className="section-links1">
+        <button
+          className="authority-leadership1-button"
+          onClick={handleButtonClick1}
+        >
+          Meet the Airport Directors
+        </button>
+
+        <div className="section-links-container2">
+          <div className="section-links2">
             <div
-              className="link-item1"
+              className="link-item2"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
               <p>Flight Status</p>
             </div>
             <div
-              className="link-item1"
+              className="link-item2"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item1"
+              className="link-item2"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item1"
+              className="link-item2"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />
