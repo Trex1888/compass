@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../styles/Leadership.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -30,10 +30,8 @@ const Leadership = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
 
-  const navigate = useNavigate();
-
-  const handleButtonClick1 = () => {
-    navigate("/about-us/authority-leadership/staff");
+  const handleNavLinkClick = () => {
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -99,15 +97,15 @@ const Leadership = ({ scrollToSection, openPopup }) => {
           <p>Jessica Feeney, Member</p>
         </div>
 
-        <button
-          className="authority-leadership1-button"
-          onClick={handleButtonClick1}
-        >
-          Meet the Airport Directors
-        </button>
-
-        <div className="section-links-container2">
-          <div className="section-links2">
+        <div className="section-links-container3">
+          <NavLink
+            to="/about-us/authority-leadership/staff"
+            className="authority-leadership1-button"
+            onClick={handleNavLinkClick}
+          >
+            Meet the Airport Directors
+          </NavLink>
+          <div className="section-links3">
             <div
               className="link-item2"
               onClick={() => handleButtonClick("Flight-Status")}
@@ -116,21 +114,21 @@ const Leadership = ({ scrollToSection, openPopup }) => {
               <p>Flight Status</p>
             </div>
             <div
-              className="link-item2"
+              className="link-item3"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item2"
+              className="link-item3"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item2"
+              className="link-item3"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

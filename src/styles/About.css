@@ -1,5 +1,4 @@
 .about-container {
-  font: 400 16px / 1.5 "Montserrat", sans-serif;
   padding: 50px;
   display: flex;
   flex-direction: row;
@@ -8,7 +7,8 @@
 .about-sidebar {
   width: 20%;
   margin-right: 30px;
-  margin-top: -25px;
+  margin-left: -5px;
+  margin-top: -15px;
 }
 
 .about-sidebar ul {
@@ -29,7 +29,7 @@
 .about-sidebar a.active {
   font-weight: bold;
   position: relative;
-  color: black;
+  color: #36294a;
 }
 
 .about-sidebar a.active::after {
@@ -44,10 +44,24 @@
 
 .about-sidebar a.active:hover {
   color: #9090a0;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .about-sidebar a:hover {
   color: #323e66;
+}
+
+.about-sidebar a.active-sub {
+  font-weight: bold;
+  color: #36294a;
+  text-decoration: none;
+}
+
+.about-sidebar a.active-sub:hover {
+  color: #9090a0;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .about-content {
@@ -56,18 +70,26 @@
   padding: 50px;
   border-radius: 10px;
   text-align: left;
+  margin-right: 30px;
 }
 
 .about-header {
   text-align: left;
   padding: 20px 0;
-  margin-top: -110px;
+  margin-top: -120px;
 }
 
 .about-header h1 {
   font-size: 36px;
   color: black;
   font-weight: 400;
+  margin-top: 75px;
+}
+
+.about-header h2 {
+  color: black;
+  font-weight: 400;
+  margin-top: 35px;
 }
 
 .about-header p {

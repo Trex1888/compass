@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-import "../styles/AirlineInfo.css";
+import "../styles/FlightsAndTravel.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";
@@ -39,9 +39,9 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
     location.pathname === "/flights-and-travel/airline-information";
 
   return (
-    <div className="flights-travel-container">
+    <div className="about-container">
       {showSidebar && (
-        <div className="flights-sidebar">
+        <div className="about-sidebar">
           <ul>
             <li>
               <Link
@@ -84,8 +84,8 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
           </ul>
         </div>
       )}
-      <div className="flights-content">
-        <div className="flights-header">
+      <div className="about-content">
+        <div className="about-header">
           <h1>Flights & Travel</h1>
           <p>
             Des Moines International Airport's six airlines offer more than 30
@@ -95,7 +95,8 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
             thrilling destination.
           </p>
         </div>
-        <div className="flights-sections">
+
+        <div className="flights-content">
           <div className="flights-section purple">
             <img
               src="https://www.flydsm.com/filesimages/FLIGHTS%20AND%20TRAVEL/Engine%20Spiral%20I.jpg"
@@ -112,6 +113,7 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
               </Link>
             </div>
           </div>
+
           <div className="flights-section orange">
             <div className="flights-section-content">
               <p>Check the status of an arriving or departing flight.</p>
@@ -119,7 +121,7 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
                 to="/flights-and-travel/flight-status"
                 className="flights-button"
               >
-                View Flight Status
+                View Arrivals & Departures
               </Link>
             </div>
             <img
@@ -128,6 +130,7 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
               className="flights-image"
             />
           </div>
+
           <div className="flights-section blue">
             <img
               src="https://www.flydsm.com/filesimages/FLIGHTS%20AND%20TRAVEL/Family%20-%20rock%20logo%20II.jpg"
@@ -135,10 +138,7 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
               className="flights-image"
             />
             <div className="flights-section-content">
-              <p>
-                Explore the many nonstop destinations available from Des Moines
-                International Airport.
-              </p>
+              <p>Choose your next nonstop getaway!</p>
               <Link
                 to="/flights-and-travel/nonstop-destinations"
                 className="flights-button"
@@ -148,31 +148,31 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
             </div>
           </div>
         </div>
-        <div className="section-links-container1">
-          <div className="section-links1">
+        <div className="section-links-container-flights">
+          <div className="section-links-flights">
             <div
-              className="link-item1"
+              className="link-item-flights"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
               <p>Flight Status</p>
             </div>
             <div
-              className="link-item1"
+              className="link-item-flights"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item1"
+              className="link-item-flights"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item1"
+              className="link-item-flights"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

@@ -81,11 +81,6 @@
   transition: background-color 0.35s ease;
 }
 
-.load-more-button:hover {
-  background-color: #390d68;
-  color: white;
-}
-
 @media (max-width: 768px) {
   .board-agendas-minutes-content {
     margin-left: 50px;

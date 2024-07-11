@@ -153,13 +153,18 @@
 .news-item h2 {
   font-size: 20px;
   color: #4a4a4a;
-  margin-bottom: -10px;
   font-weight: 500;
+}
+
+.news-item h3 {
+  color: #6f6f7b;
+  margin-bottom: 30px;
 }
 
 .news-item p {
   color: #6f6f7b;
   margin-bottom: 30px;
+  margin-top: -20px;
 }
 
 .news-item a {

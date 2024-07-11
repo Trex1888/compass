@@ -1,23 +1,40 @@
-import React from "react";
-import { Link, Route, Routes, useLocation } from "react-router-dom";
-import Shuttle from "./Shuttle";
-import Ground from "./Ground";
-import Maps from "./Maps";
-import Dining from "./Dining";
-import Services from "./Services";
-import Accessibility from "./Accessibility";
-import General from "./General";
-import Human from "./Human";
-import Title9 from "./Title9";
-import Parking from "./Parking";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, Outlet } from "react-router-dom";
 import "../styles/AtTheAirport.css";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { CiParking1 } from "react-icons/ci";
 
 const AtTheAirport = ({ scrollToSection, openPopup }) => {
+  const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
+  const isMainPage = location.pathname === "/at-the-airport";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight / 2;
+      if (window.scrollY > scrollThreshold) {
+        setShowAirplane(true);
+      } else {
+        setShowAirplane(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showAirplane]);
+
+  const handleButtonClick = (sectionId) => {
+    scrollToSection(sectionId);
+    openPopup();
+  };
 
   return (
-    <div className="at-the-airport-container">
-      <div className="sidebar">
+    <div className="about-container">
+      <div className="about-sidebar">
         <ul>
           <li>
             <Link
@@ -29,7 +46,6 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               Parking
             </Link>
           </li>
-
           <li>
             <Link
               to="/at-the-airport/shuttle-tracking"
@@ -42,20 +58,79 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
               Shuttle Tracking
             </Link>
           </li>
-
           <li>
             <Link
               to="/at-the-airport/ground-transportation"
               className={
-                location.pathname === "/at-the-airport/ground-transportation"
+                location.pathname === "/at-the-airport/ground-transportation" ||
+                location.pathname.startsWith(
+                  "/at-the-airport/ground-transportation"
+                )
                   ? "active"
                   : ""
               }
             >
               Ground Transportation
             </Link>
+            {location.pathname.startsWith(
+              "/at-the-airport/ground-transportation"
+            ) && (
+              <ul>
+                <li>
+                  <Link
+                    to="/at-the-airport/ground-transportation/ride-share-taxis"
+                    className={
+                      location.pathname ===
+                      "/at-the-airport/ground-transportation/ride-share-taxis"
+                        ? "flights-link active-sub"
+                        : "flights-link"
+                    }
+                  >
+                    Ride Share, Taxis, Limos
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/at-the-airport/ground-transportation/rental-cars"
+                    className={
+                      location.pathname ===
+                      "/at-the-airport/ground-transportation/rental-cars"
+                        ? "flights-link active-sub"
+                        : "flights-link"
+                    }
+                  >
+                    Rental Cars
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/at-the-airport/ground-transportation/hotel-shuttles"
+                    className={
+                      location.pathname ===
+                      "/at-the-airport/ground-transportation/hotel-shuttles"
+                        ? "flights-link active-sub"
+                        : "flights-link"
+                    }
+                  >
+                    Shuttles
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/at-the-airport/ground-transportation/buses-paratransit"
+                    className={
+                      location.pathname ===
+                      "/at-the-airport/ground-transportation/buses-paratransit"
+                        ? "flights-link active-sub"
+                        : "flights-link"
+                    }
+                  >
+                    Buses & Paratransit
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
-
           <li>
             <Link
               to="/at-the-airport/maps-directions"
@@ -141,86 +216,49 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
           </li>
         </ul>
       </div>
-      <div className="content">
-        <Routes>
-          <Route
-            path="shuttle-tracking"
-            element={
-              <Shuttle
-                scrollToSection={scrollToSection}
-                openPopup={openPopup}
-              />
-            }
-          />
-          <Route
-            path="parking"
-            element={
-              <Parking
-                scrollToSection={scrollToSection}
-                openPopup={openPopup}
-              />
-            }
-          />
-          <Route
-            path="ground-transportation"
-            element={
-              <Ground scrollToSection={scrollToSection} openPopup={openPopup} />
-            }
-          />
-          <Route
-            path="maps-directions"
-            element={
-              <Maps scrollToSection={scrollToSection} openPopup={openPopup} />
-            }
-          />
-          <Route
-            path="dining"
-            element={
-              <Dining scrollToSection={scrollToSection} openPopup={openPopup} />
-            }
-          />
-          <Route
-            path="services-amenities"
-            element={
-              <Services
-                scrollToSection={scrollToSection}
-                openPopup={openPopup}
-              />
-            }
-          />
-          <Route
-            path="accessibility"
-            element={
-              <Accessibility
-                scrollToSection={scrollToSection}
-                openPopup={openPopup}
-              />
-            }
-          />
-          <Route
-            path="general-aviation"
-            element={
-              <General
-                scrollToSection={scrollToSection}
-                openPopup={openPopup}
-              />
-            }
-          />
-          <Route
-            path="stop-human-trafficking"
-            element={
-              <Human scrollToSection={scrollToSection} openPopup={openPopup} />
-            }
-          />
-          <Route
-            path="title-vi-airport-nondiscrimination-program"
-            element={
-              <Title9 scrollToSection={scrollToSection} openPopup={openPopup} />
-            }
-          />
-        </Routes>
+
+      <div className="about-content">
+        {isMainPage ? (
+          <div className="about-header">
+            <h1>At The Airport</h1>
+            <p>Main page content goes here...</p>
+            <div className="section-links-container1">
+              <div className="section-links1">
+                <div
+                  className="link-item1"
+                  onClick={() => handleButtonClick("Flight-Status")}
+                >
+                  <AiOutlineFolderOpen className="icon" />
+                  <p>Flight Status</p>
+                </div>
+                <div
+                  className="link-item1"
+                  onClick={() => handleButtonClick("Departures")}
+                >
+                  <GiAirplaneDeparture className="icon" />
+                  <p>Departures</p>
+                </div>
+                <div
+                  className="link-item1"
+                  onClick={() => handleButtonClick("Arrivals")}
+                >
+                  <GiAirplaneArrival className="icon" />
+                  <p>Arrivals</p>
+                </div>
+                <div
+                  className="link-item1"
+                  onClick={() => handleButtonClick("Parking")}
+                >
+                  <CiParking1 className="icon" />
+                  <p>Parking</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Outlet />
+        )}
       </div>
-      <p>at the airport home</p>
     </div>
   );
 };

@@ -1,9 +1,53 @@
-.shuttle-tracking-container {
+.shuttle-container {
   font: 400 16px / 1.5 "Montserrat", sans-serif;
   padding: 50px;
   display: flex;
   flex-direction: row;
-  z-index: 1;
+}
+
+.shuttle-sidebar {
+  width: 20%;
+  margin-right: 30px;
+  margin-top: -25px;
+}
+
+.shuttle-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.shuttle-sidebar a {
+  color: #6f6f7b;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.shuttle-sidebar a.active {
+  font-weight: bold;
+  position: relative;
+  color: black;
+}
+
+.shuttle-sidebar a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 2px;
+  background-color: #662985;
+}
+
+.shuttle-sidebar a.active:hover {
+  color: #9090a0;
+}
+
+.shuttle-sidebar a:hover {
+  color: #323e66;
 }
 
 .shuttle-content {
@@ -78,7 +122,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-
   padding: 20px;
   gap: 40px;
   height: 200px;
@@ -109,4 +152,26 @@
 .link-item3:hover {
   cursor: pointer;
   color: #be5a0e;
+}
+
+@media (max-width: 768px) {
+  .shuttle-container {
+    flex-direction: column;
+  }
+
+  .shuttle-sidebar {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .shuttle-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .shuttle-button,
+  .shuttle-button.grey-blue-route,
+  .shuttle-button.red-route {
+    width: 100%;
+  }
 }

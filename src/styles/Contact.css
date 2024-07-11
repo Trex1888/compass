@@ -53,9 +53,14 @@ select.contact-input {
   transition: box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+.contact-textarea {
+  font-size: 30px;
+}
+
 .contact-input::placeholder,
 .contact-textarea::placeholder {
-  color: rgb(138, 139, 133);
+  color: rgb(178, 166, 166);
+  font-style: italic;
 }
 
 .contact-input:hover::placeholder,
@@ -83,8 +88,10 @@ select.contact-input {
 
 .contact-textarea {
   height: 170px;
-  font-size: 1em;
+  font-size: 1.1em;
   resize: none;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .contact-button {

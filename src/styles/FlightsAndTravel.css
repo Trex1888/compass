@@ -1,112 +1,161 @@
-.flight-status-container {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  margin-top: 80px;
+.flights-section.purple {
+  background-color: #36294a;
+  color: white;
 }
 
-.mainContainer {
-  width: 100%;
-  height: 300px;
+.flights-section.purple button {
+  color: white;
+  margin-left: 15px;
+}
+
+.flights-section.orange {
+  color: white;
+  background-color: #be5a0e;
+}
+
+.flights-section.blue {
+  background-color: #00969e;
+  color: white;
+}
+
+.flights-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 1px;
+  overflow: hidden;
+  height: 260px;
+}
+
+.flights-image {
+  width: 33%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flights-section-content {
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 55px;
+  margin-top: -25px;
+}
+
+.flights-section-content a {
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
+.flights-button {
+  padding: 0.75em 3em;
+  color: white;
+  line-height: 1.1;
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.flights-section.orange .flights-button:hover,
+.flights-section.blue .flights-button:hover {
+  background-color: #36294a;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flights-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .flights-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .flights-section-content {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .flights-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.section-links-container-flights {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  height: 200px;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: -140px;
+}
+
+.section-links-flights {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #d1e8ff, #ffffff);
+  gap: 15px;
 }
 
-.mainContainer img {
-  width: 700px;
-  position: relative;
-  transition: transform 0.5s ease;
-}
-
-.flight-status-text {
-  margin-top: 20px;
-  color: #333;
-}
-
-.flight-status-text h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.filters {
+.link-item-flights {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.filter-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  border: none;
-  background-color: #6f6f7b;
-  color: #fff;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+  transition: transform 0.9s ease-in-out, color 0.9s ease-in-out;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.filter-button:hover {
-  background-color: #323e66;
+.link-item-flights:hover .icon,
+.link-item-flights:hover p {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: #be5a0e;
 }
 
-.filter-button.active {
-  background-color: #000000;
-  font-weight: bold;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-links-container-flights {
+    padding: 15px;
+    gap: 30px;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: -100px;
+  }
 
-.filter-button.inactive {
-  background-color: #9e9e9e;
-}
+  .section-links-flights {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-.filter-inputs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
-}
+  .link-item-flights {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
 
-.flight-table {
-  margin: 20px 0;
-}
-
-.flight-table table {
-  width: 80%;
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-
-.flight-table th,
-.flight-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-.flight-table th {
-  background-color: #f4f4f4;
-}
-
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.status-dot.green {
-  background-color: green;
-}
-
-.status-dot.red {
-  background-color: red;
-}
-
-.flight-table td.green {
-  color: green;
-}
-
-.flight-table td.red {
-  color: red;
+  .link-item-flights:hover .icon,
+  .link-item-flights:hover p {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: #be5a0e;
+  }
 }

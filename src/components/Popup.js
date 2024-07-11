@@ -1,4 +1,4 @@
-import "../styles//Popup.css";
+import "../styles/Popup.css";
 import { Link } from "react-router-dom";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { CiParking1 } from "react-icons/ci";
@@ -36,6 +36,7 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
             <Link
               to="flights-and-travel/flight-status?flights=departures"
               className="view-all"
+              onClick={togglePopup}
             >
               <h3>Departures</h3>
               <div className="table-row table-header">
@@ -88,6 +89,7 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
             <Link
               to="flights-and-travel/flight-status?flights=arrivals"
               className="view-all"
+              onClick={togglePopup}
             >
               <h3>Arrivals</h3>
               <div className="table-row table-header">
@@ -123,7 +125,11 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
           </div>
 
           <div className="popup-section" id="Parking">
-            <Link to="at-the-airport/parking" className="view-all">
+            <Link
+              to="at-the-airport/parking"
+              className="view-all"
+              onClick={togglePopup}
+            >
               <h3>Parking</h3>
               <div className="table-row table-header">
                 <span>Parking Lot</span> <span>%Full</span> <span>Open</span>

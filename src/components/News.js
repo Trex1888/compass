@@ -158,6 +158,7 @@ const News = () => {
           >
             <img src={newsItem.image} alt={newsItem.title} />
             <h2>{newsItem.title}</h2>
+            <p>{newsItem.date}</p>
             <NavLink
               to={`/about-us/news/${createSlug(newsItem.title)}`}
               className="learn-more-link"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -48,6 +48,19 @@ import Permits from "./components/Permits";
 import Tenants from "./components/Tenant";
 import Agenda1 from "./components/Agenda1";
 import Minutes from "./components/Minutes";
+import RideShare from "./components/RideShare";
+import RentalCars from "./components/RentalCar";
+import Shuttle from "./components/Shuttle";
+import Accessibility from "./components/Accessibility";
+import ShuttleCar from "./components/ShuttleCars";
+import Buses from "./components/Buses";
+import Parking from "./components/Parking";
+import Ground from "./components/Ground";
+import Maps from "./components/Maps";
+import Dining from "./components/Dining";
+import General from "./components/General";
+import Human from "./components/Human";
+import Title9 from "./components/Title9";
 
 import aboutImage from "./images/about.jpg";
 import flightsAndTravelImage from "./images/flightsandtravel.jpg";
@@ -202,7 +215,26 @@ const AppContent = ({
                   openPopup={openPopup}
                 />
               }
-            />
+            >
+              <Route path="parking" element={<Parking />} />
+              <Route path="shuttle-tracking" element={<Shuttle />} />
+              <Route path="ground-transportation" element={<Ground />}>
+                <Route path="buses-paratransit" element={<Buses />} />
+                <Route path="ride-share-taxis" element={<RideShare />} />
+                <Route path="rental-cars" element={<RentalCars />} />
+                <Route path="hotel-shuttles" element={<ShuttleCar />} />
+              </Route>
+              <Route path="maps-directions" element={<Maps />} />
+              <Route path="dining" element={<Dining />} />
+              <Route path="services-amenities" element={<Services />} />
+              <Route path="accessibility" element={<Accessibility />} />
+              <Route path="general-aviation" element={<General />} />
+              <Route path="stop-human-trafficking" element={<Human />} />
+              <Route
+                path="title-vi-airport-nondiscrimination-program"
+                element={<Title9 />}
+              />
+            </Route>
             <Route
               path="/about-us"
               element={

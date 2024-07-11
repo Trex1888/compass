@@ -75,19 +75,7 @@
   margin-right: 45px;
 }
 
-.authority-leadership-button {
-  background-color: #be5a0e;
-  color: #fff;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 1px;
-  cursor: pointer;
-  transition: background-color 0.35s ease;
-  margin: 5px 0;
-  width: 400px;
-  font-size: 18px;
-}
-
+.authority-leadership-button,
 .authority-leadership1-button {
   background-color: #be5a0e;
   color: #fff;
@@ -96,9 +84,21 @@
   border-radius: 1px;
   cursor: pointer;
   transition: background-color 0.35s ease;
-  width: 300px;
   font-size: 18px;
-  margin: 40px 10px 50px 10px;
+}
+
+.authority-leadership-button {
+  margin: 5px 0;
+  width: 400px;
+}
+
+.authority-leadership1-button {
+  width: 300px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: -10px;
+  margin-bottom: -60px;
+  text-align: center;
 }
 
 .authority-leadership-button:hover,
@@ -141,7 +141,7 @@ a {
   margin: 5px 0;
 }
 
-.section-links-container2 {
+.section-links-container3 {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -149,17 +149,18 @@ a {
   padding: 20px;
   gap: 40px;
   width: 100%;
-  margin-top: -110px;
+  margin-bottom: 75px;
 }
 
-.section-links2 {
+.section-links3 {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-bottom: 500px;
 }
 
-.link-item2 {
+.link-item3 {
   display: flex;
   width: 120px;
   flex-direction: column;
@@ -189,5 +190,10 @@ a {
   .authority-leadership-content {
     width: 100%;
     padding: 20px;
+  }
+
+  .authority-leadership-button,
+  .authority-leadership1-button {
+    width: 100%;
   }
 }

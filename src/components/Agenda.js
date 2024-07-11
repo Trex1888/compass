@@ -164,6 +164,7 @@ const Agenda = () => {
               <h3>{item.title}</h3>
               <p>{item.date}</p>
               <NavLink
+                className="learn-more-link"
                 to={`/about-us/authority-leadership/board-agendas-minutes/${item.category.toLowerCase()}/${item.title
                   .toLowerCase()
                   .replace(/\s+/g, "-")

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/Shuttle.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -6,6 +7,8 @@ import { CiParking1 } from "react-icons/ci";
 
 const Shuttle = ({ scrollToSection, openPopup }) => {
   const [showAirplane, setShowAirplane] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +34,7 @@ const Shuttle = ({ scrollToSection, openPopup }) => {
 
   return (
     <div className="shuttle-container">
-      {/* <div className="shuttle-sidebar">
+      <div className="shuttle-sidebar">
         <ul>
           <li>
             <Link to="/shuttle/grey-blue-route">Grey-Blue Route</Link>
@@ -40,7 +43,7 @@ const Shuttle = ({ scrollToSection, openPopup }) => {
             <Link to="/shuttle/red-route">Red Route</Link>
           </li>
         </ul>
-      </div> */}
+      </div>
 
       <div className="shuttle-content">
         <div className="shuttle-header">

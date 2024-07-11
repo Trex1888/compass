@@ -1,10 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/AirportBusiness.css";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { CiParking1 } from "react-icons/ci";
 
-const AirportBusiness = () => {
+const AirportBusiness = ({ scrollToSection, openPopup }) => {
+  const [showAirplane, setShowAirplane] = useState(false);
   const [openSections, setOpenSections] = useState([]);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight / 2;
+      if (window.scrollY > scrollThreshold) {
+        setShowAirplane(true);
+      } else {
+        setShowAirplane(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showAirplane]);
+
+  const handleButtonClick = (sectionId) => {
+    scrollToSection(sectionId);
+    openPopup();
+  };
 
   const toggleSection = (section) => {
     if (openSections.includes(section)) {
@@ -23,8 +49,8 @@ const AirportBusiness = () => {
   };
 
   return (
-    <div className="airport-business-container">
-      <div className="airport-business-sidebar">
+    <div className="about-container">
+      <div className="about-sidebar">
         <ul>
           <li>
             <Link
@@ -168,19 +194,21 @@ const AirportBusiness = () => {
           </li>
         </ul>
       </div>
-      <div className="airport-business-content">
-        <h1>Airport Business</h1>
-        <p>
-          DSM serves as an economic engine for the region and for the State of
-          Iowa. The Airport is also a thriving business on its own with several
-          tenants, business units, and projects being implemented across the
-          2,600 acre airport campus.
-        </p>
-        <p>
-          Read below for information on business opportunities at the airport
-          including advertising, air cargo operations, charter operations,
-          T-Hangar leases, and more.
-        </p>
+      <div className="about-content">
+        <div className="about-header">
+          <h1>Airport Business</h1>
+          <p>
+            DSM serves as an economic engine for the region and for the State of
+            Iowa. The Airport is also a thriving business on its own with
+            several tenants, business units, and projects being implemented
+            across the 2,600 acre airport campus.
+          </p>
+          <p>
+            Read below for information on business opportunities at the airport
+            including advertising, air cargo operations, charter operations,
+            T-Hangar leases, and more.
+          </p>
+        </div>
         <div className="button-links">
           <div className="section">
             <button
@@ -426,6 +454,38 @@ const AirportBusiness = () => {
                 </p>
               </div>
             )}
+          </div>
+        </div>
+        <div className="section-links-container1">
+          <div className="section-links1">
+            <div
+              className="link-item1"
+              onClick={() => handleButtonClick("Flight-Status")}
+            >
+              <AiOutlineFolderOpen className="icon" />
+              <p>Flight Status</p>
+            </div>
+            <div
+              className="link-item1"
+              onClick={() => handleButtonClick("Departures")}
+            >
+              <GiAirplaneDeparture className="icon" />
+              <p>Departures</p>
+            </div>
+            <div
+              className="link-item1"
+              onClick={() => handleButtonClick("Arrivals")}
+            >
+              <GiAirplaneArrival className="icon" />
+              <p>Arrivals</p>
+            </div>
+            <div
+              className="link-item1"
+              onClick={() => handleButtonClick("Parking")}
+            >
+              <CiParking1 className="icon" />
+              <p>Parking</p>
+            </div>
           </div>
         </div>
       </div>
