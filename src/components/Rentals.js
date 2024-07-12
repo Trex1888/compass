@@ -3,7 +3,7 @@ import "../styles/Rentals.css";
 
 const Rentals = () => {
   return (
-    <div className="rental-cars-container">
+    <div className="about-header">
       <h1>Rental Cars</h1>
       <p>
         The Des Moines International Airport has several rental car agencies

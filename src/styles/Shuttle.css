@@ -1,81 +1,3 @@
-.shuttle-container {
-  font: 400 16px / 1.5 "Montserrat", sans-serif;
-  padding: 50px;
-  display: flex;
-  flex-direction: row;
-}
-
-.shuttle-sidebar {
-  width: 20%;
-  margin-right: 30px;
-  margin-top: -25px;
-}
-
-.shuttle-sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin-left: 20px;
-}
-
-.shuttle-sidebar a {
-  color: #6f6f7b;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-  display: block;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.shuttle-sidebar a.active {
-  font-weight: bold;
-  position: relative;
-  color: black;
-}
-
-.shuttle-sidebar a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  height: 2px;
-  background-color: #662985;
-}
-
-.shuttle-sidebar a.active:hover {
-  color: #9090a0;
-}
-
-.shuttle-sidebar a:hover {
-  color: #323e66;
-}
-
-.shuttle-content {
-  width: 80%;
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
-  text-align: left;
-  margin-top: -85px;
-  margin-left: -55px;
-}
-
-.shuttle-header {
-  text-align: left;
-}
-
-.shuttle-header h1 {
-  font-size: 36px;
-  color: black;
-  font-weight: 400;
-}
-
-.shuttle-header p {
-  color: #333;
-  margin: 20px 0;
-  max-width: 950px;
-}
-
 .shuttle-buttons {
   display: flex;
   gap: 10px;
@@ -84,7 +6,7 @@
 }
 
 .shuttle-button {
-  background-color: #be5a0e; /* Default background color */
+  background-color: #be5a0e;
   color: #fff;
   padding: 14px 20px;
   border: none;

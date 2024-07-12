@@ -62,14 +62,18 @@ import Human from "./components/Human";
 import Title9 from "./components/Title9";
 import TrafficStats from "./components/TrafficStats";
 import Rentals from "./components/Rentals";
+import AirService from "./components/AirService";
+import Top from "./components/Top";
 
 import aboutImage from "./images/about.jpg";
 import flightsAndTravelImage from "./images/flightsandtravel.jpg";
 import travlerImage from "./images/travelerInfo.jpg";
 import airportBusinessImage from "./images/airport1.jpg";
-import liftDsmImage from "./images/dsm3.jpg";
+// import liftDsmImage from "./images/dsm3.jpg";
 import people from "./images/peep.jpg";
 import dsm from "./images/dsm1.jpg";
+import homeImage from "./images/home.jpg";
+import flyDsm from "./images/liftmain.jpg";
 
 const App = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -118,35 +122,19 @@ const AppContent = ({
         return { backgroundImage: `url(${aboutImage})` };
 
       case "/flights-and-travel":
-        return { backgroundImage: `url(${flightsAndTravelImage})` };
-
       case "/flights-and-travel/airline-information":
+      case "/flights-and-travel/nonstop-destinations":
         return { backgroundImage: `url(${flightsAndTravelImage})` };
 
       case "/flights-and-travel/flight-status":
         return { backgroundImage: `url(${dsm})` };
 
-      case "/flights-and-travel/nonstop-destinations":
-        return { backgroundImage: `url(${flightsAndTravelImage})` };
-
       case "/traveler-info":
-        return { backgroundImage: `url(${travlerImage})` };
-
       case "/traveler-info/tsa-security":
-        return { backgroundImage: `url(${travlerImage})` };
-
       case "/traveler-info/tsa-security/precheck-global-entry":
-        return { backgroundImage: `url(${travlerImage})` };
-
       case "/traveler-info/check-in":
-        return { backgroundImage: `url(${travlerImage})` };
-
       case "/traveler-info/lost-and-found":
-        return { backgroundImage: `url(${travlerImage})` };
-
       case "/traveler-info/faq":
-        return { backgroundImage: `url(${travlerImage})` };
-
       case "/traveler-info/real-id":
         return { backgroundImage: `url(${travlerImage})` };
 
@@ -165,19 +153,17 @@ const AppContent = ({
         return { backgroundImage: `url(${airportBusinessImage})` };
 
       case "/lift-dsm":
-        return { backgroundImage: `url(${liftDsmImage})` };
+        return { backgroundImage: `url(${flyDsm})` };
 
       case "/contact":
-        return { backgroundColor: "#e9e9e9;" };
-
-      case "/careers":
-        return { backgroundColor: "#e9e9e9;" };
+      case "/about-us/careers":
+        return { backgroundColor: "#e9e9e9" };
 
       case "/":
-        return { backgroundColor: "none" };
+        return { backgroundImage: `url(${homeImage})` };
 
       default:
-        return { backgroundColor: "transparent" };
+        return { backgroundColor: "#e9e9e9" };
     }
   };
 
@@ -189,10 +175,8 @@ const AppContent = ({
 
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
-      <Header
-        isTrafficStatistics={isTrafficStatistics}
-        backgroundStyle={backgroundStyle}
-      />
+      <Header isTrafficStatistics={isTrafficStatistics} />
+      <Top backgroundStyle={backgroundStyle} />
       <div className="main-container">
         <div className="content">
           <Popup
@@ -515,7 +499,7 @@ const AppContent = ({
                 <Route
                   path="air-service-development"
                   element={
-                    <Services
+                    <AirService
                       scrollToSection={scrollToSection}
                       openPopup={openPopup}
                     />

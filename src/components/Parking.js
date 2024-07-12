@@ -2,8 +2,15 @@ import React from "react";
 import "../styles/Parking.css";
 
 const Parking = () => {
+  const scrollToEstimator = () => {
+    const element = document.getElementById("parking-estimator");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="parking-container">
+    <div className="about-header">
       <h1>Airport Parking</h1>
       <p>
         DSM offers convenient onsite parking starting at $7 per day along with
@@ -13,20 +20,36 @@ const Parking = () => {
         shuttles run continuously to the Grey, Red, and Blue Lots ensure no
         matter which lot you park in you have swift access to the terminal.
         Track the{" "}
-        <a href="#" className="link">
-          Grey-Blue shuttles here
+        <a
+          href="https://buswhere.com/dsm/routes/grey-blue_route"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Grey-Blue Route</strong>
         </a>{" "}
         and the{" "}
-        <a href="#" className="link">
-          Red shuttles here
+        <a
+          href="https://buswhere.com/dsm/routes/red_route"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Red Route</strong>
         </a>
         .
       </p>
-      <h2>Cell Phone Waiting Lot</h2>
+      <h3>Cell Phone Waiting Lot </h3>
       <p>
-        Use the convenient <strong>Cell Phone Waiting Lot</strong> for free
-        parking while you wait in your vehicle to pick up a passenger. Only
-        active loading or unloading is permitted on the front curb of the
+        Use the convenient{" "}
+        <a
+          href="https://www.google.com/maps/place/Des+Moines+Airport+Cell+Phone+Waiting+Lot/@41.5304011,-93.6464933,15z/data=!4m6!3m5!1s0x87eea3a9ccf9d85f:0xa431d69ae4e3530c!8m2!3d41.5304011!4d-93.6464933!16s%2Fg%2F11sjhp80qf?entry=ttu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link"
+        >
+          <strong>Cell Phone Waiting Lot</strong>
+        </a>{" "}
+        for free parking while you wait in your vehicle to pick up a passenger.
+        Only active loading or unloading is permitted on the front curb of the
         airport terminal. Unattended vehicles will be ticketed and towed. If
         you'd like to meet your arriving guest in the terminal, park in one of
         the available parking lots. The hourly lot includes 20 minutes of free
@@ -34,15 +57,39 @@ const Parking = () => {
       </p>
       <p>
         The Cell Phone Waiting Lot is across from the Blue Lot. View the{" "}
-        <a href="#" className="link">
+        <a
+          href="https://www.flydsm.com/filesimages/AT%20THE%20AIRPORT/Terminal%20Parking%20Map.png"
+          className="link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           parking map
         </a>{" "}
         for the location.
       </p>
       <div className="button-container">
-        <button className="btn">Grey-Blue Shuttle Route</button>
-        <button className="btn">Red Shuttle Route</button>
-        <button className="btn">Parking Estimator</button>
+        <button
+          className="btn"
+          onClick={() =>
+            window.open(
+              "https://buswhere.com/dsm/routes/grey-blue_route",
+              "_blank"
+            )
+          }
+        >
+          Grey-Blue Shuttle Route
+        </button>{" "}
+        <button
+          className="btn"
+          onClick={() =>
+            window.open("https://buswhere.com/dsm/routes/red_route", "_blank")
+          }
+        >
+          Red Shuttle Route
+        </button>
+        <button className="btn" onClick={scrollToEstimator}>
+          Parking Estimator
+        </button>
       </div>
       <h2>Real-time Parking Availability</h2>
       <table className="parking-table">
@@ -96,7 +143,7 @@ const Parking = () => {
           </tr>
         </tbody>
       </table>
-      <h2>Estimate Your Parking Costs</h2>
+      <h2 id="parking-estimator">Estimate Your Parking Costs</h2>
       <p>
         Enter your entry and exit date below to calculate your estimated parking
         costs.
@@ -153,7 +200,12 @@ const Parking = () => {
       <h2>Parking Map</h2>
       <p>
         Quickly locate the lot of your choice with this color-coded{" "}
-        <a href="#" className="link">
+        <a
+          href="https://www.flydsm.com/filesimages/AT%20THE%20AIRPORT/Terminal%20Parking%20Map.png"
+          className="link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           parking map
         </a>
         .
@@ -162,20 +214,22 @@ const Parking = () => {
         Travelers are able to park for up to 60 consecutive days in any airport
         lot. Unattended vehicles parked for longer than 60 days are subject to
         removal. Contact the SP+ Parking office at 515-256-5038 for questions
-        about longer stays.{" "}
-        <strong>
-          Please note, official Airport Parking does not offer or accept
-          coupons.
-        </strong>
+        about longer stays. Please note, official Airport Parking does not offer
+        or accept coupons.
       </p>
-      <h3>Construction Alert:</h3>
+
       <p>
-        During construction of the new parking garage there will be impacts to
-        several airport lots. The Cell Phone Waiting Lot is across from the Blue
-        Lot. While surface lot parking will be impacted temporarily during
-        construction, over 1,100 stalls will be made available upon its
-        completion. Learn more at our{" "}
-        <a href="#" className="link">
+        <strong>Construction Alert:</strong> During construction of the new
+        parking garage there will be impacts to several airport lots. The Cell
+        Phone Waiting Lot is across from the Blue Lot. While surface lot parking
+        will be impacted temporarily during construction, over 1,100 stalls will
+        be made available upon its completion. Learn more at our{" "}
+        <a
+          href="/lift-dsm"
+          className="link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Lift DSM
         </a>{" "}
         website.

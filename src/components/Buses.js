@@ -3,7 +3,7 @@ import "../styles/Buses.css";
 
 const Buses = () => {
   return (
-    <div className="buses-container">
+    <div className="about-header">
       <h1>Buses & Paratransit</h1>
       <p>
         Access to public transit has never been easier. Several organizations

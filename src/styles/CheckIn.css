@@ -1,21 +1,3 @@
-.about-containe1 {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.about-containe1 h1 {
-  color: #5c3c90;
-}
-
-.about-containe1 p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
 .image-container {
   display: flex;
   justify-content: center;

@@ -29,11 +29,13 @@ const LostItem = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
   return (
-    <div className="lost-item-report-container">
+    <div className="about-header">
       <h1>Lost Item Report</h1>
-      <h2>Report Your Lost Item</h2>
+
       <div className="form-container">
         <div className="item-details">
+          {" "}
+          <h2>Report Your Lost Item</h2>
           <h3>Item Details</h3>
           <form>
             <div className="form-group">

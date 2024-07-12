@@ -1,20 +1,3 @@
-.parking-container {
-  padding: 20px;
-  font-family: "Montserrat", sans-serif;
-}
-
-.parking-container h1,
-.parking-container h2,
-.parking-container h3 {
-  color: #5c3c90;
-  margin-bottom: 20px;
-}
-
-.parking-container p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
 .parking-container .link {
   color: #5c3c90;
   text-decoration: none;

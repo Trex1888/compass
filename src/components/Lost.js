@@ -30,7 +30,7 @@ const Lost = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
   return (
-    <div className="lost-and-found-container">
+    <div className="about-header">
       <h1>Lost & Found</h1>
       <p>
         For items lost on an aircraft, please contact your{" "}

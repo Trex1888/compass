@@ -3,7 +3,7 @@ import "../styles/Human.css";
 
 const Human = () => {
   return (
-    <div className="human-trafficking-container">
+    <div className="about-header">
       <h1>Human Trafficking</h1>
       <p>
         The Des Moines Airport Authority is committed to supporting the fight
@@ -14,7 +14,6 @@ const Human = () => {
         at educating transportation employees and the traveling public to
         recognize and report possible instances of human trafficking.
       </p>
-
       <h2>Blue Lightning Initiative</h2>
       <p>
         A program of DOT and DHS' Blue Campaign and Customs and Border
@@ -23,7 +22,6 @@ const Human = () => {
         in-flight and on-the-ground reporting mechanisms. The Des Moines Airport
         Authority staff is a proud member of the Blue Lightning Initiative.
       </p>
-
       <h3 style={{ color: "#be5a0e", fontWeight: "bold" }}>
         Recognizing & Reporting Human Trafficking
       </h3>
@@ -53,7 +51,6 @@ const Human = () => {
         1-802-872-6199.
       </p>
       <p>In the event of an emergency, call 911.</p>
-
       <div className="human-trafficking-logos">
         <img
           src="https://www.flydsm.com/filesimages/TRAVELER%20INFO/TLAHT%20Logo.jpg"
@@ -64,7 +61,6 @@ const Human = () => {
           alt="U.S. Department of Homeland Security"
         />
       </div>
-
       <p className="note">
         The United States Department of Homeland Security and the United States
         Department of Transportation are Federal agencies of the United States

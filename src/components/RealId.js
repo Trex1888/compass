@@ -30,7 +30,7 @@ const RealId = ({ scrollToSection, openPopup }) => {
   };
 
   return (
-    <div className="realid-container">
+    <div className="about-header">
       <h1>REAL ID - Department of Homeland Security</h1>
       <p>
         As of <strong>May 7, 2025</strong>, commercial flyers will need a REAL

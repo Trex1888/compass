@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Faqs.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";
@@ -63,7 +62,7 @@ const Faqs = ({ scrollToSection, openPopup }) => {
   ];
 
   return (
-    <div className="faq-container">
+    <div className="about-header">
       <h1>Frequently Asked Questions</h1>
       <div className="button-links">
         {faqItems.map((item, index) => (

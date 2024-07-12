@@ -7,7 +7,7 @@ import signatureFlightSupportLogo from "../images/pic4.png";
 
 const General = () => {
   return (
-    <div className="general-aviation-container">
+    <div className="about-header">
       <h1>General Aviation</h1>
       <p>
         The convenience of an international airport only 10 minutes from

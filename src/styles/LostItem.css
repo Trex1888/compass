@@ -1,20 +1,8 @@
-.lost-item-report-container {
-  padding: 20px;
-}
-
-.lost-item-report-container h1 {
-  color: #5c3c90; /* Purple color */
-}
-
-.lost-item-report-container h2 {
-  color: #5c3c90; /* Purple color */
-  margin-top: 20px;
-}
-
 .form-container {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  background-color: red;
 }
 
 .item-details,
@@ -24,7 +12,7 @@
 
 .item-details h3,
 .your-details h3 {
-  color: #5c3c90; /* Purple color */
+  color: #5c3c90;
 }
 
 .form-group {

@@ -1,70 +1,28 @@
-.home-content {
+.home-links-container {
+  margin-top: 20px;
+}
+
+.home-section-links {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.home-link-item {
+  display: flex;
+  width: 120px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #ffffff; /* Default text color */
-  background-image: url("../images/plane2.jpg"); /* Path to your background image */
-  background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  height: 100vh;
+  color: #3a3b5a;
+  font-size: 1rem;
+  box-shadow: 0 0 0px 2px #e9e9e9;
 }
 
-.home-content h3 {
-  font-weight: bold;
-  margin-top: 175px;
-  margin-right: 500px;
-}
-
-.home-content .second {
-  font-size: 24px; /* Adjusted font size for the second heading */
-}
-
-/* Button container styles */
-.button-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.button-container button {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Semi-transparent white background */
-  color: #333333; /* Dark text color */
-  font-weight: 600;
-  font-size: 16px;
-  padding: 10px 20px;
-  margin: 0 10px;
+.home-link-item:hover .icon,
+.home-section-links,
+.home-link-item:hover p {
+  color: #d96e2d;
+  transition: color 0.3s ease-in-out;
   cursor: pointer;
-  border: none;
-  outline: none;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.button-container button:hover {
-  background-color: #ffffff; /* White background on hover */
-  color: #ff4500; /* Orange text color on hover */
-}
-
-.airplane-image {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  background-image: url("../images/plane.jpg"); /* Adjust path as necessary */
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-
-.airplane-image.show {
-  opacity: 1;
 }

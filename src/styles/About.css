@@ -1,19 +1,21 @@
 .about-container {
-  padding: 50px;
   display: flex;
   flex-direction: row;
 }
 
 .about-sidebar {
   width: 30%;
-  margin-left: -30px;
-  margin-right: -50px;
-  margin-top: -30px;
+  margin-left: 25px;
+  margin-top: 38px;
 }
 
 .about-sidebar ul {
   list-style: none;
   max-width: 195px;
+}
+
+.about-sidebar ul ul {
+  margin-left: -25px;
 }
 
 .about-sidebar a {
@@ -31,10 +33,10 @@
   content: "";
   position: absolute;
   left: 0;
-  right: 5%;
+  right: 2%;
   bottom: 1px;
   height: 2px;
-  background-color: #f0f0f0;
+  background-color: #faf8f8;
 }
 
 .about-sidebar a.active {
@@ -45,7 +47,7 @@
 .about-sidebar a.active::after {
   background-color: black;
   left: 0;
-  right: 5%;
+  right: 2%;
 }
 
 .about-sidebar a:hover {
@@ -60,10 +62,6 @@
   transition: background-color 0.35s ease;
 }
 
-.flights-link {
-  margin-left: -20px;
-}
-
 .about-sidebar a.active-sub {
   color: black;
   font-weight: bold;
@@ -76,24 +74,20 @@
 }
 
 .about-content {
-  width: 80%;
+  width: 64%;
   background-color: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
   text-align: left;
-  margin-right: 30px;
+  margin-left: -98px;
 }
 
 .about-header {
-  text-align: left;
-  padding: 20px 0;
-  margin-top: -150px;
+  margin-top: -30px;
 }
 
 .about-header h1 {
   font-size: 36px;
   color: black;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 75px;
 }
 

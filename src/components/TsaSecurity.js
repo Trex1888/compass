@@ -33,7 +33,7 @@ const TsaSecurity = ({ scrollToSection, openPopup }) => {
   };
 
   return (
-    <div className="about-contendt">
+    <div>
       <div className="about-header">
         <h1>TSA & Security</h1>
         <p>

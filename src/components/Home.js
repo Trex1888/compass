@@ -33,49 +33,45 @@ const Home = ({ scrollToSection, openPopup }) => {
   };
 
   return (
-    <div className="home">
-      <div className="home-content">
-        <h3>DES MOINES INTERNATIONAL AIRPORT</h3>
-
-        <div className="button-container">
-          <div className="section-links-container1">
-            <div className="section-links1">
-              <div
-                className="link-item1"
-                onClick={() => handleButtonClick("Flight-Status")}
-              >
-                <AiOutlineFolderOpen className="icon" />
-                <p>Flight Status</p>
-              </div>
-              <div
-                className="link-item1"
-                onClick={() => handleButtonClick("Departures")}
-              >
-                <GiAirplaneDeparture className="icon" />
-                <p>Departures</p>
-              </div>
-              <div
-                className="link-item1"
-                onClick={() => handleButtonClick("Arrivals")}
-              >
-                <GiAirplaneArrival className="icon" />
-                <p>Arrivals</p>
-              </div>
-              <div
-                className="link-item1"
-                onClick={() => handleButtonClick("Parking")}
-              >
-                <CiParking1 className="icon" />
-                <p>Parking</p>
-              </div>
-            </div>
+    <div className="about-header">
+      <h3>DES MOINES INTERNATIONAL AIRPORT</h3>
+      <div className="home-links-container">
+        <div className="home-section-links">
+          <div
+            className="home-link-item"
+            onClick={() => handleButtonClick("Flight-Status")}
+          >
+            <AiOutlineFolderOpen className="icon" />
+            <p>Flight Status</p>
+          </div>
+          <div
+            className="home-link-item"
+            onClick={() => handleButtonClick("Departures")}
+          >
+            <GiAirplaneDeparture className="icon" />
+            <p>Departures</p>
+          </div>
+          <div
+            className="home-link-item"
+            onClick={() => handleButtonClick("Arrivals")}
+          >
+            <GiAirplaneArrival className="icon" />
+            <p>Arrivals</p>
+          </div>
+          <div
+            className="home-link-item"
+            onClick={() => handleButtonClick("Parking")}
+          >
+            <CiParking1 className="icon" />
+            <p>Parking</p>
           </div>
         </div>
       </div>
-      <Hero />
+
+      {/* <Hero />
       {showAirplane && <div className="airplane-image"></div>}
       <Hero1 />
-      <Hero2 />
+      <Hero2 /> */}
     </div>
   );
 };

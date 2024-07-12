@@ -3,8 +3,8 @@ import "../styles/Dining.css";
 
 const Dining = () => {
   return (
-    <div className="dining-container">
-      <div className="dining-header">
+    <div>
+      <div className="about-header">
         <h1>Restaurants & Dining</h1>
         <p>
           DSM looks forward to serving you at one of our seven food and beverage

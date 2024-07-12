@@ -25,7 +25,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="services-container">
+    <div className="about-header">
       <h1>Services & Amenities</h1>
       <p>
         DSM offers our travelers services and amenities to make their travel

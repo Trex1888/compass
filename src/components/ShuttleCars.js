@@ -3,19 +3,39 @@ import "../styles/ShuttleCars.css";
 
 const ShuttleCars = () => {
   return (
-    <div className="shuttles-container">
+    <div className="about-header">
       <h1>Shuttles</h1>
       <p>
         Airport shuttles are free and take travelers to and from airport parking
         lots 24/7. Des Moines International Airport shuttles run on two routes:
-        the <span className="grey-blue-route">Grey-Blue Route</span> and the{" "}
-        <span className="red-route">Red Route</span>. The route you board at the
-        lot pick up will be the route you should look to take upon your arrival
-        back at DSM. All routes take approximately 10 minutes from pick up to
-        drop off. The convenient route map is below and you can track the
-        shuttles in real-time{" "}
-        <a href="#" className="link">
-          here
+        the{" "}
+        <a
+          href="https://buswhere.com/dsm/routes/grey-blue_route"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Grey-Blue Route</strong>
+        </a>{" "}
+        and the{" "}
+        <a
+          href="https://buswhere.com/dsm/routes/red_route"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Red Route</strong>
+        </a>
+        . The route you board at the lot pick up will be the route you should
+        look to take upon your arrival back at DSM. All routes take
+        approximately 10 minutes from pick up to drop off. The convenient route
+        map is below and you can track the shuttles in real-time For more
+        details, click{" "}
+        <a
+          href="https://dsm.tripshot.com/g/tmsSystemMap/TMSSystemMap.html"
+          className="link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>here</strong>
         </a>
         .
       </p>
@@ -138,14 +158,27 @@ const ShuttleCars = () => {
         prominent national companies. If you specifically want transportation to
         Iowa State University (ISU) for an event or a campus visit for potential
         students, contact:{" "}
-        <a href="#" className="link">
+        <a
+          href="https://www.iastate.edu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link"
+        >
           Iowa State University ISU website
         </a>
         .
       </p>
       <p>
         <strong>
-          Intra-City Shuttle (between Iowa towns/cities): Executive Express
+          Intra-City Shuttle (between Iowa towns/cities):{" "}
+          <a
+            href="https://www.executiveexpress.biz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
+            Executive Express
+          </a>
         </strong>{" "}
         will provide shuttle service to and from Ames, IA, on a regular basis.
         They are also a great resource for commuting to other Central Iowa
@@ -156,8 +189,13 @@ const ShuttleCars = () => {
       </p>
       <p>
         <strong>Windstar Lines:</strong> Call 1-888-494-6378 or visit{" "}
-        <a href="http://www.gowindstar.com" className="link">
-          http://www.gowindstar.com
+        <a
+          href="http://www.gowindstar.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link"
+        >
+          Windstar Lines
         </a>
         .
       </p>

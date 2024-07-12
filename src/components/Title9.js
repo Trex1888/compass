@@ -3,7 +3,7 @@ import "../styles/Title9.css";
 
 const Title9 = () => {
   return (
-    <div className="title-vi-container">
+    <div className="about-header">
       <h1>Title VI Airport Nondiscrimination Program</h1>
       <p>
         Title VI of the Civil Rights Act of 1964, 42 U.S.C. § 2000d, and the
@@ -32,7 +32,7 @@ const Title9 = () => {
         </li>
 
         <li>
-          <a href="#">Title VI Plan</a>
+          <a href="/">Title VI Plan</a>
         </li>
         <li>
           <a href="/">Title VI Complaint Form</a>

@@ -3,7 +3,7 @@ import "../styles/Maps.css";
 
 const Maps = () => {
   return (
-    <div className="airport-maps-container">
+    <div className="about-header">
       <h1>Airport Maps</h1>
 
       <h2>Directions to DSM</h2>

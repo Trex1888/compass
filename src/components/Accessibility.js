@@ -21,7 +21,7 @@ const Accessibility = () => {
   ];
 
   return (
-    <div className="ada-title-vi-container">
+    <div className="about-header">
       <h1>Accessibility - ADA & Title VI</h1>
       <p>
         Des Moines International Airport is committed to providing a safe and

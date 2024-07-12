@@ -1,21 +1,3 @@
-.contractor-resources-container {
-  padding: 20px;
-}
-
-.contractor-resources-container h1 {
-  color: #5c3c90; /* Purple color */
-  margin-bottom: 20px;
-}
-
-.contractor-resources-container h2 {
-  color: #d97e1c; /* Orange color */
-  margin-bottom: 20px;
-}
-
-.contractor-resources-container p {
-  margin-bottom: 20px;
-}
-
 .highlight-link {
   color: #5c3c90; /* Purple color */
   font-weight: bold;

@@ -29,8 +29,8 @@ const TsaPre = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
   return (
-    <div className="tsaprecontainer">
-      <div className="tsapre">
+    <div>
+      <div className="about-header">
         <h1 className="tsapreheader">TSA PreCheck™ & Global Entry</h1>
         <div className="content-wrapper">
           <div className="text-content">

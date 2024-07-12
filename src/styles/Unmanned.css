@@ -1,0 +1,15 @@
+.regulation-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid #4a3c8c;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+.regulation-section h2 {
+  background-color: #4a3c8c;
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  margin: -15px -15px 10px -15px;
+}

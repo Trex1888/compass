@@ -3,7 +3,7 @@ import "../styles/RideShare.css";
 
 const RideShare = () => {
   return (
-    <div className="transportation-options-container">
+    <div className="about-header">
       <h1>Ride Share</h1>
       <p>
         Uber and Lyft operate throughout the Greater Des Moines region and can

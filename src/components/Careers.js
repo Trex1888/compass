@@ -31,8 +31,8 @@ const Careers = ({ scrollToSection, openPopup }) => {
   };
 
   return (
-    <div className="careers-container">
-      <div className="careers-sidebar">
+    <div className="about-container">
+      <div className="about-sidebar">
         <ul>
           <li>
             <Link to="/about-us/news">News & Statistics</Link>
@@ -50,8 +50,8 @@ const Careers = ({ scrollToSection, openPopup }) => {
         </ul>
       </div>
 
-      <div className="careers-content">
-        <div className="careers-header">
+      <div className="about-content">
+        <div className="about-header">
           <h1>Airport Authority Careers</h1>
           <p>
             We pride ourselves in being performance-driven with each team member
@@ -128,31 +128,31 @@ const Careers = ({ scrollToSection, openPopup }) => {
           <p>Hudson News (gift shop): Send email to: Amy Beeghley</p>
         </div>
 
-        <div className="section-links-container2">
-          <div className="section-links2">
+        <div className="careers-links-container">
+          <div className="careers-links">
             <div
-              className="link-item1"
+              className="careers-item"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
               <p>Flight Status</p>
             </div>
             <div
-              className="link-item1"
+              className="careers-item"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item1"
+              className="careers-item"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item1"
+              className="careers-item"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />
