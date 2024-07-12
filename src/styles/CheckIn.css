@@ -1,0 +1,53 @@
+.about-containe1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-containe1 h1 {
+  color: #5c3c90;
+}
+
+.about-containe1 p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cancellations-section {
+  margin-top: 40px;
+}
+
+.cancellations-section h2 {
+  color: #e76f51;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e76f51;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #d65b44;
+}

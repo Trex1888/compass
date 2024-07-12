@@ -1,0 +1,60 @@
+.shuttles-container {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.shuttles-container h1,
+.shuttles-container h2 {
+  color: #5c3c90;
+  margin-bottom: 20px;
+}
+
+.shuttles-container p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.shuttles-container .link {
+  color: #5c3c90;
+  text-decoration: none;
+}
+
+.shuttles-container .link:hover {
+  text-decoration: underline;
+}
+
+.shuttle-map {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.shuttle-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.shuttle-table th,
+.shuttle-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.shuttle-table th {
+  background-color: #5c3c90;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .shuttles-container {
+    padding: 10px;
+  }
+
+  .shuttle-table th,
+  .shuttle-table td {
+    padding: 5px;
+  }
+}

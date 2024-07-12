@@ -1,0 +1,116 @@
+.ada-title-vi-container {
+  padding: 20px;
+}
+
+.ada-title-vi-container h1,
+.ada-title-vi-container h2,
+.ada-title-vi-container h3 {
+  color: #5c3c90; /* Purple color */
+  margin-bottom: 20px;
+}
+
+.ada-title-vi-container p {
+  margin-bottom: 20px;
+}
+
+.button-links {
+  margin-top: -15px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background: white;
+  color: #36294a;
+  outline: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.section-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px; /* Adjusted to position the underline properly */
+  height: 2px;
+  background: #e5e5e5;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.section-button.active {
+  background: #36294a;
+  color: white;
+}
+
+.section-button.active::before {
+  background: transparent;
+}
+
+.section-button:hover::before {
+  background: transparent;
+}
+
+.section-button:hover {
+  background: #36294a;
+  color: white;
+  transform: scale(1.05);
+}
+
+.section-button .plus-sign {
+  font-size: 24px;
+  color: #36294a;
+  transition: transform 0.3s;
+}
+
+.section-button.active .plus-sign {
+  color: white;
+}
+
+.section-button:hover .plus-sign {
+  color: white;
+}
+
+.section-content {
+  background: #f5f5f5;
+  padding: 15px;
+  border: 2px solid #36294a;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  font-size: 16px;
+  display: none; /* Initially hidden */
+}
+
+.section-button.active + .section-content {
+  display: block; /* Display the content when active */
+}
+
+.ada-title-vi-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ada-title-vi-container ul li {
+  margin-bottom: 10px;
+}
+
+.ada-title-vi-container ul li a {
+  color: #5c3c90; /* Purple color */
+  text-decoration: none;
+}
+
+.ada-title-vi-container ul li a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,29 @@
+.lost-and-found-container {
+  padding: 20px;
+}
+
+.lost-and-found-container h1 {
+  color: #5c3c90; /* Purple color */
+}
+
+.lost-and-found-container h2 {
+  color: #5c3c90; /* Purple color */
+  margin-top: 20px;
+}
+
+.lost-and-found-container p {
+  margin: 10px 0;
+}
+
+.lost-and-found-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.lost-and-found-container li {
+  margin: 10px 0;
+}
+
+.lost-and-found-container a {
+  color: #5c3c90; /* Purple color */
+}

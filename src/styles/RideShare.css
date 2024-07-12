@@ -1,0 +1,70 @@
+.transportation-options-container {
+  padding: 20px;
+}
+
+.transportation-options-container h1,
+.transportation-options-container h2 {
+  color: #5c3c90; /* Purple color */
+}
+
+.transportation-options-container p {
+  margin: 10px 0;
+}
+
+.ride-share-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ride-share-button {
+  background-color: #f37021; /* Orange color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ride-share-button.uber {
+  background-color: #000; /* Black color for Uber */
+}
+
+.ride-share-button.lyft {
+  background-color: #ff00bf; /* Pink color for Lyft */
+}
+
+.ride-share-button:hover {
+  opacity: 0.8;
+}
+
+.taxi-service-table,
+.limo-service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.taxi-service-table th,
+.taxi-service-table td,
+.limo-service-table th,
+.limo-service-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.taxi-service-table th,
+.limo-service-table th {
+  background-color: #f0f0f0;
+  color: #5c3c90; /* Purple color */
+}
+
+.limo-service-table td a {
+  color: #5c3c90; /* Purple color */
+}
+
+.limo-service-table td a:hover {
+  text-decoration: underline;
+}

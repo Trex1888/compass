@@ -136,7 +136,7 @@ const TravelerInfo = ({ scrollToSection, openPopup }) => {
       <div className="about-content">
         {isMainPage ? (
           <div className="about-header">
-            <h1>Traveler Information</h1>
+            <h1>Travel Information</h1>
             <p>
               Having a pleasant flight begins before you arrive at the airport.
               Be better prepared for your flight by knowing what to expect.

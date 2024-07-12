@@ -1,0 +1,167 @@
+.flights-section.purple {
+  background-color: #36294a;
+  color: white;
+}
+
+.flights-section.purple button {
+  color: white;
+  margin-left: 15px;
+}
+
+.flights-section.orange {
+  color: white;
+  background-color: #be5a0e;
+}
+
+.flights-section.blue {
+  background-color: #00969e;
+  color: white;
+}
+
+.flights-section.green {
+  background-color: #006b3c;
+  color: white;
+}
+
+.flights-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 1px;
+  overflow: hidden;
+  height: 260px;
+}
+
+.flights-image {
+  width: 33%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flights-section-content {
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 55px;
+  margin-top: -25px;
+}
+
+.flights-section-content a {
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
+.flights-button {
+  padding: 0.75em 3em;
+  color: white;
+  line-height: 1.1;
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.flights-section.orange .flights-button:hover,
+.flights-section.blue .flights-button:hover,
+.flights-section.green .flights-button:hover {
+  background-color: #36294a;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flights-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .flights-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .flights-section-content {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .flights-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.section-links-container-flights {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  height: 200px;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: -140px;
+}
+
+.section-links-flights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.link-item-flights {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+  transition: transform 0.9s ease-in-out, color 0.9s ease-in-out;
+  cursor: pointer;
+}
+
+.link-item-flights:hover .icon,
+.link-item-flights:hover p {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: #be5a0e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-links-container-flights {
+    padding: 15px;
+    gap: 30px;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: -100px;
+  }
+
+  .section-links-flights {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-item-flights {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .link-item-flights:hover .icon,
+  .link-item-flights:hover p {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: #be5a0e;
+  }
+}

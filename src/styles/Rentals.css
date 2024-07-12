@@ -1,0 +1,49 @@
+.rental-cars-container {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.rental-cars-container h1,
+.rental-cars-container h2,
+.rental-cars-container h3 {
+  color: #5c3c90;
+  margin-bottom: 20px;
+}
+
+.rental-cars-container p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.rental-cars-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.rental-cars-table th,
+.rental-cars-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.rental-cars-table th {
+  background-color: #5c3c90;
+  color: white;
+}
+
+.tutorial-button {
+  background-color: #be5a0e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tutorial-button:hover {
+  background-color: #f39200;
+}

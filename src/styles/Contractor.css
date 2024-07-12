@@ -1,0 +1,46 @@
+.contractor-resources-container {
+  padding: 20px;
+}
+
+.contractor-resources-container h1 {
+  color: #5c3c90; /* Purple color */
+  margin-bottom: 20px;
+}
+
+.contractor-resources-container h2 {
+  color: #d97e1c; /* Orange color */
+  margin-bottom: 20px;
+}
+
+.contractor-resources-container p {
+  margin-bottom: 20px;
+}
+
+.highlight-link {
+  color: #5c3c90; /* Purple color */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.resource-button {
+  background-color: #d97e1c; /* Orange color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.resource-button:hover {
+  background-color: #b56917;
+}

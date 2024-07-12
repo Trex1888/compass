@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import flightsAndTravelImage from "../images/mainPlane.png";
 import "../styles/FlightStatus.css";
+import { FaPlane } from "react-icons/fa";
+import Modal1 from "./Modal1"; // Make sure this path is correct
 
 const FlightStatus = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("departures");
+  const [airlineFilter, setAirlineFilter] = useState("");
+  const [cityFilter, setCityFilter] = useState("");
+  const [searchFilter, setSearchFilter] = useState("");
+  const [filteredFlights, setFilteredFlights] = useState([]);
+  const [selectedFlight, setSelectedFlight] = useState(null);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -15,6 +22,32 @@ const FlightStatus = () => {
       setActiveFilter(flightsParam);
     }
   }, [location.search]);
+
+  const applyFilters = useCallback(() => {
+    const allFlights = activeFilter === "departures" ? departures : arrivals;
+    const filtered = allFlights.filter((flight) => {
+      return (
+        (airlineFilter === "" || flight.airline === airlineFilter) &&
+        (cityFilter === "" ||
+          (activeFilter === "departures" ? flight.to : flight.from) ===
+            cityFilter) &&
+        (searchFilter === "" ||
+          flight.flight.toLowerCase().includes(searchFilter.toLowerCase()))
+      );
+    });
+    setFilteredFlights(filtered);
+  }, [activeFilter, airlineFilter, cityFilter, searchFilter]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [
+    activeFilter,
+    airlineFilter,
+    cityFilter,
+    searchFilter,
+    arrivals,
+    applyFilters,
+  ]);
 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
@@ -35,11 +68,19 @@ const FlightStatus = () => {
     }
   };
 
+  const handleRowClick = (flight) => {
+    setSelectedFlight(flight);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedFlight(null);
+  };
+
   const departures = [
     {
       airline: "Allegiant",
       flight: "G4458",
-      to: "Orange County (SNA)",
+      to: "ORANGE COUNTY (SNA)",
       scheduled: "7:30 AM",
       updated: "7:35 AM",
       status: "In Air",
@@ -48,7 +89,7 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA1363",
-      to: "Chicago (ORD)",
+      to: "CHICAGO (ORD)",
       scheduled: "8:00 AM",
       updated: "7:58 AM",
       status: "Departed",
@@ -57,7 +98,7 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA581",
-      to: "Denver (DEN)",
+      to: "DENVER (DEN)",
       scheduled: "9:15 AM",
       updated: "9:07 AM",
       status: "Departed",
@@ -66,7 +107,7 @@ const FlightStatus = () => {
     {
       airline: "Frontier",
       flight: "F91868",
-      to: "Orlando (MCO)",
+      to: "ORLANDO (MCO)",
       scheduled: "9:32 AM",
       updated: "9:32 AM",
       status: "Departed",
@@ -75,7 +116,7 @@ const FlightStatus = () => {
     {
       airline: "Delta",
       flight: "DL5253",
-      to: "Minneapolis (MSP)",
+      to: "MINNEAPOLIS (MSP)",
       scheduled: "10:00 AM",
       updated: "9:59 AM",
       status: "Departed",
@@ -84,7 +125,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA4408",
-      to: "Washington (DCA)",
+      to: "WASHINGTON (DCA)",
       scheduled: "10:30 AM",
       updated: "10:28 AM",
       status: "Departed",
@@ -93,7 +134,7 @@ const FlightStatus = () => {
     {
       airline: "Allegiant",
       flight: "G41501",
-      to: "Austin (AUS)",
+      to: "AUSTIN (AUS)",
       scheduled: "11:00 AM",
       updated: "10:55 AM",
       status: "Departed",
@@ -102,7 +143,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA6170",
-      to: "Chicago (ORD)",
+      to: "CHICAGO (ORD)",
       scheduled: "11:30 AM",
       updated: "11:25 AM",
       status: "Departed",
@@ -111,7 +152,7 @@ const FlightStatus = () => {
     {
       airline: "Southwest",
       flight: "WN2010",
-      to: "Phoenix (PHX)",
+      to: "PHOENIX (PHX)",
       scheduled: "12:00 PM",
       updated: "11:55 AM",
       status: "In Air",
@@ -120,7 +161,7 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA700",
-      to: "Houston (IAH)",
+      to: "HOUSTON (IAH)",
       scheduled: "12:30 PM",
       updated: "12:25 PM",
       status: "Scheduled",
@@ -129,7 +170,7 @@ const FlightStatus = () => {
     {
       airline: "Delta",
       flight: "DL900",
-      to: "Salt Lake City (SLC)",
+      to: "SALT LAKE CITY (SLC)",
       scheduled: "1:00 PM",
       updated: "12:58 PM",
       status: "Scheduled",
@@ -138,7 +179,7 @@ const FlightStatus = () => {
     {
       airline: "Allegiant",
       flight: "G41602",
-      to: "Las Vegas (LAS)",
+      to: "LAS VEGAS (LAS)",
       scheduled: "1:30 PM",
       updated: "1:28 PM",
       status: "Scheduled",
@@ -147,7 +188,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA4409",
-      to: "Miami (MIA)",
+      to: "MIAMI (MIA)",
       scheduled: "2:00 PM",
       updated: "1:59 PM",
       status: "In Air",
@@ -156,7 +197,7 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA701",
-      to: "Los Angeles (LAX)",
+      to: "LOS ANGELES (LAX)",
       scheduled: "2:30 PM",
       updated: "2:28 PM",
       status: "In Air",
@@ -165,7 +206,7 @@ const FlightStatus = () => {
     {
       airline: "Southwest",
       flight: "WN2011",
-      to: "Dallas (DAL)",
+      to: "DALLAS (DAL)",
       scheduled: "3:00 PM",
       updated: "2:58 PM",
       status: "Delayed",
@@ -174,7 +215,7 @@ const FlightStatus = () => {
     {
       airline: "Delta",
       flight: "DL5260",
-      to: "Seattle (SEA)",
+      to: "SEATTLE (SEA)",
       scheduled: "3:30 PM",
       updated: "Cancelled",
       status: "Cancelled",
@@ -186,7 +227,7 @@ const FlightStatus = () => {
     {
       airline: "Frontier",
       flight: "F91867",
-      from: "Orlando (MCO)",
+      from: "ORLANDO (MCO)",
       updated: "8:11 AM",
       status: "Arrived",
       gate: "A2",
@@ -194,7 +235,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA1536",
-      from: "Dallas-Fort Worth (DFW)",
+      from: "DALLAS-FORT WORTH (DFW)",
       updated: "8:53 AM",
       status: "Arrived",
       gate: "C7",
@@ -202,7 +243,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA6172",
-      from: "Chicago (ORD)",
+      from: "CHICAGO (ORD)",
       updated: "9:29 AM",
       status: "Arrived",
       gate: "C5",
@@ -210,7 +251,7 @@ const FlightStatus = () => {
     {
       airline: "Delta",
       flight: "DL5058",
-      from: "Detroit (DTW)",
+      from: "DETROIT (DTW)",
       updated: "9:39 AM",
       status: "Arrived",
       gate: "C2",
@@ -218,7 +259,7 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA1362",
-      from: "Denver (DEN)",
+      from: "DENVER (DEN)",
       updated: "10:00 AM",
       status: "Arrived",
       gate: "A4A",
@@ -226,7 +267,7 @@ const FlightStatus = () => {
     {
       airline: "Frontier",
       flight: "F91869",
-      from: "Las Vegas (LAS)",
+      from: "LAS VEGAS (LAS)",
       updated: "10:30 AM",
       status: "Arrived",
       gate: "A1",
@@ -234,7 +275,7 @@ const FlightStatus = () => {
     {
       airline: "Delta",
       flight: "DL5254",
-      from: "Minneapolis (MSP)",
+      from: "MINNEAPOLIS (MSP)",
       updated: "11:00 AM",
       status: "Arrived",
       gate: "C4",
@@ -242,7 +283,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA4410",
-      from: "Washington (DCA)",
+      from: "WASHINGTON (DCA)",
       updated: "11:30 AM",
       status: "Arrived",
       gate: "C6",
@@ -250,7 +291,7 @@ const FlightStatus = () => {
     {
       airline: "Allegiant",
       flight: "G41502",
-      from: "Austin (AUS)",
+      from: "AUSTIN (AUS)",
       updated: "12:00 PM",
       status: "Arrived",
       gate: "A2",
@@ -258,7 +299,7 @@ const FlightStatus = () => {
     {
       airline: "Southwest",
       flight: "WN2012",
-      from: "Phoenix (PHX)",
+      from: "PHOENIX (PHX)",
       updated: "12:30 PM",
       status: "Arrived",
       gate: "B5",
@@ -266,7 +307,7 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA702",
-      from: "Houston (IAH)",
+      from: "HOUSTON (IAH)",
       updated: "1:00 PM",
       status: "In Air",
       gate: "C7",
@@ -274,7 +315,7 @@ const FlightStatus = () => {
     {
       airline: "Delta",
       flight: "DL901",
-      from: "Salt Lake City (SLC)",
+      from: "SALT LAKE CITY (SLC)",
       updated: "1:30 PM",
       status: "In Air",
       gate: "C8",
@@ -282,7 +323,7 @@ const FlightStatus = () => {
     {
       airline: "Allegiant",
       flight: "G41603",
-      from: "Las Vegas (LAS)",
+      from: "LAS VEGAS (LAS)",
       updated: "2:00 PM",
       status: "Delayed",
       gate: "A2",
@@ -290,7 +331,7 @@ const FlightStatus = () => {
     {
       airline: "American Airlines",
       flight: "AA4411",
-      from: "Miami (MIA)",
+      from: "MIAMI (MIA)",
       updated: "2:30 PM",
       status: "Cancelled",
       gate: "C9",
@@ -298,14 +339,13 @@ const FlightStatus = () => {
     {
       airline: "United",
       flight: "UA703",
-      from: "Los Angeles (LAX)",
+      from: "LOS ANGELES (LAX)",
       updated: "3:00 PM",
       status: "Scheduled",
       gate: "A1",
     },
   ];
 
-  const flights = activeFilter === "departures" ? departures : arrivals;
   return (
     <div className="flight-status-container">
       <div className="mainContainer">
@@ -344,18 +384,52 @@ const FlightStatus = () => {
             </label>
           </div>
           <div className="flight-filter-inputs">
-            <select className="flight-filter-select">
-              <option>Filter by Airline</option>
+            <select
+              className="flight-filter-select"
+              value={airlineFilter}
+              onChange={(e) => setAirlineFilter(e.target.value)}
+            >
+              <option value="">Filter by Airline</option>
+              <option value="Allegiant">Allegiant</option>
+              <option value="American Airlines">American Airlines</option>
+              <option value="Delta">Delta</option>
+              <option value="Frontier">Frontier</option>
+              <option value="Southwest">Southwest</option>
+              <option value="United">United</option>
             </select>
-            <select className="flight-filter-select">
-              <option>Filter by City</option>
+            <select
+              className="flight-filter-select"
+              value={cityFilter}
+              onChange={(e) => setCityFilter(e.target.value)}
+            >
+              <option value="">Filter by City</option>
+              <option value="ORANGE COUNTY (SNA)">Orange County (SNA)</option>
+              <option value="CHICAGO (ORD)">Chicago (ORD)</option>
+              <option value="DENVER (DEN)">Denver (DEN)</option>
+              <option value="ORLANDO (MCO)">Orlando (MCO)</option>
+              <option value="MINNEAPOLIS (MSP)">Minneapolis (MSP)</option>
+              <option value="WASHINGTON (DCA)">Washington (DCA)</option>
+              <option value="AUSTIN (AUS)">Austin (AUS)</option>
+              <option value="PHOENIX (PHX)">Phoenix (PHX)</option>
+              <option value="HOUSTON (IAH)">Houston (IAH)</option>
+              <option value="SALT LAKE CITY (SLC)">Salt Lake City (SLC)</option>
+              <option value="LAS VEGAS (LAS)">Las Vegas (LAS)</option>
+              <option value="MIAMI (MIA)">Miami (MIA)</option>
+              <option value="LOS ANGELES (LAX)">Los Angeles (LAX)</option>
+              <option value="DALLAS (DAL)">Dallas (DAL)</option>
+              <option value="SEATTLE (SEA)">Seattle (SEA)</option>
+              <option value="DETROIT (DTW)">Detroit (DTW)</option>
             </select>
             <input
               type="text"
               className="flight-filter-search-input"
               placeholder="Search Flight #"
+              value={searchFilter}
+              onChange={(e) => setSearchFilter(e.target.value)}
             />
-            <button className="flight-filter-button">Filter</button>
+            <button className="flight-filter-button" onClick={applyFilters}>
+              Filter
+            </button>
           </div>
         </div>
         <div className="flight-table">
@@ -372,8 +446,8 @@ const FlightStatus = () => {
               </tr>
             </thead>
             <tbody>
-              {flights.map((flight, index) => (
-                <tr key={index}>
+              {filteredFlights.map((flight, index) => (
+                <tr key={index} onClick={() => handleRowClick(flight)}>
                   <td>
                     <span
                       className={`status-dot ${
@@ -392,6 +466,9 @@ const FlightStatus = () => {
                   <td>{flight.updated}</td>
                   <td className={getStatusColor(flight.status)}>
                     {flight.status}
+                    {flight.status === "In Air" && (
+                      <FaPlane className="in-air-icon" />
+                    )}
                   </td>
                   <td>{flight.gate}</td>
                 </tr>
@@ -399,7 +476,22 @@ const FlightStatus = () => {
             </tbody>
           </table>
         </div>
+        <div className="flight-table-footer">
+          <div className="left-footer">
+            <FaPlane className="in-air-icon" />
+            <p>Click to track flight</p>
+          </div>
+          <Link
+            to="/flights-and-travel/airline-information"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            <p>Contact an Airline</p>
+          </Link>
+        </div>
       </div>
+      {selectedFlight && (
+        <Modal1 flight={selectedFlight} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };

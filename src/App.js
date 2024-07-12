@@ -49,7 +49,6 @@ import Tenants from "./components/Tenant";
 import Agenda1 from "./components/Agenda1";
 import Minutes from "./components/Minutes";
 import RideShare from "./components/RideShare";
-import RentalCars from "./components/RentalCar";
 import Shuttle from "./components/Shuttle";
 import Accessibility from "./components/Accessibility";
 import ShuttleCar from "./components/ShuttleCars";
@@ -61,6 +60,8 @@ import Dining from "./components/Dining";
 import General from "./components/General";
 import Human from "./components/Human";
 import Title9 from "./components/Title9";
+import TrafficStats from "./components/TrafficStats";
+import Rentals from "./components/Rentals";
 
 import aboutImage from "./images/about.jpg";
 import flightsAndTravelImage from "./images/flightsandtravel.jpg";
@@ -69,7 +70,6 @@ import airportBusinessImage from "./images/airport1.jpg";
 import liftDsmImage from "./images/dsm3.jpg";
 import people from "./images/peep.jpg";
 import dsm from "./images/dsm1.jpg";
-import TrafficStats from "./components/TrafficStats";
 
 const App = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -221,7 +221,7 @@ const AppContent = ({
               <Route path="ground-transportation" element={<Ground />}>
                 <Route path="buses-paratransit" element={<Buses />} />
                 <Route path="ride-share-taxis" element={<RideShare />} />
-                <Route path="rental-cars" element={<RentalCars />} />
+                <Route path="rental-cars" element={<Rentals />} />
                 <Route path="hotel-shuttles" element={<ShuttleCar />} />
               </Route>
               <Route path="maps-directions" element={<Maps />} />
@@ -311,19 +311,69 @@ const AppContent = ({
                 />
               }
             >
-              <Route path="tsa-security" element={<TsaSecurity />} />
+              <Route
+                path="tsa-security"
+                element={
+                  <TsaSecurity
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
               <Route
                 path="tsa-security/precheck-global-entry"
-                element={<TsaPre />}
+                element={
+                  <TsaPre
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
               />
-              <Route path="check-in" element={<CheckIn />} />
-              <Route path="lost-and-found" element={<Lost />} />
+              <Route
+                path="check-in"
+                element={
+                  <CheckIn
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
+              <Route
+                path="lost-and-found"
+                element={
+                  <Lost
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
               <Route
                 path="lost-and-found/lost-item-report"
-                element={<LostItem />}
+                element={
+                  <LostItem
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
               />
-              <Route path="faq" element={<Faqs />} />
-              <Route path="real-id" element={<RealId />} />
+              <Route
+                path="faq"
+                element={
+                  <Faqs
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
+              <Route
+                path="real-id"
+                element={
+                  <RealId
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
             </Route>
             <Route
               path="/flights-and-travel/airline-information"
@@ -351,124 +401,128 @@ const AppContent = ({
                   openPopup={openPopup}
                 />
               }
-            />
-            <Route
-              path="/airport-business/contractor-resources"
-              element={
-                <Contractor
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+            >
+              <Route
+                path="contractor-resources"
+                element={
+                  <Contractor
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
+              <Route
+                path="bid-procurement-rfps"
+                element={
+                  <Procurement
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
+              <Route
+                path="badging"
+                element={
+                  <Badging
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              >
+                <Route
+                  path="badge-applications-renewal"
+                  element={
+                    <BadgeApp
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/bid-procurement-rfps"
-              element={
-                <Procurement
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+                <Route
+                  path="badge-faqs"
+                  element={
+                    <BadgeFaqs
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/badging"
-              element={
-                <Badging
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+              </Route>
+              <Route
+                path="operations"
+                element={
+                  <Operations
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              >
+                <Route
+                  path="unmanned-aerial-systems"
+                  element={
+                    <Unmanned
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/badging/badge-applications-renewal"
-              element={
-                <BadgeApp
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+                <Route
+                  path="airport-driver-training"
+                  element={
+                    <Driver
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/badging/badge-faqs"
-              element={
-                <BadgeFaqs
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+                <Route
+                  path="rules-regulations"
+                  element={
+                    <Rules
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/operations"
-              element={
-                <Operations
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+                <Route
+                  path="aircraft-noise-program"
+                  element={
+                    <Noise
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/operations/unmanned-aerial-systems"
-              element={
-                <Unmanned
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
+              </Route>
+              <Route
+                path="permits-forms"
+                element={
+                  <Permits
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              />
+              <Route
+                path="tenant-resources"
+                element={
+                  <Tenants
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  />
+                }
+              >
+                <Route
+                  path="air-service-development"
+                  element={
+                    <Services
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/airport-business/operations/airport-driver-training"
-              element={
-                <Driver
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
-                />
-              }
-            />
-            <Route
-              path="/airport-business/operations/rules-regulations"
-              element={
-                <Rules
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
-                />
-              }
-            />
-            <Route
-              path="/airport-business/operations/aircraft-noise-program"
-              element={
-                <Noise
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
-                />
-              }
-            />
-            <Route
-              path="/airport-business/permits-forms"
-              element={
-                <Permits
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
-                />
-              }
-            />
-            <Route
-              path="/airport-business/tenant-resources"
-              element={
-                <Tenants
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
-                />
-              }
-            />
-            <Route
-              path="/airport-business/tenant-resources/air-service-development"
-              element={
-                <Services
-                  scrollToSection={scrollToSection}
-                  openPopup={openPopup}
-                />
-              }
-            />
+              </Route>
+            </Route>
             <Route path="/lift-dsm" element={<LiftDSM />} />
           </Routes>
         </div>

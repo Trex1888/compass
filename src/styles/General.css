@@ -1,0 +1,68 @@
+.general-aviation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.general-aviation-container h1 {
+  color: #5c3c90;
+  margin-bottom: 20px;
+}
+
+.general-aviation-container p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.aviation-service {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 25px;
+}
+
+.aviation-service img {
+  max-width: 150px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.aviation-service div {
+  display: flex;
+  flex-direction: column;
+}
+
+.aviation-service p {
+  margin: 5px 0;
+}
+
+.aviation-service .contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.aviation-service .contact-info div {
+  display: flex;
+  align-items: center;
+}
+
+.aviation-service .phone-numbers {
+  margin-left: 20px;
+}
+
+.aviation-service .website {
+  margin-left: 20px;
+}
+
+.aviation-service a {
+  color: #5c3c90;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.aviation-service a:hover {
+  text-decoration: underline;
+}

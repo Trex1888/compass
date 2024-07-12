@@ -1,0 +1,43 @@
+.buses-container {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.buses-container h1,
+.buses-container h2,
+.buses-container h3 {
+  color: #5c3c90;
+  margin-bottom: 20px;
+}
+
+.buses-container p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.buses-container .link {
+  color: #5c3c90;
+  text-decoration: none;
+}
+
+.buses-container .link:hover {
+  text-decoration: underline;
+}
+
+.bus-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.bus-table th,
+.bus-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.bus-table th {
+  background-color: #5c3c90;
+  color: white;
+}

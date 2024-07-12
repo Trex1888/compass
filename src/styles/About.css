@@ -5,57 +5,68 @@
 }
 
 .about-sidebar {
-  width: 20%;
-  margin-right: 30px;
-  margin-left: -5px;
-  margin-top: -15px;
+  width: 30%;
+  margin-left: -30px;
+  margin-right: -50px;
+  margin-top: -30px;
 }
 
 .about-sidebar ul {
   list-style: none;
-  padding: 0;
-  margin-left: 20px;
+  max-width: 195px;
 }
 
 .about-sidebar a {
-  color: #6f6f7b;
+  color: #636363;
+  margin-right: -50px;
   text-decoration: none;
   font-size: 18px;
   padding: 10px;
   display: block;
+  position: relative;
   transition: color 0.3s, transform 0.3s;
+}
+
+.about-sidebar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 5%;
+  bottom: 1px;
+  height: 2px;
+  background-color: #f0f0f0;
 }
 
 .about-sidebar a.active {
   font-weight: bold;
-  position: relative;
   color: #36294a;
 }
 
 .about-sidebar a.active::after {
-  content: "";
-  position: absolute;
+  background-color: black;
   left: 0;
-  right: 0;
-  bottom: 1px;
-  height: 2px;
-  background-color: #662985;
+  right: 5%;
+}
+
+.about-sidebar a:hover {
+  color: rgb(184, 184, 200);
+  transition: background-color 0.35s ease;
 }
 
 .about-sidebar a.active:hover {
   color: #9090a0;
   font-weight: bold;
   text-decoration: none;
+  transition: background-color 0.35s ease;
 }
 
-.about-sidebar a:hover {
-  color: #323e66;
+.flights-link {
+  margin-left: -20px;
 }
 
 .about-sidebar a.active-sub {
+  color: black;
   font-weight: bold;
-  color: #36294a;
-  text-decoration: none;
 }
 
 .about-sidebar a.active-sub:hover {
@@ -76,7 +87,7 @@
 .about-header {
   text-align: left;
   padding: 20px 0;
-  margin-top: -120px;
+  margin-top: -150px;
 }
 
 .about-header h1 {
@@ -157,4 +168,15 @@
 
 img {
   margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .about-sidebar {
+    display: none;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 20px;
+  }
 }

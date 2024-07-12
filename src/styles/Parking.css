@@ -1,0 +1,133 @@
+.parking-container {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.parking-container h1,
+.parking-container h2,
+.parking-container h3 {
+  color: #5c3c90;
+  margin-bottom: 20px;
+}
+
+.parking-container p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.parking-container .link {
+  color: #5c3c90;
+  text-decoration: none;
+}
+
+.parking-container .link:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #be5a0e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #f39200;
+}
+
+.parking-table,
+.estimated-cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.parking-table th,
+.estimated-cost-table th,
+.parking-table td,
+.estimated-cost-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.parking-table th,
+.estimated-cost-table th {
+  background-color: #5c3c90;
+  color: white;
+}
+
+.parking-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.parking-form label {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.parking-form input {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.estimated-cost-table th {
+  background-color: #5c3c90;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parking-container {
+    padding: 10px;
+    margin-left: 20px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .parking-form label {
+    flex: 1 1 100%;
+  }
+
+  .parking-form input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .parking-table,
+  .estimated-cost-table {
+    font-size: 14px;
+  }
+
+  .parking-table th,
+  .estimated-cost-table th,
+  .parking-table td,
+  .estimated-cost-table td {
+    padding: 5px;
+  }
+}

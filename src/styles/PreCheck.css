@@ -1,0 +1,21 @@
+.image-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.precheck-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.global-entry-section {
+  margin-top: 20px;
+}
+
+.global-entry-section h2 {
+  color: #f37021; /* Orange color */
+}
+
+.global-entry-section p {
+  margin: 10px 0;
+}

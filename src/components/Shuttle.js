@@ -30,7 +30,7 @@ const Shuttle = ({ scrollToSection, openPopup }) => {
   };
 
   return (
-    <div className="shuttle-container">
+    <div className="main-container">
       {/* <div className="shuttle-sidebar">
         <ul>
           <li>
@@ -42,8 +42,8 @@ const Shuttle = ({ scrollToSection, openPopup }) => {
         </ul>
       </div> */}
 
-      <div className="shuttle-content">
-        <div className="shuttle-header">
+      <div className="about-content">
+        <div className="about-header">
           <h1>Shuttle Tracking</h1>
           <p>
             Convenient shuttle tracking helps keep you moving. Grey-Blue

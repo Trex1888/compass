@@ -1,0 +1,38 @@
+.title-vi-container {
+  padding: 20px;
+  width: 100%;
+}
+
+.title-vi-container h1 {
+  margin-bottom: 20px;
+  margin-top: -100px;
+  font-size: 36px;
+  color: black;
+  font-weight: 400;
+}
+
+.title-vi-container p {
+  margin-bottom: 20px;
+}
+
+.title-vi-container h2 {
+  margin-bottom: 10px;
+}
+
+.title-vi-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.title-vi-container ul li {
+  margin-bottom: 10px;
+}
+
+.title-vi-container ul li a {
+  color: #5c3c90; /* Purple color */
+  text-decoration: none;
+}
+
+.title-vi-container ul li a:hover {
+  text-decoration: underline;
+}

@@ -1,10 +1,14 @@
-.faq-container {
+.services-container {
   padding: 20px;
 }
 
-.faq-container h1 {
+.services-container h1 {
   color: #5c3c90; /* Purple color */
   margin-bottom: 20px;
+}
+
+.services-container p {
+  margin: 10px 0;
 }
 
 .button-links {
@@ -89,46 +93,4 @@
 
 .section-content.open {
   display: block;
-}
-
-.section-content ul {
-  padding-left: 20px;
-}
-
-.section-content a.development-plan-link,
-.section-content a.t-hangar-map-link,
-.section-content a.minimum-standards-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #be5a0e;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.section-content a.development-plan-link:hover,
-.section-content a.t-hangar-map-link:hover,
-.section-content a.minimum-standards-link:hover {
-  background-color: #f39200;
-}
-
-@media (max-width: 768px) {
-  .section button {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .section-content {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .section-content a.development-plan-link,
-  .section-content a.t-hangar-map-link,
-  .section-content a.minimum-standards-link {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
 }
