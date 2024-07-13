@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../styles/Leadership.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
@@ -36,7 +36,7 @@ const Leadership = ({ scrollToSection, openPopup }) => {
 
   return (
     <div className="authority-leadership-container">
-      <div className="authority-leadership-sidebar">
+      <div className="about-sidebar">
         <ul>
           <li>
             <Link to="/about-us/news">News & Statistics</Link>
@@ -75,7 +75,7 @@ const Leadership = ({ scrollToSection, openPopup }) => {
           <p>
             The DSM Airport Authority Board holds regular meetings on the 2nd
             Tuesday of each month at 9:00 a.m. CT in the Board Room, 2nd Floor,
-            Main Terminal. For more information, call Mary Benson at (515)
+            Main Terminal. See the schedule below, call Mary Benson at (515)
             256-5100, or
             <a href="/">
               <strong> send us a message</strong>

@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Hero1.css";
 
 const Hero1 = () => {

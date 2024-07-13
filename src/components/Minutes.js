@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams, NavLink } from "react-router-dom";
 import "../styles/Agenda1.css";
 

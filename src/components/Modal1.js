@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Modal1.css";
 
 const Modal1 = ({ flight, onClose }) => {
@@ -30,7 +29,6 @@ const Modal1 = ({ flight, onClose }) => {
         {flight.status === "In Air" && (
           <div>
             <h3>Flight Details</h3>
-            {/* Add any other flight details you need */}
           </div>
         )}
       </div>

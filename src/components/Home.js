@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Home.css";
-import Hero from "./Hero";
-import Hero1 from "./Hero1";
-import Hero2 from "./Hero2";
+// import Hero from "./Hero";
+// import Hero1 from "./Hero1";
+// import Hero2 from "./Hero2";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";
 import { AiOutlineFolderOpen } from "react-icons/ai";
@@ -34,7 +34,10 @@ const Home = ({ scrollToSection, openPopup }) => {
 
   return (
     <div className="about-header">
-      <h3>DES MOINES INTERNATIONAL AIRPORT</h3>
+      <div className="home-wrapper">
+        <h3>DES MOINES INTERNATIONAL AIRPORT</h3>
+      </div>
+
       <div className="home-links-container">
         <div className="home-section-links">
           <div

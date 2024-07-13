@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Contact.css";
 import { IoCarOutline, IoChatboxEllipsesOutline } from "react-icons/io5";
 import { HiOutlineNewspaper } from "react-icons/hi2";

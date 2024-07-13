@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/LostItem.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -42,7 +42,6 @@ const LostItem = ({ scrollToSection, openPopup }) => {
               <label htmlFor="type">Type *</label>
               <select id="type" required>
                 <option value="">Select type...</option>
-                {/* Add more options here */}
               </select>
             </div>
             <div className="form-group">
@@ -58,7 +57,6 @@ const LostItem = ({ scrollToSection, openPopup }) => {
                 <option value="airline-ticketing-area">
                   Airline Ticketing Area
                 </option>
-                {/* Add more options here */}
               </select>
             </div>
             <div className="form-group">

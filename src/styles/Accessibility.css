@@ -5,7 +5,7 @@
 .ada-title-vi-container h1,
 .ada-title-vi-container h2,
 .ada-title-vi-container h3 {
-  color: #5c3c90;
+  color: #36294a;
   margin-bottom: 20px;
 }
 
@@ -44,7 +44,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 10px; /* Adjusted to position the underline properly */
+  bottom: 10px;
   height: 2px;
   background: #e5e5e5;
   transition: background-color 0.3s, transform 0.3s;
@@ -90,11 +90,11 @@
   border-top: none;
   border-radius: 0 0 5px 5px;
   font-size: 16px;
-  display: none; /* Initially hidden */
+  display: none;
 }
 
 .section-button.active + .section-content {
-  display: block; /* Display the content when active */
+  display: block;
 }
 
 .ada-title-vi-container ul {
@@ -107,7 +107,7 @@
 }
 
 .ada-title-vi-container ul li a {
-  color: #5c3c90; /* Purple color */
+  color: #36294a;
   text-decoration: none;
 }
 

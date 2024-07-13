@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Rentals.css";
 
 const Rentals = () => {

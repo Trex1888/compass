@@ -1,8 +1,34 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Accessibility.css";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { CiParking1 } from "react-icons/ci";
 
-const Accessibility = () => {
+const Accessibility = ({ scrollToSection, openPopup }) => {
   const [openSections, setOpenSections] = useState([]);
+  const [showAirplane, setShowAirplane] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight / 2;
+      if (window.scrollY > scrollThreshold) {
+        setShowAirplane(true);
+      } else {
+        setShowAirplane(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showAirplane]);
+
+  const handleButtonClick = (sectionId) => {
+    scrollToSection(sectionId);
+    openPopup();
+  };
 
   const toggleSection = (section) => {
     if (openSections.includes(section)) {
@@ -11,7 +37,6 @@ const Accessibility = () => {
       setOpenSections([...openSections, section]);
     }
   };
-
   const buttonItems = [
     "Wheelchair Services",
     "Family Restrooms",
@@ -35,7 +60,6 @@ const Accessibility = () => {
         services along with information on service animals, traveling with pets,
         and more can be found below.
       </p>
-
       <div className="button-links">
         {buttonItems.map((item, index) => (
           <div key={index} className="section">
@@ -58,7 +82,6 @@ const Accessibility = () => {
           </div>
         ))}
       </div>
-
       <h2>Title VI Airport Nondiscrimination Program</h2>
       <p>
         Title VI of the Civil Rights Act of 1964, 42 U.S.C. § 2000d, and the
@@ -85,21 +108,53 @@ const Accessibility = () => {
           </a>
         </li>
         <li>
-          <a href="#">Title II Procedures</a>
+          <a href="/">Title II Procedures</a>
         </li>
         <li>
-          <a href="#">Title VI Plan</a>
+          <a href="/">Title VI Plan</a>
         </li>
         <li>
-          <a href="#">Discrimination Complaint Form</a>
+          <a href="/">Discrimination Complaint Form</a>
         </li>
         <li>
-          <a href="#">DBE Program</a>
+          <a href="/">DBE Program</a>
         </li>
         <li>
-          <a href="#">ACDBE Program</a>
+          <a href="/">ACDBE Program</a>
         </li>
       </ul>
+      <div className="section-links-container3">
+        <div className="section-links3">
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Flight-Status")}
+          >
+            <AiOutlineFolderOpen className="icon" />
+            <p>Flight Status</p>
+          </div>
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Departures")}
+          >
+            <GiAirplaneDeparture className="icon" />
+            <p>Departures</p>
+          </div>
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Arrivals")}
+          >
+            <GiAirplaneArrival className="icon" />
+            <p>Arrivals</p>
+          </div>
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Parking")}
+          >
+            <CiParking1 className="icon" />
+            <p>Parking</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,37 @@
-import React, { useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import "../styles/Tenant.css"; // Make sure to create and update this CSS file
+import { useEffect, useState } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import "../styles/Tenant.css";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { CiParking1 } from "react-icons/ci";
 
-const Tenant = () => {
+const Tenant = ({ scrollToSection, openPopup }) => {
+  const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
   const isMainPage = location.pathname === "/airport-business/tenant-resources";
   const [openSections, setOpenSections] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight / 2;
+      if (window.scrollY > scrollThreshold) {
+        setShowAirplane(true);
+      } else {
+        setShowAirplane(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showAirplane]);
+
+  const handleButtonClick = (sectionId) => {
+    scrollToSection(sectionId);
+    openPopup();
+  };
 
   const toggleSection = (section) => {
     if (openSections.includes(section)) {
@@ -34,7 +60,10 @@ const Tenant = () => {
             our goal to provide tenants with the information needed to be
             successful while working with the Airport. Below you will find
             tenant resources. Permits and forms can be found{" "}
-            <a href="#">here</a>.
+            <Link to="/airport-business/permits-forms" className="link">
+              here
+            </Link>
+            .
           </p>
           <div className="button-links">
             <button className="work-order-request">
@@ -60,7 +89,6 @@ const Tenant = () => {
                   }`}
                 >
                   <p>
-                    {/* Replace with the actual content for each section */}
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
@@ -72,6 +100,40 @@ const Tenant = () => {
         </div>
       )}
       <Outlet />
+      {isMainPage && (
+        <div className="section-links-container3">
+          <div className="section-links3">
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Flight-Status")}
+            >
+              <AiOutlineFolderOpen className="icon" />
+              <p>Flight Status</p>
+            </div>
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Departures")}
+            >
+              <GiAirplaneDeparture className="icon" />
+              <p>Departures</p>
+            </div>
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Arrivals")}
+            >
+              <GiAirplaneArrival className="icon" />
+              <p>Arrivals</p>
+            </div>
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Parking")}
+            >
+              <CiParking1 className="icon" />
+              <p>Parking</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

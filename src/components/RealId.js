@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/RealId.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -137,7 +137,7 @@ const RealId = ({ scrollToSection, openPopup }) => {
               <p>Parking</p>
             </div>
           </div>
-        </div>{" "}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-import { FaYoutube } from "react-icons/fa";
 import "../styles/SectionLinks.css";
+import { FaYoutube } from "react-icons/fa";
 import { IoMailOutline, IoMapOutline } from "react-icons/io5";
 import { CiParking1 } from "react-icons/ci";
 import { PiForkKnifeLight, PiVanLight } from "react-icons/pi";

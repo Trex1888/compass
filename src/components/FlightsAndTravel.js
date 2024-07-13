@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import "../styles/FlightsAndTravel.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";

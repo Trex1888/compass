@@ -67,32 +67,6 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .flights-section {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .flights-image {
-    width: 100%;
-    height: 200px;
-  }
-
-  .flights-section-content {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
-    padding: 0 15px;
-  }
-
-  .flights-button {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
-}
-
 .section-links-container-flights {
   position: relative;
   display: flex;
@@ -129,6 +103,32 @@
 .link-item-flights:hover p {
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
   color: #be5a0e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flights-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .flights-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .flights-section-content {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .flights-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 
 /* Responsive Design */

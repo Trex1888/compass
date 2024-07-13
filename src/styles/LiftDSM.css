@@ -1,0 +1,38 @@
+/* .fly-container {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  top: 0;
+  height: 730px;
+}
+
+.fly-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 31, 0.5);
+  z-index: 1;
+  clip-path: inherit;
+}
+
+.fly-container-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.home-route {
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 0 100%);
+}
+
+.lift-route {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+} */

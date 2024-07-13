@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams, NavLink, useLocation } from "react-router-dom";
 import "../styles/TrafficStats.css";
 import statsImage from "../images/minutes.jpg";
@@ -77,7 +76,6 @@ const TrafficStats = () => {
     return <div>News item not found</div>;
   }
 
-  // Check if the current route contains "airport-traffic-statistics"
   const isTrafficStatistics = location.pathname.includes(
     "about-us/news/june-2024-airport-traffic-statistics"
   );

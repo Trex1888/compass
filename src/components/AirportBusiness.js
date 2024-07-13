@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import "../styles/AirportBusiness.css";
 import { AiOutlineFolderOpen } from "react-icons/ai";
@@ -283,7 +283,6 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
                     }`}
                   >
                     <p>
-                      {/* Replace with the actual content for each section */}
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua.

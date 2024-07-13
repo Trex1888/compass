@@ -1,22 +1,23 @@
 .news-container {
-  padding: 50px;
-  margin-left: 60px;
-  margin-right: 110px;
+  margin-left: 55px;
+  max-width: 1200px;
 }
 
 .news-header {
   text-align: left;
   margin-bottom: 40px;
+  margin-left: 60px;
+  margin-top: 50px;
 }
 
 .news-header h1 {
   font-size: 36px;
-  color: #4a4a4a;
+  color: black;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
 .news-header p {
-  color: #6f6f7b;
   margin-bottom: 10px;
   max-width: 1115px;
 }
@@ -96,6 +97,7 @@
   width: 400px;
   height: 40px;
   margin-top: 20px;
+  margin-right: 175px;
 }
 
 .news-category-container select:hover,
@@ -124,11 +126,14 @@
 }
 
 .news-category-container h1 {
-  margin-left: 15px;
+  font-size: 36px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-left: 75px;
 }
 
 .news-items {
-  margin-top: -15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -138,13 +143,13 @@
 .news-item {
   background-color: #fff;
   width: calc(33% - 20px);
-  text-align: left;
+  text-align: center;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
 
 .news-item img {
-  width: 100%;
+  width: 50%;
   height: 55%;
   border-radius: 1px;
   margin-bottom: -5px;
@@ -152,7 +157,7 @@
 
 .news-item h2 {
   font-size: 20px;
-  color: #4a4a4a;
+  color: red;
   font-weight: 500;
 }
 
@@ -177,6 +182,10 @@
 .news-item:hover {
   transform: scale(1.02);
   cursor: pointer;
+}
+
+.news-title h1 {
+  color: blue;
 }
 
 .load-more {

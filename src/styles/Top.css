@@ -29,3 +29,11 @@
   z-index: 2;
   color: white;
 }
+
+.home-route {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.fly-route {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}

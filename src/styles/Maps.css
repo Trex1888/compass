@@ -1,24 +1,3 @@
-.airport-maps-container {
-  padding: 20px;
-}
-
-.airport-maps-container h1 {
-  color: #5c3c90; /* Purple color */
-}
-
-.airport-maps-container h2 {
-  color: #5c3c90; /* Purple color */
-  margin-top: 20px;
-}
-
-.airport-maps-container p {
-  margin: 10px 0;
-}
-
-.airport-maps-container a {
-  color: #5c3c90; /* Purple color */
-}
-
 .image-container {
   text-align: center;
   margin: 20px 0;

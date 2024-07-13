@@ -1,7 +1,37 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/BadgeApp.css";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { CiParking1 } from "react-icons/ci";
 
-const BadgeApp = () => {
+const BadgeApp = ({ scrollToSection, openPopup }) => {
+  const [showAirplane, setShowAirplane] = useState(false);
+  const location = useLocation();
+  const isMainPage = location.pathname === "/your-main-badge-app-path"; // Replace with the actual path
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight / 2;
+      if (window.scrollY > scrollThreshold) {
+        setShowAirplane(true);
+      } else {
+        setShowAirplane(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showAirplane]);
+
+  const handleButtonClick = (sectionId) => {
+    scrollToSection(sectionId);
+    openPopup();
+  };
+
   return (
     <div>
       <div className="about-header">
@@ -91,6 +121,40 @@ const BadgeApp = () => {
           </li>
         </ul>
       </div>
+      {isMainPage && (
+        <div className="section-links-container3">
+          <div className="section-links3">
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Flight-Status")}
+            >
+              <AiOutlineFolderOpen className="icon" />
+              <p>Flight Status</p>
+            </div>
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Departures")}
+            >
+              <GiAirplaneDeparture className="icon" />
+              <p>Departures</p>
+            </div>
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Arrivals")}
+            >
+              <GiAirplaneArrival className="icon" />
+              <p>Arrivals</p>
+            </div>
+            <div
+              className="link-item3"
+              onClick={() => handleButtonClick("Parking")}
+            >
+              <CiParking1 className="icon" />
+              <p>Parking</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

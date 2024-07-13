@@ -1,11 +1,37 @@
-import React, { useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, Outlet } from "react-router-dom";
 import "../styles/Badging.css";
+import { AiOutlineFolderOpen } from "react-icons/ai";
+import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { CiParking1 } from "react-icons/ci";
 
-const Badging = () => {
+const Badging = ({ scrollToSection, openPopup }) => {
+  const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
   const isMainPage = location.pathname === "/airport-business/badging";
   const [openSections, setOpenSections] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight / 2;
+      if (window.scrollY > scrollThreshold) {
+        setShowAirplane(true);
+      } else {
+        setShowAirplane(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showAirplane]);
+
+  const handleButtonClick = (sectionId) => {
+    scrollToSection(sectionId);
+    openPopup();
+  };
 
   const toggleSection = (section) => {
     if (openSections.includes(section)) {
@@ -52,7 +78,6 @@ const Badging = () => {
                     }`}
                   >
                     <p>
-                      {/* Replace with the actual content for each section */}
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua.
@@ -64,6 +89,38 @@ const Badging = () => {
           </div>
         )}
         <Outlet />
+      </div>
+      <div className="section-links-container3">
+        <div className="section-links3">
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Flight-Status")}
+          >
+            <AiOutlineFolderOpen className="icon" />
+            <p>Flight Status</p>
+          </div>
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Departures")}
+          >
+            <GiAirplaneDeparture className="icon" />
+            <p>Departures</p>
+          </div>
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Arrivals")}
+          >
+            <GiAirplaneArrival className="icon" />
+            <p>Arrivals</p>
+          </div>
+          <div
+            className="link-item3"
+            onClick={() => handleButtonClick("Parking")}
+          >
+            <CiParking1 className="icon" />
+            <p>Parking</p>
+          </div>
+        </div>
       </div>
     </div>
   );

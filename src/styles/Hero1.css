@@ -1,18 +1,14 @@
 .hero1-container {
   text-align: center;
-  width: 100vw; /* Full width of the viewport */
-  padding: 50px 20px; /* Vertical padding 50px, horizontal padding 20px */
-  background: linear-gradient(
-    to bottom,
-    #b3cde0,
-    #ffffff
-  ); /* Gradient from light blue to white */
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  width: 100vw;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #b3cde0, #ffffff);
+  box-sizing: border-box;
 }
 
 .hero1-container h1,
 .hero1-container h2 {
-  max-width: 900px; /* Set maximum width for both h1 and h2 */
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -30,8 +26,8 @@
 }
 
 .hero1-container button {
-  background-color: #ff4500; /* Orange background color */
-  color: #ffffff; /* White text color */
+  background-color: #ff4500;
+  color: #ffffff;
   font-size: 20px;
   font-weight: bold;
   padding: 15px 30px;
@@ -41,5 +37,5 @@
 }
 
 .hero1-container button:hover {
-  background-color: #e63946; /* Darker orange on hover */
+  background-color: #e63946;
 }

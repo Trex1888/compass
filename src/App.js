@@ -68,12 +68,16 @@ import Top from "./components/Top";
 import aboutImage from "./images/about.jpg";
 import flightsAndTravelImage from "./images/flightsandtravel.jpg";
 import travlerImage from "./images/travelerInfo.jpg";
-import airportBusinessImage from "./images/airport1.jpg";
-// import liftDsmImage from "./images/dsm3.jpg";
-import people from "./images/peep.jpg";
-import dsm from "./images/dsm1.jpg";
+import airportBusinessImage from "./images/at-the-airport.jpg";
+import newsImage from "./images/news.jpg";
+import peopleImage from "./images/peep.jpg";
+import dsmImage from "./images/dsm1.jpg";
 import homeImage from "./images/home.jpg";
-import flyDsm from "./images/liftmain.jpg";
+import flyDsmImage from "./images/liftmain.jpg";
+import parkingImage from "./images/parking.jpg";
+import groundImage from "./images/ground.jpg";
+import amenitiesImage from "./images/amenities.jpg";
+import tenantImage from "./images/tenant.jpg";
 
 const App = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -117,54 +121,52 @@ const AppContent = ({
   const location = useLocation();
 
   const getLocationBackground = (location) => {
-    switch (location.pathname) {
-      case "/about-us":
-        return { backgroundImage: `url(${aboutImage})` };
+    const path = location.pathname;
 
-      case "/flights-and-travel":
-      case "/flights-and-travel/airline-information":
-      case "/flights-and-travel/nonstop-destinations":
-        return { backgroundImage: `url(${flightsAndTravelImage})` };
+    const backgroundImages = {
+      "/about-us": aboutImage,
+      "/flights-and-travel": flightsAndTravelImage,
+      "/flights-and-travel/airline-information": flightsAndTravelImage,
+      "/flights-and-travel/nonstop-destinations": flightsAndTravelImage,
+      "/flights-and-travel/flight-status": dsmImage,
+      "/traveler-info": travlerImage,
+      "/traveler-info/tsa-security": travlerImage,
+      "/traveler-info/tsa-security/precheck-global-entry": travlerImage,
+      "/traveler-info/check-in": travlerImage,
+      "/traveler-info/lost-and-found": travlerImage,
+      "/traveler-info/faq": travlerImage,
+      "/traveler-info/real-id": travlerImage,
+      "/at-the-airport": airportBusinessImage,
+      "/at-the-airport/parking": parkingImage,
+      "/at-the-airport/shuttle-tracking": peopleImage,
+      "/at-the-airport/ground-transportation": groundImage,
+      "/at-the-airport/ground-transportation/ride-share-taxis": groundImage,
+      "/at-the-airport/ground-transportation/rental-cars": groundImage,
+      "/at-the-airport/ground-transportation/hotel-shuttles": groundImage,
+      "/at-the-airport/ground-transportation/buses-paratransit": groundImage,
+      "/at-the-airport/maps-directions": groundImage,
+      "/at-the-airport/dining": travlerImage,
+      "/at-the-airport/services-amenities": amenitiesImage,
+      "/at-the-airport/accessibility": amenitiesImage,
+      "/at-the-airport/general-aviation": flightsAndTravelImage,
+      "/at-the-airport/title-vi-airport-nondiscrimination-program":
+        amenitiesImage,
+      "/airport-business/tenant-resources/air-service-development": tenantImage,
+      "/about-us/news": newsImage,
+      "/airport-business": parkingImage,
+      "/airport-business/badging": parkingImage,
+      "/airport-business/operations": parkingImage,
+      "/airport-business/bid-procurement-rfps": parkingImage,
+      "/airport-business/contractor-resources": parkingImage,
+      "/lift-dsm": flyDsmImage,
+      "/": homeImage,
+    };
 
-      case "/flights-and-travel/flight-status":
-        return { backgroundImage: `url(${dsm})` };
-
-      case "/traveler-info":
-      case "/traveler-info/tsa-security":
-      case "/traveler-info/tsa-security/precheck-global-entry":
-      case "/traveler-info/check-in":
-      case "/traveler-info/lost-and-found":
-      case "/traveler-info/faq":
-      case "/traveler-info/real-id":
-        return { backgroundImage: `url(${travlerImage})` };
-
-      case "/at-the-airport":
-        return { backgroundImage: `url(${airportBusinessImage})` };
-
-      case "/at-the-airport/shuttle-tracking":
-        return { backgroundImage: `url(${people})` };
-
-      case "/airport-business":
-      case "/airport-business/contractor-resources":
-      case "/airport-business/badging":
-      case "/airport-business/operations":
-      case "/airport-business/permits-forms":
-      case "/airport-business/tenant-resources":
-        return { backgroundImage: `url(${airportBusinessImage})` };
-
-      case "/lift-dsm":
-        return { backgroundImage: `url(${flyDsm})` };
-
-      case "/contact":
-      case "/about-us/careers":
-        return { backgroundColor: "#e9e9e9" };
-
-      case "/":
-        return { backgroundImage: `url(${homeImage})` };
-
-      default:
-        return { backgroundColor: "#e9e9e9" };
+    if (path === "/contact" || path === "/about-us/careers") {
+      return { backgroundColor: "#e9e9e9" };
     }
+
+    return { backgroundImage: `url(${backgroundImages[path] || homeImage})` };
   };
 
   const backgroundStyle = getLocationBackground(location);
@@ -172,6 +174,10 @@ const AppContent = ({
   const isTrafficStatistics = location.pathname.includes(
     "about-us/news/june-2024-airport-traffic-statistics"
   );
+
+  const RouteWrapper = ({ children, scrollToSection, openPopup }) => {
+    return React.cloneElement(children, { scrollToSection, openPopup });
+  };
 
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
@@ -201,24 +207,152 @@ const AppContent = ({
               }
             >
               <Route path="parking" element={<Parking />} />
-              <Route path="shuttle-tracking" element={<Shuttle />} />
-              <Route path="ground-transportation" element={<Ground />}>
-                <Route path="buses-paratransit" element={<Buses />} />
-                <Route path="ride-share-taxis" element={<RideShare />} />
-                <Route path="rental-cars" element={<Rentals />} />
-                <Route path="hotel-shuttles" element={<ShuttleCar />} />
+              <Route
+                path="shuttle-tracking"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Shuttle />
+                  </RouteWrapper>
+                }
+              />
+              <Route
+                path="ground-transportation"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Ground />
+                  </RouteWrapper>
+                }
+              >
+                <Route
+                  path="buses-paratransit"
+                  element={
+                    <RouteWrapper
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    >
+                      <Buses />
+                    </RouteWrapper>
+                  }
+                />
+                <Route
+                  path="ride-share-taxis"
+                  element={
+                    <RouteWrapper
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    >
+                      <RideShare />
+                    </RouteWrapper>
+                  }
+                />
+                <Route
+                  path="rental-cars"
+                  element={
+                    <RouteWrapper
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    >
+                      <Rentals />
+                    </RouteWrapper>
+                  }
+                />
+                <Route
+                  path="hotel-shuttles"
+                  element={
+                    <RouteWrapper
+                      scrollToSection={scrollToSection}
+                      openPopup={openPopup}
+                    >
+                      <ShuttleCar />
+                    </RouteWrapper>
+                  }
+                />
               </Route>
-              <Route path="maps-directions" element={<Maps />} />
-              <Route path="dining" element={<Dining />} />
-              <Route path="services-amenities" element={<Services />} />
-              <Route path="accessibility" element={<Accessibility />} />
-              <Route path="general-aviation" element={<General />} />
-              <Route path="stop-human-trafficking" element={<Human />} />
+              <Route
+                path="maps-directions"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Maps />
+                  </RouteWrapper>
+                }
+              />
+              <Route
+                path="dining"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Dining />
+                  </RouteWrapper>
+                }
+              />
+              <Route
+                path="services-amenities"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Services />
+                  </RouteWrapper>
+                }
+              />
+              <Route
+                path="accessibility"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Accessibility />
+                  </RouteWrapper>
+                }
+              />
+              <Route
+                path="general-aviation"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <General />
+                  </RouteWrapper>
+                }
+              />
+              <Route
+                path="stop-human-trafficking"
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Human />
+                  </RouteWrapper>
+                }
+              />
               <Route
                 path="title-vi-airport-nondiscrimination-program"
-                element={<Title9 />}
+                element={
+                  <RouteWrapper
+                    scrollToSection={scrollToSection}
+                    openPopup={openPopup}
+                  >
+                    <Title9 />
+                  </RouteWrapper>
+                }
               />
             </Route>
+
             <Route
               path="/about-us"
               element={
@@ -507,7 +641,10 @@ const AppContent = ({
                 />
               </Route>
             </Route>
-            <Route path="/lift-dsm" element={<LiftDSM />} />
+            <Route
+              path="/lift-dsm"
+              element={<LiftDSM backgroundStyle={backgroundStyle} />}
+            />
           </Routes>
         </div>
       </div>

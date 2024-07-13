@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Hero.css";
 
 import houstonImage from "../images/dsm4.png";

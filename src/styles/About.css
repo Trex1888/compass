@@ -81,25 +81,19 @@
 }
 
 .about-header {
-  margin-top: -30px;
+  margin-top: 45px;
 }
 
 .about-header h1 {
   font-size: 36px;
   color: black;
   font-weight: 500;
-  margin-top: 75px;
 }
 
 .about-header h2 {
   color: black;
   font-weight: 400;
   margin-top: 35px;
-}
-
-.about-header p {
-  color: #333;
-  margin: 20px 0;
 }
 
 .about-button {
@@ -137,27 +131,9 @@
   background-color: #390d68;
 }
 
-.about-section {
-  margin-bottom: 30px;
-}
-
-.about-section h2 {
-  color: #662985;
-  margin-bottom: 20px;
-}
-
 .about-section p {
-  color: #333;
+  color: #2d2d2d;
   font-weight: normal;
-}
-
-.about-link {
-  color: #be5a0e;
-  text-decoration: none;
-}
-
-.about-link:hover {
-  text-decoration: underline;
 }
 
 img {

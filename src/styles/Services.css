@@ -3,7 +3,7 @@
 }
 
 .services-container h1 {
-  color: #5c3c90; /* Purple color */
+  color: #36294a;
   margin-bottom: 20px;
 }
 
@@ -42,7 +42,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 10px; /* Adjusted to position the underline properly */
+  bottom: 10px;
   height: 2px;
   background: #e5e5e5;
   transition: background-color 0.3s, transform 0.3s;

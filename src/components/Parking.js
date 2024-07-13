@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Parking.css";
 
 const Parking = () => {

@@ -4,7 +4,7 @@
 
 .transportation-options-container h1,
 .transportation-options-container h2 {
-  color: #5c3c90; /* Purple color */
+  color: #5c3c90;
 }
 
 .transportation-options-container p {
@@ -18,7 +18,7 @@
 }
 
 .ride-share-button {
-  background-color: #f37021; /* Orange color */
+  background-color: #f37021;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -28,11 +28,11 @@
 }
 
 .ride-share-button.uber {
-  background-color: #000; /* Black color for Uber */
+  background-color: #000;
 }
 
 .ride-share-button.lyft {
-  background-color: #ff00bf; /* Pink color for Lyft */
+  background-color: #ff00bf;
 }
 
 .ride-share-button:hover {
@@ -58,11 +58,11 @@
 .taxi-service-table th,
 .limo-service-table th {
   background-color: #f0f0f0;
-  color: #5c3c90; /* Purple color */
+  color: #5c3c90;
 }
 
 .limo-service-table td a {
-  color: #5c3c90; /* Purple color */
+  color: #5c3c90;
 }
 
 .limo-service-table td a:hover {

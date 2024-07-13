@@ -1,73 +1,22 @@
 .authority-leadership-container {
-  font: 400 16px / 1.5 "Montserrat", sans-serif;
-  padding: 50px;
   display: flex;
   flex-direction: row;
 }
 
-.authority-leadership-sidebar {
-  width: 20%;
-  margin-right: 30px;
-  margin-top: -25px;
-}
-
-.authority-leadership-sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin-left: 20px;
-}
-
-.authority-leadership-sidebar a {
-  color: #6f6f7b;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-  display: block;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.authority-leadership-sidebar a.active {
-  font-weight: bold;
-  position: relative;
-  color: black;
-}
-
-.authority-leadership-sidebar a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  height: 2px;
-  background-color: #662985;
-}
-
-.authority-leadership-sidebar a.active:hover {
-  color: #9090a0;
-}
-
-.authority-leadership-sidebar a:hover {
-  color: #323e66;
-}
-
 .authority-leadership-content {
-  width: 80%;
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
   text-align: left;
+  margin-left: -98px;
+  width: 68%;
 }
 
 .authority-leadership-header {
-  text-align: left;
-  padding: 20px 0;
-  margin-top: -110px;
+  margin-top: 45px;
 }
 
 .authority-leadership-header h1 {
   font-size: 36px;
   color: black;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .authority-leadership-header p {
@@ -138,7 +87,7 @@ a {
 .divider {
   border-top: 1px solid #a09797;
   max-width: 975px;
-  margin: 5px 0;
+  margin: 15px 0;
 }
 
 .section-links-container3 {

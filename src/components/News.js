@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import "../styles/News.css";
 import eventsImage from "../images/news1.jpg";

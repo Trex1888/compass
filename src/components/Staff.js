@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 import "../styles/Staff.css";
-import "../styles/Modal.css"; // Import Modal CSS
+import "../styles/Modal.css";
 
 const Staff = () => {
   const [showModal, setShowModal] = useState(false);

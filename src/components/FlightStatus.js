@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import flightsAndTravelImage from "../images/mainPlane.png";
 import "../styles/FlightStatus.css";
 import { FaPlane } from "react-icons/fa";
-import Modal1 from "./Modal1"; // Make sure this path is correct
+import Modal1 from "./Modal1";
 
 const FlightStatus = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("departures");
   const [airlineFilter, setAirlineFilter] = useState("");
   const [cityFilter, setCityFilter] = useState("");
   const [searchFilter, setSearchFilter] = useState("");
   const [filteredFlights, setFilteredFlights] = useState([]);
   const [selectedFlight, setSelectedFlight] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);

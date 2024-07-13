@@ -19,11 +19,11 @@
 }
 
 .tips-content {
-  background-color: #f4f4f4; /* Light background for the content */
+  background-color: #f4f4f4;
   padding: 15px;
-  border: 1px solid #ccc; /* Border for the content */
-  border-top: none; /* Remove top border to connect with header */
-  border-radius: 0 0 4px 4px; /* Rounded corners at the bottom */
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
   margin-bottom: 10px;
 }
 
@@ -43,11 +43,11 @@
 .img-container {
   text-align: center;
   align-items: center;
-  max-width: 300px; /* Adjusted max-width to make the container smaller */
-  margin: 0 auto; /* Center the container */
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .img-container img {
-  max-width: 100%; /* Make the image responsive within the container */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  height: auto;
 }
