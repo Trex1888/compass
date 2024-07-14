@@ -3,14 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 31, 0.5);
+  background-color: rgba(54, 41, 74, 0.9) !important;
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
   margin-top: -50px;
-  background-image: url("../images/dsm4.png");
+  background-image: url("../images/bottom.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   height: 675px;
+  background-blend-mode: overlay;
+  z-index: 0;
 }
 
 .section-links {
@@ -18,7 +20,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 285px;
+  margin-top: 280px;
 }
 
 .link-item {
@@ -55,12 +57,13 @@
 .social-icons {
   display: flex;
   gap: 15px;
-  margin-right: -1225px;
+  margin-top: 240px;
+  margin-left: auto;
+  margin-right: 75px;
 }
 
 .social-icon {
-  margin-top: 240px;
-  color: black;
+  color: white;
   transition: color 0.3s, border-color 0.3s, transform 0.6s;
   border-radius: 50%;
   padding: 10px;
@@ -73,15 +76,6 @@
   cursor: pointer;
   box-shadow: 0 0 0 3px #fff;
   scale: 1.1;
-}
-
-@keyframes flip {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
 }
 
 @media (max-width: 1200px) {
@@ -122,7 +116,7 @@
 @media (max-width: 480px) {
   .section-links-container {
     padding: 10px;
-    gap: px;
+    gap: 0px;
     background-size: contain;
   }
 
@@ -141,7 +135,7 @@
 
   .social-icons {
     margin-left: auto;
-    gap: px;
+    gap: 0px;
   }
 }
 

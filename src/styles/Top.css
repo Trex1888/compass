@@ -1,15 +1,17 @@
 .top-container {
   position: relative;
+  background-image: url("../images/plane2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 350px;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  top: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 62%, 0 100%);
+  height: 100vh;
+  color: white;
+  z-index: 2;
 }
 
 .top-container::before {
@@ -20,20 +22,76 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 31, 0.5);
-  z-index: 1;
   clip-path: inherit;
+  z-index: 1;
 }
 
-.top-container-content {
-  position: relative;
+.top-header {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: -550px;
   z-index: 2;
+}
+
+.top-header h1 {
   color: white;
+  margin-top: 120px;
+  font-weight: 500;
+  margin-left: -85px;
+  font-size: 32px;
+  line-height: 1;
 }
 
-.home-route {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+.top-subtitle {
+  display: block;
+  text-align: left;
 }
 
-.fly-route {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+.top-links-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  height: 200px;
+  margin-left: -120px;
+  z-index: 2;
+}
+
+.top-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.top-link-item {
+  display: flex;
+  width: 95px;
+  height: 100px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+  background-color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-link-item:hover {
+  color: #d96e2d;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.top-link-item .icon {
+  font-size: 42px;
+  margin-top: 10px;
+  margin-bottom: -15px;
+}
+
+.top-link-item p {
+  font-size: 1rem;
+  margin-bottom: -20px;
 }

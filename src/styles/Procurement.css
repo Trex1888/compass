@@ -1,0 +1,112 @@
+.procedure-container {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.top-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-section h1 {
+  font-size: 36px;
+  color: #36294a;
+}
+
+.top-section p {
+  font-size: 18px;
+  color: #6f6f7b;
+}
+
+.top-section a {
+  color: #be5a0e;
+  text-decoration: none;
+}
+
+.subscribe-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subscribe-section h2 {
+  font-size: 24px;
+  color: #36294a;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.subscribe-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.subscribe-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.category-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.category-section h2 {
+  font-size: 24px;
+  color: #36294a;
+}
+
+.category-dropdown {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bid-list {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.bid-item {
+  margin-bottom: 20px;
+}
+
+.bid-item h3 {
+  font-size: 20px;
+  color: #36294a;
+}
+
+.bid-item .date {
+  font-size: 16px;
+  color: #6f6f7b;
+}
+
+.bid-item .details {
+  font-size: 16px;
+  color: #6f6f7b;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bid-item a {
+  color: #be5a0e;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.bid-item a:hover {
+  text-decoration: underline;
+}

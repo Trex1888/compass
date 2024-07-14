@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import flightsAndTravelImage from "../images/mainPlane.png";
 import "../styles/FlightStatus.css";
@@ -14,6 +14,282 @@ const FlightStatus = () => {
   const [selectedFlight, setSelectedFlight] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const departures = useMemo(
+    () => [
+      {
+        airline: "Allegiant",
+        flight: "G4458",
+        to: "ORANGE COUNTY (SNA)",
+        scheduled: "7:30 AM",
+        updated: "7:35 AM",
+        status: "In Air",
+        gate: "C1",
+      },
+      {
+        airline: "United",
+        flight: "UA1363",
+        to: "CHICAGO (ORD)",
+        scheduled: "8:00 AM",
+        updated: "7:58 AM",
+        status: "Departed",
+        gate: "A2",
+      },
+      {
+        airline: "United",
+        flight: "UA581",
+        to: "DENVER (DEN)",
+        scheduled: "9:15 AM",
+        updated: "9:07 AM",
+        status: "Departed",
+        gate: "A4A",
+      },
+      {
+        airline: "Frontier",
+        flight: "F91868",
+        to: "ORLANDO (MCO)",
+        scheduled: "9:32 AM",
+        updated: "9:32 AM",
+        status: "Departed",
+        gate: "A2",
+      },
+      {
+        airline: "Delta",
+        flight: "DL5253",
+        to: "MINNEAPOLIS (MSP)",
+        scheduled: "10:00 AM",
+        updated: "9:59 AM",
+        status: "Departed",
+        gate: "C4",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA4408",
+        to: "WASHINGTON (DCA)",
+        scheduled: "10:30 AM",
+        updated: "10:28 AM",
+        status: "Departed",
+        gate: "C6",
+      },
+      {
+        airline: "Allegiant",
+        flight: "G41501",
+        to: "AUSTIN (AUS)",
+        scheduled: "11:00 AM",
+        updated: "10:55 AM",
+        status: "Departed",
+        gate: "A1",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA6170",
+        to: "CHICAGO (ORD)",
+        scheduled: "11:30 AM",
+        updated: "11:25 AM",
+        status: "Departed",
+        gate: "A3",
+      },
+      {
+        airline: "Southwest",
+        flight: "WN2010",
+        to: "PHOENIX (PHX)",
+        scheduled: "12:00 PM",
+        updated: "11:55 AM",
+        status: "In Air",
+        gate: "B5",
+      },
+      {
+        airline: "United",
+        flight: "UA700",
+        to: "HOUSTON (IAH)",
+        scheduled: "12:30 PM",
+        updated: "12:25 PM",
+        status: "Scheduled",
+        gate: "C7",
+      },
+      {
+        airline: "Delta",
+        flight: "DL900",
+        to: "SALT LAKE CITY (SLC)",
+        scheduled: "1:00 PM",
+        updated: "12:58 PM",
+        status: "Scheduled",
+        gate: "C8",
+      },
+      {
+        airline: "Allegiant",
+        flight: "G41602",
+        to: "LAS VEGAS (LAS)",
+        scheduled: "1:30 PM",
+        updated: "1:28 PM",
+        status: "Scheduled",
+        gate: "A2",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA4409",
+        to: "MIAMI (MIA)",
+        scheduled: "2:00 PM",
+        updated: "1:59 PM",
+        status: "In Air",
+        gate: "C9",
+      },
+      {
+        airline: "United",
+        flight: "UA701",
+        to: "LOS ANGELES (LAX)",
+        scheduled: "2:30 PM",
+        updated: "2:28 PM",
+        status: "In Air",
+        gate: "A1",
+      },
+      {
+        airline: "Southwest",
+        flight: "WN2011",
+        to: "DALLAS (DAL)",
+        scheduled: "3:00 PM",
+        updated: "2:58 PM",
+        status: "Delayed",
+        gate: "B6",
+      },
+      {
+        airline: "Delta",
+        flight: "DL5260",
+        to: "SEATTLE (SEA)",
+        scheduled: "3:30 PM",
+        updated: "Cancelled",
+        status: "Cancelled",
+        gate: "C10",
+      },
+    ],
+    []
+  );
+
+  const arrivals = useMemo(
+    () => [
+      {
+        airline: "Frontier",
+        flight: "F91867",
+        from: "ORLANDO (MCO)",
+        updated: "8:11 AM",
+        status: "Arrived",
+        gate: "A2",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA1536",
+        from: "DALLAS-FORT WORTH (DFW)",
+        updated: "8:53 AM",
+        status: "Arrived",
+        gate: "C7",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA6172",
+        from: "CHICAGO (ORD)",
+        updated: "9:29 AM",
+        status: "Arrived",
+        gate: "C5",
+      },
+      {
+        airline: "Delta",
+        flight: "DL5058",
+        from: "DETROIT (DTW)",
+        updated: "9:39 AM",
+        status: "Arrived",
+        gate: "C2",
+      },
+      {
+        airline: "United",
+        flight: "UA1362",
+        from: "DENVER (DEN)",
+        updated: "10:00 AM",
+        status: "Arrived",
+        gate: "A4A",
+      },
+      {
+        airline: "Frontier",
+        flight: "F91869",
+        from: "LAS VEGAS (LAS)",
+        updated: "10:30 AM",
+        status: "Arrived",
+        gate: "A1",
+      },
+      {
+        airline: "Delta",
+        flight: "DL5254",
+        from: "MINNEAPOLIS (MSP)",
+        updated: "11:00 AM",
+        status: "Arrived",
+        gate: "C4",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA4410",
+        from: "WASHINGTON (DCA)",
+        updated: "11:30 AM",
+        status: "Arrived",
+        gate: "C6",
+      },
+      {
+        airline: "Allegiant",
+        flight: "G41502",
+        from: "AUSTIN (AUS)",
+        updated: "12:00 PM",
+        status: "Arrived",
+        gate: "A2",
+      },
+      {
+        airline: "Southwest",
+        flight: "WN2012",
+        from: "PHOENIX (PHX)",
+        updated: "12:30 PM",
+        status: "Arrived",
+        gate: "B5",
+      },
+      {
+        airline: "United",
+        flight: "UA702",
+        from: "HOUSTON (IAH)",
+        updated: "1:00 PM",
+        status: "In Air",
+        gate: "C7",
+      },
+      {
+        airline: "Delta",
+        flight: "DL901",
+        from: "SALT LAKE CITY (SLC)",
+        updated: "1:30 PM",
+        status: "In Air",
+        gate: "C8",
+      },
+      {
+        airline: "Allegiant",
+        flight: "G41603",
+        from: "LAS VEGAS (LAS)",
+        updated: "2:00 PM",
+        status: "Delayed",
+        gate: "A2",
+      },
+      {
+        airline: "American Airlines",
+        flight: "AA4411",
+        from: "MIAMI (MIA)",
+        updated: "2:30 PM",
+        status: "Cancelled",
+        gate: "C9",
+      },
+      {
+        airline: "United",
+        flight: "UA703",
+        from: "LOS ANGELES (LAX)",
+        updated: "3:00 PM",
+        status: "Scheduled",
+        gate: "A1",
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -36,23 +312,24 @@ const FlightStatus = () => {
       );
     });
     setFilteredFlights(filtered);
-  }, [activeFilter, airlineFilter, cityFilter, searchFilter]);
-
-  useEffect(() => {
-    applyFilters();
   }, [
     activeFilter,
     airlineFilter,
     cityFilter,
     searchFilter,
     arrivals,
-    applyFilters,
+    departures,
   ]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [activeFilter, airlineFilter, cityFilter, searchFilter, applyFilters]);
 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
     navigate(`/flights-and-travel/flight-status?flights=${filter}`);
   };
+
   const getStatusColor = (status) => {
     switch (status) {
       case "Arrived":
@@ -75,276 +352,6 @@ const FlightStatus = () => {
   const handleCloseModal = () => {
     setSelectedFlight(null);
   };
-
-  const departures = [
-    {
-      airline: "Allegiant",
-      flight: "G4458",
-      to: "ORANGE COUNTY (SNA)",
-      scheduled: "7:30 AM",
-      updated: "7:35 AM",
-      status: "In Air",
-      gate: "C1",
-    },
-    {
-      airline: "United",
-      flight: "UA1363",
-      to: "CHICAGO (ORD)",
-      scheduled: "8:00 AM",
-      updated: "7:58 AM",
-      status: "Departed",
-      gate: "A2",
-    },
-    {
-      airline: "United",
-      flight: "UA581",
-      to: "DENVER (DEN)",
-      scheduled: "9:15 AM",
-      updated: "9:07 AM",
-      status: "Departed",
-      gate: "A4A",
-    },
-    {
-      airline: "Frontier",
-      flight: "F91868",
-      to: "ORLANDO (MCO)",
-      scheduled: "9:32 AM",
-      updated: "9:32 AM",
-      status: "Departed",
-      gate: "A2",
-    },
-    {
-      airline: "Delta",
-      flight: "DL5253",
-      to: "MINNEAPOLIS (MSP)",
-      scheduled: "10:00 AM",
-      updated: "9:59 AM",
-      status: "Departed",
-      gate: "C4",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA4408",
-      to: "WASHINGTON (DCA)",
-      scheduled: "10:30 AM",
-      updated: "10:28 AM",
-      status: "Departed",
-      gate: "C6",
-    },
-    {
-      airline: "Allegiant",
-      flight: "G41501",
-      to: "AUSTIN (AUS)",
-      scheduled: "11:00 AM",
-      updated: "10:55 AM",
-      status: "Departed",
-      gate: "A1",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA6170",
-      to: "CHICAGO (ORD)",
-      scheduled: "11:30 AM",
-      updated: "11:25 AM",
-      status: "Departed",
-      gate: "A3",
-    },
-    {
-      airline: "Southwest",
-      flight: "WN2010",
-      to: "PHOENIX (PHX)",
-      scheduled: "12:00 PM",
-      updated: "11:55 AM",
-      status: "In Air",
-      gate: "B5",
-    },
-    {
-      airline: "United",
-      flight: "UA700",
-      to: "HOUSTON (IAH)",
-      scheduled: "12:30 PM",
-      updated: "12:25 PM",
-      status: "Scheduled",
-      gate: "C7",
-    },
-    {
-      airline: "Delta",
-      flight: "DL900",
-      to: "SALT LAKE CITY (SLC)",
-      scheduled: "1:00 PM",
-      updated: "12:58 PM",
-      status: "Scheduled",
-      gate: "C8",
-    },
-    {
-      airline: "Allegiant",
-      flight: "G41602",
-      to: "LAS VEGAS (LAS)",
-      scheduled: "1:30 PM",
-      updated: "1:28 PM",
-      status: "Scheduled",
-      gate: "A2",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA4409",
-      to: "MIAMI (MIA)",
-      scheduled: "2:00 PM",
-      updated: "1:59 PM",
-      status: "In Air",
-      gate: "C9",
-    },
-    {
-      airline: "United",
-      flight: "UA701",
-      to: "LOS ANGELES (LAX)",
-      scheduled: "2:30 PM",
-      updated: "2:28 PM",
-      status: "In Air",
-      gate: "A1",
-    },
-    {
-      airline: "Southwest",
-      flight: "WN2011",
-      to: "DALLAS (DAL)",
-      scheduled: "3:00 PM",
-      updated: "2:58 PM",
-      status: "Delayed",
-      gate: "B6",
-    },
-    {
-      airline: "Delta",
-      flight: "DL5260",
-      to: "SEATTLE (SEA)",
-      scheduled: "3:30 PM",
-      updated: "Cancelled",
-      status: "Cancelled",
-      gate: "C10",
-    },
-  ];
-
-  const arrivals = [
-    {
-      airline: "Frontier",
-      flight: "F91867",
-      from: "ORLANDO (MCO)",
-      updated: "8:11 AM",
-      status: "Arrived",
-      gate: "A2",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA1536",
-      from: "DALLAS-FORT WORTH (DFW)",
-      updated: "8:53 AM",
-      status: "Arrived",
-      gate: "C7",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA6172",
-      from: "CHICAGO (ORD)",
-      updated: "9:29 AM",
-      status: "Arrived",
-      gate: "C5",
-    },
-    {
-      airline: "Delta",
-      flight: "DL5058",
-      from: "DETROIT (DTW)",
-      updated: "9:39 AM",
-      status: "Arrived",
-      gate: "C2",
-    },
-    {
-      airline: "United",
-      flight: "UA1362",
-      from: "DENVER (DEN)",
-      updated: "10:00 AM",
-      status: "Arrived",
-      gate: "A4A",
-    },
-    {
-      airline: "Frontier",
-      flight: "F91869",
-      from: "LAS VEGAS (LAS)",
-      updated: "10:30 AM",
-      status: "Arrived",
-      gate: "A1",
-    },
-    {
-      airline: "Delta",
-      flight: "DL5254",
-      from: "MINNEAPOLIS (MSP)",
-      updated: "11:00 AM",
-      status: "Arrived",
-      gate: "C4",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA4410",
-      from: "WASHINGTON (DCA)",
-      updated: "11:30 AM",
-      status: "Arrived",
-      gate: "C6",
-    },
-    {
-      airline: "Allegiant",
-      flight: "G41502",
-      from: "AUSTIN (AUS)",
-      updated: "12:00 PM",
-      status: "Arrived",
-      gate: "A2",
-    },
-    {
-      airline: "Southwest",
-      flight: "WN2012",
-      from: "PHOENIX (PHX)",
-      updated: "12:30 PM",
-      status: "Arrived",
-      gate: "B5",
-    },
-    {
-      airline: "United",
-      flight: "UA702",
-      from: "HOUSTON (IAH)",
-      updated: "1:00 PM",
-      status: "In Air",
-      gate: "C7",
-    },
-    {
-      airline: "Delta",
-      flight: "DL901",
-      from: "SALT LAKE CITY (SLC)",
-      updated: "1:30 PM",
-      status: "In Air",
-      gate: "C8",
-    },
-    {
-      airline: "Allegiant",
-      flight: "G41603",
-      from: "LAS VEGAS (LAS)",
-      updated: "2:00 PM",
-      status: "Delayed",
-      gate: "A2",
-    },
-    {
-      airline: "American Airlines",
-      flight: "AA4411",
-      from: "MIAMI (MIA)",
-      updated: "2:30 PM",
-      status: "Cancelled",
-      gate: "C9",
-    },
-    {
-      airline: "United",
-      flight: "UA703",
-      from: "LOS ANGELES (LAX)",
-      updated: "3:00 PM",
-      status: "Scheduled",
-      gate: "A1",
-    },
-  ];
 
   return (
     <div className="flight-status-container">
@@ -497,3 +504,5 @@ const FlightStatus = () => {
 };
 
 export default FlightStatus;
+
+//background: linear-gradient(to bottom, #d1e8ff, #ffffff);

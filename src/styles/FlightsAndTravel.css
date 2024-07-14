@@ -18,6 +18,10 @@
   color: white;
 }
 
+.main-wrap {
+  background-color: red;
+}
+
 .flights-section {
   display: flex;
   align-items: center;

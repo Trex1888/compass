@@ -10,6 +10,9 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
   const [openSections, setOpenSections] = useState([]);
   const location = useLocation();
   const isMainPage = location.pathname === "/airport-business";
+  const showSidebar = !location.pathname.includes(
+    "/airport-business/bid-procurement-rfps"
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,204 +55,206 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
 
   return (
     <div className="about-container">
-      <div className="about-sidebar">
-        <ul>
-          <li>
-            <Link
-              to="/airport-business/contractor-resources"
-              className={
-                location.pathname === "/airport-business/contractor-resources"
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              Contractor Resources
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/airport-business/bid-procurement-rfps"
-              className={
-                location.pathname === "/airport-business/bid-procurement-rfps"
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              Bid Procurement & RFPs
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/airport-business/badging"
-              className={
-                location.pathname === "/airport-business/badging" ||
-                location.pathname.startsWith("/airport-business/badging")
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              Badging
-            </Link>
-            {location.pathname.startsWith("/airport-business/badging") && (
-              <ul>
-                <li>
-                  <Link
-                    to="/airport-business/badging/badge-applications-renewal"
-                    className={
-                      location.pathname ===
-                      "/airport-business/badging/badge-applications-renewal"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Badge Applications & Renewal
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/airport-business/badging/badge-faqs"
-                    className={
-                      location.pathname ===
-                      "/airport-business/badging/badge-faqs"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Badging FAQs
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link
-              to="/about-us/news"
-              className={
-                location.pathname === "/about-us/news"
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              News & Statistics
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/airport-business/operations"
-              className={
-                location.pathname === "/airport-business/operations" ||
-                location.pathname.startsWith("/airport-business/operations")
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              Operations
-            </Link>
-            {location.pathname.startsWith("/airport-business/operations") && (
-              <ul>
-                <li>
-                  <Link
-                    to="/airport-business/operations/unmanned-aerial-systems"
-                    className={
-                      location.pathname ===
-                      "/airport-business/operations/unmanned-aerial-systems"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Unmanned Aerial Systems
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/airport-business/operations/airport-driver-training"
-                    className={
-                      location.pathname ===
-                      "/airport-business/operations/airport-driver-training"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Airport Driver Training
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/airport-business/operations/rules-regulations"
-                    className={
-                      location.pathname ===
-                      "/airport-business/operations/rules-regulations"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Rules, Regulations, Policies and Procedures
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/airport-business/operations/aircraft-noise-program"
-                    className={
-                      location.pathname ===
-                      "/airport-business/operations/aircraft-noise-program"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Aircraft Noise Program
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link
-              to="/airport-business/permits-forms"
-              className={
-                location.pathname === "/airport-business/permits-forms"
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              Permits & Forms
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/airport-business/tenant-resources"
-              className={
-                location.pathname === "/airport-business/tenant-resources" ||
-                location.pathname.startsWith(
-                  "/airport-business/tenant-resources"
-                )
-                  ? "flights-link active"
-                  : "flights-link"
-              }
-            >
-              Tenant Resources
-            </Link>
-            {location.pathname.startsWith(
-              "/airport-business/tenant-resources"
-            ) && (
-              <ul>
-                <li>
-                  <Link
-                    to="/airport-business/tenant-resources/air-service-development"
-                    className={
-                      location.pathname ===
-                      "/airport-business/tenant-resources/air-service-development"
-                        ? "flights-link active-sub"
-                        : "flights-link"
-                    }
-                  >
-                    Air Service Development
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-        </ul>
-      </div>
+      {showSidebar && (
+        <div className="about-sidebar">
+          <ul>
+            <li>
+              <Link
+                to="/airport-business/contractor-resources"
+                className={
+                  location.pathname === "/airport-business/contractor-resources"
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                Contractor Resources
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/airport-business/bid-procurement-rfps"
+                className={
+                  location.pathname === "/airport-business/bid-procurement-rfps"
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                Bid Procurement & RFPs
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/airport-business/badging"
+                className={
+                  location.pathname === "/airport-business/badging" ||
+                  location.pathname.startsWith("/airport-business/badging")
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                Badging
+              </Link>
+              {location.pathname.startsWith("/airport-business/badging") && (
+                <ul>
+                  <li>
+                    <Link
+                      to="/airport-business/badging/badge-applications-renewal"
+                      className={
+                        location.pathname ===
+                        "/airport-business/badging/badge-applications-renewal"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Badge Applications & Renewal
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/airport-business/badging/badge-faqs"
+                      className={
+                        location.pathname ===
+                        "/airport-business/badging/badge-faqs"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Badging FAQs
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link
+                to="/about-us/news"
+                className={
+                  location.pathname === "/about-us/news"
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                News & Statistics
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/airport-business/operations"
+                className={
+                  location.pathname === "/airport-business/operations" ||
+                  location.pathname.startsWith("/airport-business/operations")
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                Operations
+              </Link>
+              {location.pathname.startsWith("/airport-business/operations") && (
+                <ul>
+                  <li>
+                    <Link
+                      to="/airport-business/operations/unmanned-aerial-systems"
+                      className={
+                        location.pathname ===
+                        "/airport-business/operations/unmanned-aerial-systems"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Unmanned Aerial Systems
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/airport-business/operations/airport-driver-training"
+                      className={
+                        location.pathname ===
+                        "/airport-business/operations/airport-driver-training"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Airport Driver Training
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/airport-business/operations/rules-regulations"
+                      className={
+                        location.pathname ===
+                        "/airport-business/operations/rules-regulations"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Rules, Regulations, Policies and Procedures
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/airport-business/operations/aircraft-noise-program"
+                      className={
+                        location.pathname ===
+                        "/airport-business/operations/aircraft-noise-program"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Aircraft Noise Program
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link
+                to="/airport-business/permits-forms"
+                className={
+                  location.pathname === "/airport-business/permits-forms"
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                Permits & Forms
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/airport-business/tenant-resources"
+                className={
+                  location.pathname === "/airport-business/tenant-resources" ||
+                  location.pathname.startsWith(
+                    "/airport-business/tenant-resources"
+                  )
+                    ? "flights-link active"
+                    : "flights-link"
+                }
+              >
+                Tenant Resources
+              </Link>
+              {location.pathname.startsWith(
+                "/airport-business/tenant-resources"
+              ) && (
+                <ul>
+                  <li>
+                    <Link
+                      to="/airport-business/tenant-resources/air-service-development"
+                      className={
+                        location.pathname ===
+                        "/airport-business/tenant-resources/air-service-development"
+                          ? "flights-link active-sub"
+                          : "flights-link"
+                      }
+                    >
+                      Air Service Development
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+          </ul>
+        </div>
+      )}
       <div className="about-content">
         {isMainPage ? (
           <div className="about-header">

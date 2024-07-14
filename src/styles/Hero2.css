@@ -1,0 +1,156 @@
+body {
+  color: #4a4a4a;
+}
+
+.hero2-section {
+  padding: 50px 20px;
+  background-color: white;
+}
+
+.hero2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero2-container a {
+  color: #e84a27;
+  font-weight: bold;
+}
+
+.hero2-container a:hover {
+  text-decoration: none;
+}
+
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-item {
+  margin-bottom: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 10px 15px;
+}
+
+.accordion-header span {
+  font-size: 30px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.accordion-header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.accordion-header .header-content h4 {
+  margin: 0;
+  padding-left: 20px;
+  flex: 1;
+}
+
+.accordion-header .header-content p {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+  flex: 2;
+}
+
+.accordion-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.accordion-content img {
+  width: 25%;
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: -10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.accordion-content p {
+  margin-bottom: 10px;
+}
+
+.accordion-content a {
+  color: #e84a27;
+  font-weight: bold;
+}
+
+.accordion-content h5 {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  margin-bottom: -20px;
+  padding: 10px;
+  color: #4a4a4a;
+}
+
+.table-header span:first-child {
+  margin-right: 200px;
+}
+
+.select-airline {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.select-airline select {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.accordion-item.active {
+  border-bottom: none;
+  border-top: 2px solid black;
+}
+
+.accordion-item.active + .accordion-item {
+  border-top: 2px solid black;
+}
+
+.new-data-section {
+  margin-top: 40px;
+}
+
+.new-data-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.new-data-section p {
+  margin-bottom: 10px;
+}
+
+.new-data-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.new-data-section ul li {
+  margin-bottom: 5px;
+}

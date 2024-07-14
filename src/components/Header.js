@@ -7,10 +7,15 @@ const Header = ({ backgroundStyle }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const [showSubmenu, setShowSubmenu] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
     setIsScrolled(offset > 50);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
@@ -169,6 +174,11 @@ const Header = ({ backgroundStyle }) => {
 
   return (
     <div className="header-container" style={backgroundStyle}>
+      <div className="hamburger-menu" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
       <nav className={`top-nav ${isScrolled ? "hidden" : ""}`}>
         <ul>
           <li>
@@ -209,7 +219,11 @@ const Header = ({ backgroundStyle }) => {
         </ul>
       </nav>
 
-      <nav className={`main-nav ${isScrolled ? "sticky" : ""}`}>
+      <nav
+        className={`main-nav ${isScrolled ? "sticky" : ""} ${
+          isMenuOpen ? "open" : ""
+        }`}
+      >
         <ul>
           <li className="logo-title">
             <NavLink to="/" className="header-link">

@@ -9,8 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -225px;
-  background: linear-gradient(to bottom, #d1e8ff, #ffffff);
+  background-image: url("../images/sky.jpg");
+  transform: rotateY(7deg);
 }
 
 .mainContainer img {

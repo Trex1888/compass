@@ -221,7 +221,78 @@ const AtTheAirport = ({ scrollToSection, openPopup }) => {
         {isMainPage ? (
           <div className="about-header">
             <h1>At The Airport</h1>
-            <p>Main page content goes here...</p>
+            <p>
+              Des Moines International Airport is committed to offering a
+              convenient and pleasurable travel experience for all passengers.
+              From restaurants to pit-stop grab and go options, to cost-friendly
+              parking options, to shopping and more DSM has you covered.{" "}
+            </p>
+            <div className="flights-content">
+              <div className="flights-section purple">
+                <img
+                  src="https://www.flydsm.com/filesimages/AT%20THE%20AIRPORT/Holdroom%20-%20Teen%20with%20phone.jpg"
+                  alt="Airline engine spiral"
+                  className="flights-image"
+                />
+                <div className="flights-section-content">
+                  <h3>Services & Amenities</h3>
+                  <p>
+                    DSM strives to meet the needs of the traveling public by
+                    offering convenient services and amenities for travelers and
+                    guests.
+                  </p>
+                  <Link
+                    to="/flights-and-travel/airline-information"
+                    className="flights-button"
+                  >
+                    View Services & Amenities
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flights-section orange">
+                <div className="flights-section-content">
+                  <h3>Ground Transportation</h3>
+                  <p>
+                    Quick and easy transporation to and from DSM. View all the
+                    options from the buses to car rentals, taxis, shuttles and
+                    more.
+                  </p>
+                  <Link
+                    to="/flights-and-travel/flight-status"
+                    className="flights-button"
+                  >
+                    View Transporation Options
+                  </Link>
+                </div>
+                <img
+                  src="https://www.flydsm.com/filesimages/AT%20THE%20AIRPORT/taxi.jpg"
+                  alt="Departure screen"
+                  className="flights-image"
+                />
+              </div>
+
+              <div className="flights-section blue">
+                <img
+                  src="https://www.flydsm.com/filesimages/AT%20THE%20AIRPORT/Portermill%20-%20family%20eating.jpg"
+                  alt="Family at airport"
+                  className="flights-image"
+                />
+                <div className="flights-section-content">
+                  <h3>Restaurants & Dining</h3>
+                  <p>
+                    Join us for a meal or grab something to go: we have options
+                    to keep you fueled until you reach your final destinations.
+                  </p>
+                  <Link
+                    to="/flights-and-travel/nonstop-destinations"
+                    className="flights-button"
+                  >
+                    View Dining Options
+                  </Link>
+                </div>
+              </div>
+            </div>
             <div className="section-links-container1">
               <div className="section-links1">
                 <div

@@ -1,0 +1,25 @@
+.nonstop-main {
+  position: relative;
+}
+
+.img-container1 {
+  position: absolute;
+  top: -150px; /* Adjust to move the image up */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.img-container1 img {
+  width: 600px; /* Adjust the image width as needed */
+  height: 400px; /* Adjust the image height as needed */
+  object-fit: cover;
+  z-index: 3;
+}
