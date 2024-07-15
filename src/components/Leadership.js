@@ -82,7 +82,15 @@ const Leadership = ({ scrollToSection, openPopup }) => {
             </a>
             .
           </p>
-          <button className="authority-leadership-button">
+          <button
+            className="authority-leadership-button"
+            onClick={() =>
+              window.open(
+                "https://www.flydsm.com/filesimages/ABOUT%20US/Des%20Moines%20Airport%20Authority%20Board%202024%20Meeting%20Schedule.pdf",
+                "_blank"
+              )
+            }
+          >
             2024 Regular Board Meeting Schedule
           </button>
         </div>
@@ -95,40 +103,41 @@ const Leadership = ({ scrollToSection, openPopup }) => {
           <p>Ross Dickinson, Secretary/Treasurer</p>
           <p>Mark Feldmann, Member</p>
           <p>Jessica Feeney, Member</p>
-        </div>
-
-        <div className="section-links-container3">
-          <NavLink
-            to="/about-us/authority-leadership/staff"
-            className="authority-leadership1-button"
-            onClick={handleNavLinkClick}
-          >
+        </div>{" "}
+        <NavLink
+          to="/about-us/authority-leadership/staff"
+          onClick={handleNavLinkClick}
+          className="leadership-links-button-wrapper"
+        >
+          <button className="leadership-links-button">
             Meet the Airport Directors
-          </NavLink>
-          <div className="section-links3">
+          </button>
+        </NavLink>
+        <div className="leadership-links-container">
+          <div className="leadership-links">
             <div
-              className="link-item2"
+              className="leadership-item"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
-              className="link-item3"
+              className="leadership-item"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item3"
+              className="leadership-item"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item3"
+              className="leadership-item"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

@@ -32,13 +32,19 @@ const Header = ({ backgroundStyle }) => {
         label: "Ground Transportation",
         submenu: [
           {
-            path: "/ground-transportation/ride-share",
+            path: "/at-the-airport/ground-transportation/ride-share-taxis",
             label: "Ride Share, Taxis, Limos",
           },
-          { path: "/ground-transportation/rental-cars", label: "Rental Cars" },
-          { path: "/ground-transportation/shuttles", label: "Shuttles" },
           {
-            path: "/ground-transportation/buses",
+            path: "/at-the-airport/ground-transportation/rental-cars",
+            label: "Rental Cars",
+          },
+          {
+            path: "/at-the-airport/ground-transportation/hotel-shuttles",
+            label: "Shuttles",
+          },
+          {
+            path: "/at-the-airport/ground-transportation/buses-paratransit",
             label: "Buses & Paratransit",
           },
         ],
@@ -280,7 +286,7 @@ const Header = ({ backgroundStyle }) => {
                     </div>
                     {menuItems["traveler-info"]
                       .find((item) => item.label.toLowerCase() === showSubmenu)
-                      .submenu.map((subItem) => (
+                      ?.submenu?.map((subItem) => (
                         <NavLink key={subItem.path} to={subItem.path}>
                           {subItem.label}
                         </NavLink>
@@ -335,7 +341,7 @@ const Header = ({ backgroundStyle }) => {
                     </div>
                     {menuItems["at-the-airport"]
                       .find((item) => item.label === "Ground Transportation")
-                      .submenu.map((subItem) => (
+                      ?.submenu?.map((subItem) => (
                         <NavLink key={subItem.path} to={subItem.path}>
                           {subItem.label}
                         </NavLink>
@@ -348,9 +354,7 @@ const Header = ({ backgroundStyle }) => {
                         <div className="dropdown-item-with-submenu">
                           <NavLink to={item.path}>{item.label}</NavLink>
                           <span
-                            onClick={(e) =>
-                              handleSubmenuToggle(e, item.submenu)
-                            }
+                            onClick={(e) => handleSubmenuToggle(e, item.label)}
                             className="submenu-toggle show-submenu-toggle"
                           >
                             | &gt;
@@ -388,7 +392,7 @@ const Header = ({ backgroundStyle }) => {
                     </div>
                     {menuItems["airport-business"]
                       .find((item) => item.label === showSubmenu)
-                      .submenu.map((subItem) => (
+                      ?.submenu?.map((subItem) => (
                         <NavLink key={subItem.path} to={subItem.path}>
                           {subItem.label}
                         </NavLink>

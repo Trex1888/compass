@@ -53,7 +53,7 @@ const Contact = ({ scrollToSection, openPopup }) => {
           <input
             type="text"
             placeholder="Full Name"
-            class="contact-input full-name-input"
+            className="contact-input full-name-input"
           />
 
           <select className="contact-input">
@@ -179,31 +179,32 @@ const Contact = ({ scrollToSection, openPopup }) => {
         <br />
         <p>Call 515-256-5038 for vehicle assistance.</p>
       </div>
-      <div className="section-links-container1">
-        <div className="section-links1">
+
+      <div className="contact-links-container">
+        <div className="contact-item-links ">
           <div
-            className="link-item1"
+            className="contact-link-items"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item1"
+            className="contact-link-items"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item1"
+            className="contact-link-items"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item1"
+            className="contact-link-items"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

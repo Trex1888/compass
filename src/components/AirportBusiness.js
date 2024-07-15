@@ -259,42 +259,48 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
         {isMainPage ? (
           <div className="about-header">
             <h1>Airport Business</h1>
-            <p>
-              DSM serves as an economic engine for the region and for the State
-              of Iowa. The Airport is also a thriving business on its own with
-              several tenants, business units, and projects being implemented
-              across the 2,600 acre airport campus.
-            </p>
-            <p>
-              Read below for information on business opportunities at the
-              airport including advertising, air cargo operations, charter
-              operations, T-Hangar leases, and more.
-            </p>
-            <div className="button-links">
-              {sections.map((section, index) => (
-                <div key={index} className="section">
-                  <button
-                    className={openSections.includes(section) ? "active" : ""}
-                    onClick={() => toggleSection(section)}
-                  >
-                    {section}
-                    <span className="plus-sign">
-                      {openSections.includes(section) ? "-" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`section-content ${
-                      openSections.includes(section) ? "open" : ""
-                    }`}
-                  >
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
+            <div className="airport-business-top">
+              <p>
+                DSM serves as an economic engine for the region and for the
+                State of Iowa. The Airport is also a thriving business on its
+                own with several tenants, business units, and projects being
+                implemented across the 2,600 acre airport campus.
+              </p>
+              <p>
+                Read below for information on business opportunities at the
+                airport including advertising, air cargo operations, charter
+                operations, T-Hangar leases, and more.
+              </p>
+              <div className="button-links">
+                {sections.map((section, index) => (
+                  <div key={index} className="section">
+                    <button
+                      className={openSections.includes(section) ? "active" : ""}
+                      onClick={() => toggleSection(section)}
+                    >
+                      {section}
+                      <span className="plus-sign">
+                        {openSections.includes(section) ? "-" : "+"}
+                      </span>
+                    </button>
+                    <div
+                      className={`section-content ${
+                        openSections.includes(section) ? "open" : ""
+                      }`}
+                    >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}{" "}
+                For Des Moines Airport Authority Board approved rates and
+                charges, click here. To review the Independent Registered
+                Municipal Advisor letter click here. For additional inquiries,
+                call Airport Administration at (515) 256-5100.
+              </div>
             </div>
             <div className="section-links-container1">
               <div className="section-links1">
@@ -303,7 +309,7 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
                   onClick={() => handleButtonClick("Flight-Status")}
                 >
                   <AiOutlineFolderOpen className="icon" />
-                  <p>Flight Status</p>
+                  <p>Status</p>
                 </div>
                 <div
                   className="link-item1"

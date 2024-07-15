@@ -12,6 +12,9 @@ const Top = ({ scrollToSection, openPopup, backgroundStyle }) => {
   const isNonstopRoute =
     location.pathname === "/flights-and-travel/nonstop-destinations";
   const isFlyRoute = location.pathname === "/lift-dsm";
+  const statusRoute = location.pathname === "/flights-and-travel/flight-status";
+  // const agendaRoute =
+  //   location.pathname === "about-us/authority-leadership/minutes-agenda";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +46,8 @@ const Top = ({ scrollToSection, openPopup, backgroundStyle }) => {
       ? "740px"
       : isNonstopRoute
       ? "450px"
+      : statusRoute
+      ? "450px"
       : "350px",
   };
 
@@ -66,7 +71,7 @@ const Top = ({ scrollToSection, openPopup, backgroundStyle }) => {
                 onClick={() => handleButtonClick("Flight-Status")}
               >
                 <AiOutlineFolderOpen className="icon" />
-                <p>Flight Status</p>
+                <p>Status</p>
               </div>
               <div
                 className="top-link-item"

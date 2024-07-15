@@ -1,11 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Hero2.css";
 
 const Hero2 = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const navigate = useNavigate();
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const handleNavigation = (url) => {
+    navigate(url);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      const element = document.getElementById(url.split("/").pop());
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
   };
 
   const destinations = [
@@ -278,8 +291,22 @@ const Hero2 = () => {
           with individual airlines when booking your travel.
         </p>
         <p>
-          <a href="/airlines">Learn more</a> about the airlines offering air
-          service from the Des Moines International Airport.
+          <button
+            onClick={() =>
+              handleNavigation("/flights-and-travel/airline-information")
+            }
+            style={{
+              cursor: "pointer",
+              background: "none",
+              border: "none",
+              color: "blue",
+              textDecoration: "underline",
+            }}
+          >
+            Learn more
+          </button>{" "}
+          about the airlines offering air service from the Des Moines
+          International Airport.
         </p>
         <h2>
           Explore Direct Flights from Des Moines to the Nation's Top
@@ -353,11 +380,60 @@ const Hero2 = () => {
           <p>
             As you prepare for your trip, find everything you need to know about
             traveling out of the Des Moines International Airport. View{" "}
-            <a href="#">maps and directions</a>, and read about short term and
-            long term <a href="#">parking at the airport</a>. Explore additional
-            travel resources and <a href="#">trip preparation information</a>,
-            and <a href="#">reach out to us</a> if you have any questions about
-            traveling from DSM.
+            <button
+              onClick={() =>
+                handleNavigation("/at-the-airport/maps-directions")
+              }
+              style={{
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                color: "blue",
+                textDecoration: "underline",
+              }}
+            >
+              maps and directions
+            </button>
+            , and read about short term and long term{" "}
+            <button
+              onClick={() => handleNavigation("/at-the-airport/parking")}
+              style={{
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                color: "blue",
+                textDecoration: "underline",
+              }}
+            >
+              parking at the airport
+            </button>
+            . Explore additional travel resources and{" "}
+            <button
+              onClick={() => handleNavigation("/traveler-info")}
+              style={{
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                color: "blue",
+                textDecoration: "underline",
+              }}
+            >
+              trip preparation information
+            </button>
+            , and{" "}
+            <button
+              onClick={() => handleNavigation("/contact")}
+              style={{
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                color: "blue",
+                textDecoration: "underline",
+              }}
+            >
+              reach out to us
+            </button>{" "}
+            if you have any questions about traveling from DSM.
           </p>
           <h2>What airlines fly out of DSM?</h2>
           <p>

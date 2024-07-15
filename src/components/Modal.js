@@ -1,6 +1,19 @@
+import { useEffect } from "react";
 import "../styles/Modal.css";
 
 const Modal = ({ show, handleClose, member }) => {
+  useEffect(() => {
+    if (show) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [show]);
+
   if (!show) return null;
 
   return (

@@ -1,15 +1,62 @@
+.human-header h2 {
+  margin-left: 0 !important;
+}
+
+.human-header h3 {
+  font-weight: bold;
+}
+
+.human-header ul {
+  margin-left: -22px;
+}
+
 .human-trafficking-logos {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  justify-content: space-between;
+  margin-right: 100px;
 }
 
 .human-trafficking-logos img {
-  width: 100px;
+  width: 400px;
   height: auto;
 }
 
 .note {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.human-links-container {
+  margin-top: 125px;
+  margin-bottom: 100px;
+}
+
+.human-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.human-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+}
+
+.human-item:hover {
+  color: #be5a0e;
+}
+
+.human-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
 }

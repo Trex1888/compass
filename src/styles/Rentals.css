@@ -14,6 +14,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  margin-top: 35px;
 }
 
 .rental-cars-table th,
@@ -24,7 +25,7 @@
 }
 
 .rental-cars-table th {
-  background-color: #5c3c90;
+  background-color: #390d68;
   color: white;
 }
 
@@ -33,12 +34,17 @@
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 1px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
+  width: 325px;
+  transition: all 0.3s ease-out 0.3s;
 }
 
 .tutorial-button:hover {
-  background-color: #f39200;
+  background-color: #390d68;
+}
+
+.rentals-header p {
+  padding: 0 !important;
 }

@@ -179,7 +179,9 @@
 }
 
 .link-item1:hover .icon,
+.link-item1:hover,
 .link-item1:hover p {
   color: #d96e2d;
   transition: color 0.3s ease-in-out;
+  cursor: pointer;
 }

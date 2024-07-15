@@ -1,0 +1,17 @@
+.lost-div h2 {
+  margin-left: 0 !important;
+}
+
+.lost-bold a {
+  color: black !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lost-bold ul {
+  padding-left: 20px;
+}
+
+.lost-bold li {
+  margin-bottom: 10px;
+}

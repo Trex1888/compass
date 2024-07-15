@@ -51,15 +51,15 @@
 }
 
 .about-sidebar a:hover {
-  color: rgb(184, 184, 200);
-  transition: background-color 0.35s ease;
+  color: rgb(114, 114, 120);
+  transition: all 0.1s ease-out 0.1s;
 }
 
 .about-sidebar a.active:hover {
   color: #9090a0;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.35s ease;
+  transition: all 0.1s ease-out 0.1s;
 }
 
 .about-sidebar a.active-sub {
@@ -78,7 +78,6 @@
   background-color: #ffffff;
   text-align: left;
   margin-left: -98px;
-  background-image: url("../images/sky.jpg");
 }
 
 .about-header {
@@ -95,6 +94,14 @@
   color: black;
   font-weight: 400;
   margin-top: 35px;
+}
+
+.about-section h2 {
+  color: black;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0 !important;
 }
 
 .about-button {
@@ -139,6 +146,38 @@
 
 img {
   margin: 40px 0;
+}
+
+.about-links-container {
+  margin-top: 125px;
+  margin-bottom: 100px;
+}
+
+.about-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.about-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  border: 1px solid rgb(180, 178, 178);
+}
+
+.about-item:hover {
+  color: #be5a0e;
+}
+
+.about-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
 }
 
 @media (max-width: 768px) {

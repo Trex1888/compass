@@ -37,7 +37,7 @@ const AirService = ({ scrollToSection, openPopup }) => {
   return (
     <div className="about-header">
       {isMainPage && (
-        <div>
+        <div className="service-header">
           <h1>Air Service Development</h1>
           <p>
             The Des Moines Airport Authority works to grow and improve
@@ -54,31 +54,31 @@ const AirService = ({ scrollToSection, openPopup }) => {
         </div>
       )}
       <Outlet />{" "}
-      <div className="section-links-container3">
-        <div className="section-links3">
+      <div className="air-service-links-container">
+        <div className="air-service-links">
           <div
-            className="link-item3"
+            className="air-service-item"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item3"
+            className="air-service-item"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item3"
+            className="air-service-item"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item3"
+            className="air-service-item"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

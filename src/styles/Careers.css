@@ -1,6 +1,6 @@
 .careers-button {
   background-color: #be5a0e;
-  color: #fff;
+  color: white !important;
   padding: 14px 20px;
   border: none;
   border-radius: 2px;
@@ -12,8 +12,9 @@
   font-size: 18px;
 }
 
-.careers-button:hover {
+.careers-button:hover:active {
   background-color: #390d68;
+  color: white !important;
 }
 
 .careers-section {
@@ -23,8 +24,10 @@
 .careers-section h2 {
   color: black;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 40px;
   font-size: 28px;
+  margin-left: 0 !important;
 }
 
 .careers-section h3 {
@@ -61,7 +64,7 @@
   color: #3a3b5a;
   font-size: 1rem;
   transition: all 0.3s ease-out 0.3s;
-  border: 1px solid rgb(180, 178, 178);
+  box-shadow: 0 0 0px 2px #e9e9e9;
 }
 
 .careers-item:hover {

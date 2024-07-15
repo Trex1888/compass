@@ -125,31 +125,31 @@ const Procurement = ({ scrollToSection, openPopup }) => {
           <a href="/">Learn More ⟶</a>
         </div>
       </div>
-      <div className="section-links-container1">
-        <div className="section-links1">
+      <div className="proc-links-container">
+        <div className="proc-links">
           <div
-            className="link-item1"
+            className="proc-item"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item1"
+            className="proc-item"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item1"
+            className="proc-item"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item1"
+            className="proc-item"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

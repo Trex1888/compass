@@ -1,13 +1,23 @@
-.image-container {
+.check-content-with-image {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-.image-container img {
+.check-content {
+  flex: 1;
+}
+
+.check-image-container {
+  flex: 0 0 400px;
+  margin-left: 20px;
+  margin-top: -20px;
+}
+
+.check-image-container img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 1px;
 }
 
 .cancellations-section {
@@ -15,21 +25,44 @@
 }
 
 .cancellations-section h2 {
-  color: #e76f51;
+  color: #be5a0e;
+  font-weight: 600;
+  margin-left: 0 !important;
 }
 
-.contact-button {
+.contact-button1 {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #e76f51;
+  background-color: #be5a0e;
   color: white;
   border: none;
-  border-radius: 5px;
+  width: 225px;
+  border-radius: 1px;
+  margin-top: 10px;
   text-align: center;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-button1:hover {
+  background-color: #390d68;
   cursor: pointer;
 }
 
-.contact-button:hover {
-  background-color: #d65b44;
+.section-links-container1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.section-links1 {
+  display: flex;
+  gap: 15px;
+}
+
+.link-item1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }

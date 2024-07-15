@@ -4,12 +4,24 @@
   margin-bottom: 20px;
   border-radius: 1px;
   overflow: hidden;
-  height: 260px;
+  height: 450px;
 }
 
 .dining-section.purple {
   background-color: #36294a;
   color: white;
+}
+.dining-header p {
+  margin-left: -15px !important;
+  margin-bottom: 25px;
+}
+.dining-section.purple h3,
+p {
+  padding: 5px 15px;
+}
+
+.dining-section.purple h3 {
+  margin-bottom: -10px;
 }
 
 .dining-section.orange {
@@ -41,12 +53,49 @@
   justify-content: center;
 }
 
+.dining-header p {
+  margin-left: -25px;
+}
+
 .dining-content h2 {
   margin-top: 0;
 }
 
 .dining-content p {
   margin-bottom: 0;
+}
+
+.dining-links-container {
+  margin-top: 125px;
+  margin-bottom: 100px;
+}
+
+.dining-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.dining-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease-out 0.3s;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+}
+
+.dining-item:hover {
+  color: #be5a0e;
+}
+
+.dining-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
 }
 
 /* Responsive Design */

@@ -50,7 +50,7 @@
 :focus {
   color: black;
   box-shadow: 0 0 5px 2px #be5a0e;
-  border-color: #be5a0e;
+  border-color: #be5a0e !important;
 }
 
 .newsletter-signup ::placeholder {

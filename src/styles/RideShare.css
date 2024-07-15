@@ -2,11 +2,6 @@
   padding: 20px;
 }
 
-.transportation-options-container h1,
-.transportation-options-container h2 {
-  color: #5c3c90;
-}
-
 .transportation-options-container p {
   margin: 10px 0;
 }
@@ -25,18 +20,20 @@
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
+  transition: all 0.3s ease-out 0.3s;
+  width: 100px;
 }
 
 .ride-share-button.uber {
-  background-color: #000;
+  background-color: #be5a0e;
 }
 
 .ride-share-button.lyft {
-  background-color: #ff00bf;
+  background-color: #be5a0e;
 }
 
 .ride-share-button:hover {
-  opacity: 0.8;
+  background-color: #3a3b5a;
 }
 
 .taxi-service-table,

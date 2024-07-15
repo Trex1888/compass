@@ -93,23 +93,19 @@ select.contact-input {
 }
 
 .contact-button {
-  background-color: #be5a0e;
-  color: white;
-  border: none;
-  padding: 15px;
-  font-size: 1.2em;
-  border-radius: 1px;
-  cursor: pointer;
-  transition: background-color 0.35s ease;
+  background-color: #be5a0e !important;
+  color: white !important;
+  border: none !important;
+  padding: 15px !important;
+  font-size: 1.2em !important;
+  border-radius: 1px !important;
+  cursor: pointer !important;
+  transition: background-color 0.35s ease !important;
 }
 
 .contact-button:hover {
-  background-color: #390d68;
-  color: white;
-}
-
-.bottom a {
-  color: #be5a0e;
+  background-color: #390d68 !important;
+  color: white !important;
 }
 
 .contact-info {
@@ -146,10 +142,6 @@ select.contact-input {
   text-decoration: none;
   font-weight: bold;
   margin-left: 20px;
-}
-
-.bottom {
-  margin-bottom: 75px;
 }
 
 .contact-info a:hover {
@@ -219,14 +211,46 @@ select.contact-input {
   margin-bottom: 10px;
 }
 
-li {
-  text-align: left;
-}
-
 select.contact-input {
   color: black !important;
   font-style: normal;
   cursor: pointer;
+}
+
+.info-box li {
+  text-align: left;
+}
+
+.contact-links-container {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.contact-item-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-link-items {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  border: 1px solid rgb(180, 178, 178);
+}
+
+.contact-link-itemshover {
+  color: #be5a0e;
+}
+
+.contact-link-items:hover {
+  cursor: pointer;
+  color: #be5a0e;
 }
 
 @media (max-width: 768px) {

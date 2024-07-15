@@ -27,8 +27,10 @@ const Home = ({ scrollToSection, openPopup }) => {
   }, []);
 
   const handleButtonClick = (sectionId) => {
-    scrollToSection(sectionId);
-    openPopup();
+    if (typeof scrollToSection === "function") {
+      scrollToSection(sectionId);
+      openPopup();
+    }
   };
 
   return (
@@ -44,7 +46,7 @@ const Home = ({ scrollToSection, openPopup }) => {
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
             className="home-link-item"

@@ -51,7 +51,7 @@ const Tenant = ({ scrollToSection, openPopup }) => {
   ];
 
   return (
-    <div>
+    <div className="about-header">
       {isMainPage && (
         <div className="tenant-container">
           <h1>Tenant Resources</h1>
@@ -64,6 +64,11 @@ const Tenant = ({ scrollToSection, openPopup }) => {
               here
             </Link>
             .
+          </p>
+          <h2>Work Order Requests</h2>
+          <p>
+            Airport tenants in need of assistance can submit a work request
+            through the Work Order Request Portal.{" "}
           </p>
           <div className="button-links">
             <button className="work-order-request">
@@ -101,31 +106,31 @@ const Tenant = ({ scrollToSection, openPopup }) => {
       )}
       <Outlet />
       {isMainPage && (
-        <div className="section-links-container3">
-          <div className="section-links3">
+        <div className="tenant-links-container">
+          <div className="tenant-links">
             <div
-              className="link-item3"
+              className="tenant-item"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
-              className="link-item3"
+              className="tenant-item"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item3"
+              className="tenant-item"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item3"
+              className="tenant-item"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

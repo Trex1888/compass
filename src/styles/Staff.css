@@ -19,11 +19,12 @@
 }
 
 .staff-content h2 {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 20px;
   color: #be5a0e;
   font-weight: 700;
   text-align: left;
+  margin-left: 0 !important;
 }
 
 .staff-members {
@@ -75,7 +76,7 @@
 
 hr {
   width: 100%;
-  color: #a09797;
+  color: #d3d3d3;
   max-width: 1200px;
 }
 

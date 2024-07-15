@@ -94,3 +94,35 @@
 .section-content.open {
   display: block;
 }
+
+.amenity-links-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.amenity-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.amenity-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+}
+
+.amenity-item:hover {
+  color: #be5a0e;
+}
+
+.amenity-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
+}

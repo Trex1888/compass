@@ -57,9 +57,28 @@ const Careers = ({ scrollToSection, openPopup }) => {
             We pride ourselves in being performance-driven with each team member
             playing a role in the success of our airport operations. DSM offers
             competitive pay and benefits. View open positions to join our team
-            and review the Airport Authority <strong>Benefit Summary</strong>.
+            and review the Airport Authority{" "}
+            <strong
+              onClick={() =>
+                window.open(
+                  "https://www.flydsm.com/filesimages/ABOUT%20US/Summary%20of%20Benefits.pdf",
+                  "_blank"
+                )
+              }
+              style={{ cursor: "pointer" }}
+            >
+              Benefit Summary
+            </strong>
+            .
           </p>
-          <button className="careers-button">View Current Openings</button>
+          <button
+            className="careers-button"
+            onClick={() =>
+              window.open("https://flydsm.isolvedhire.com/jobs", "_blank")
+            }
+          >
+            View Current Openings
+          </button>
         </div>
 
         <div className="careers-section">
@@ -135,7 +154,7 @@ const Careers = ({ scrollToSection, openPopup }) => {
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
               className="careers-item"

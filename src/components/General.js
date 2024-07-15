@@ -9,7 +9,6 @@ import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";
 
 const General = ({ scrollToSection, openPopup }) => {
-  const [openSections, setOpenSections] = useState([]);
   const [showAirplane, setShowAirplane] = useState(false);
 
   useEffect(() => {
@@ -34,13 +33,6 @@ const General = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
 
-  const toggleSection = (section) => {
-    if (openSections.includes(section)) {
-      setOpenSections(openSections.filter((sec) => sec !== section));
-    } else {
-      setOpenSections([...openSections, section]);
-    }
-  };
   return (
     <div className="about-header">
       <h1>General Aviation</h1>
@@ -60,12 +52,14 @@ const General = ({ scrollToSection, openPopup }) => {
         Aviation and Des Moines Flying Service have complete aircraft
         maintenance service facilities and personnel.
       </p>
-
       <div className="aviation-service">
         <img src={desmoinesFlyingServiceLogo} alt="Des Moines Flying Service" />
-        <div className="contact-info">
+        <div className="contact-info1">
           <div>
             <p>6307 SW 28th Street</p>
+            <p>Des Moines, IA</p>
+          </div>
+          <div>
             <p className="phone-numbers">800-622-8311</p>
             <p className="phone-numbers">515-256-5300</p>
             <p className="website">
@@ -80,13 +74,16 @@ const General = ({ scrollToSection, openPopup }) => {
           </div>
         </div>
       </div>
-
       <div className="aviation-service">
         <img src={elliottAviationLogo} alt="Elliott Aviation" />
-        <div className="contact-info">
+        <div className="contact-info1">
           <div>
             <p>2800 SW McKinley</p>
+            <p>Des Moines, IA</p>
+          </div>
+          <div>
             <p className="phone-numbers">515-285-6555</p>
+            <p className="phone-numbers">515-256-5300</p>
             <p className="website">
               <a
                 href="http://elliottaviation.com"
@@ -99,13 +96,16 @@ const General = ({ scrollToSection, openPopup }) => {
           </div>
         </div>
       </div>
-
       <div className="aviation-service">
         <img src={modernAviationLogo} alt="Modern Aviation" />
-        <div className="contact-info">
+        <div className="contact-info1">
           <div>
             <p>2700 SW McKinley</p>
+            <p>Des Moines, IA</p>
+          </div>
+          <div className="phones">
             <p className="phone-numbers">515-285-6551</p>
+            <p className="phone-numbers">515-256-5300</p>
             <p className="website">
               <a
                 href="http://modern-aviation.com"
@@ -118,13 +118,16 @@ const General = ({ scrollToSection, openPopup }) => {
           </div>
         </div>
       </div>
-
       <div className="aviation-service">
         <img src={signatureFlightSupportLogo} alt="Signature Flight Support" />
-        <div className="contact-info">
+        <div className="contact-info1">
           <div>
             <p>5600 Fleur Drive</p>
-            <p className="phone-numbers">515-256-5330</p>
+            <p>Des Moines, IA</p>
+          </div>
+          <div className="phones">
+            <p className="phone-numbers">515-285-6551</p>
+            <p className="phone-numbers">515-256-5300</p>
             <p className="website">
               <a
                 href="http://signatureflight.com"
@@ -135,37 +138,38 @@ const General = ({ scrollToSection, openPopup }) => {
               </a>
             </p>
           </div>
-        </div>{" "}
-        <div className="section-links-container3">
-          <div className="section-links3">
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Flight-Status")}
-            >
-              <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
-            </div>
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Departures")}
-            >
-              <GiAirplaneDeparture className="icon" />
-              <p>Departures</p>
-            </div>
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Arrivals")}
-            >
-              <GiAirplaneArrival className="icon" />
-              <p>Arrivals</p>
-            </div>
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Parking")}
-            >
-              <CiParking1 className="icon" />
-              <p>Parking</p>
-            </div>
+        </div>
+      </div>
+
+      <div className="general-links-container">
+        <div className="general-links">
+          <div
+            className="general-item"
+            onClick={() => handleButtonClick("Flight-Status")}
+          >
+            <AiOutlineFolderOpen className="icon" />
+            <p>Status</p>
+          </div>
+          <div
+            className="general-item"
+            onClick={() => handleButtonClick("Departures")}
+          >
+            <GiAirplaneDeparture className="icon" />
+            <p>Departures</p>
+          </div>
+          <div
+            className="general-item"
+            onClick={() => handleButtonClick("Arrivals")}
+          >
+            <GiAirplaneArrival className="icon" />
+            <p>Arrivals</p>
+          </div>
+          <div
+            className="general-item"
+            onClick={() => handleButtonClick("Parking")}
+          >
+            <CiParking1 className="icon" />
+            <p>Parking</p>
           </div>
         </div>
       </div>

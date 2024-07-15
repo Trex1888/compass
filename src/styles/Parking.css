@@ -1,10 +1,22 @@
 .parking-container .link {
-  color: #5c3c90;
+  color: black;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.parking-container .link:hover {
-  text-decoration: underline;
+.parking-container a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.parking-container p {
+  padding: 0 !important;
+}
+
+.parking-container h2 {
+  margin-left: 0 !important;
+  font-weight: 500;
 }
 
 .button-container {
@@ -19,14 +31,15 @@
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 1px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  transition: all 0.3s ease-out 0.3s;
 }
 
 .btn:hover {
-  background-color: #f39200;
+  background-color: #390d68;
 }
 
 .parking-table,
@@ -47,7 +60,7 @@
 
 .parking-table th,
 .estimated-cost-table th {
-  background-color: #5c3c90;
+  background-color: #390d68;
   color: white;
 }
 
@@ -71,7 +84,7 @@
 }
 
 .estimated-cost-table th {
-  background-color: #5c3c90;
+  background-color: #390d68;
   color: white;
 }
 

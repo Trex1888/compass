@@ -45,56 +45,58 @@ const Title9 = ({ scrollToSection, openPopup }) => {
         regardless of whether those programs and activities are federally
         funded.
       </p>
-      <h2>Resources:</h2>
-      <ul>
-        <li>
-          <a
-            href="https://www.ecfr.gov/current/title-49/subtitle-A/part-21"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            DOT Title VI Regulations at 49 CFR Part 21
-          </a>
-        </li>
+      <div className="title9-top">
+        <h2>Resources:</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.ecfr.gov/current/title-49/subtitle-A/part-21"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOT Title VI Regulations at 49 CFR Part 21
+            </a>
+          </li>
 
-        <li>
-          <a href="/">Title VI Plan</a>
-        </li>
-        <li>
-          <a href="/">Title VI Complaint Form</a>
-        </li>
-        <li>
-          <a href="/">DBE Program</a>
-        </li>
-        <li>
-          <a href="/">ACDBE Program</a>
-        </li>
-      </ul>{" "}
-      <div className="section-links-container3">
-        <div className="section-links3">
+          <li>
+            <a href="/">Title VI Plan</a>
+          </li>
+          <li>
+            <a href="/">Title VI Complaint Form</a>
+          </li>
+          <li>
+            <a href="/">DBE Program</a>
+          </li>
+          <li>
+            <a href="/">ACDBE Program</a>
+          </li>
+        </ul>{" "}
+      </div>
+      <div className="title9-links-container">
+        <div className="title9-links">
           <div
-            className="link-item3"
+            className="title9-item"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item3"
+            className="title9-item"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item3"
+            className="title9-item"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item3"
+            className="title9-item"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

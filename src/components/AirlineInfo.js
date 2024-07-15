@@ -76,25 +76,27 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
 
       <div className="about-content">
         <div className="about-header">
-          <h1>Airline Contact Information</h1>
-          <p>
-            DSM is proud to partner with the airlines operating over 20 nonstop
-            routes with limitless connections to exciting destinations for
-            Iowans and visitors alike. To book a flight or for information on an
-            existing reservation, please find airline contact information below.
-          </p>
-
-          <p>
-            For information on charter flight operations, visit our{" "}
-            <strong>
-              <Link to="/airport-business">DSM Airport Business page</Link>
-            </strong>
-            .
-          </p>
+          <div className="airline-info-top">
+            <h1>Airline Contact Information</h1>
+            <p>
+              DSM is proud to partner with the airlines operating over 20
+              nonstop routes with limitless connections to exciting destinations
+              for Iowans and visitors alike. To book a flight or for information
+              on an existing reservation, please find airline contact
+              information below.
+            </p>
+            <p>
+              For information on charter flight operations, visit our{" "}
+              <strong>
+                <Link to="/airport-business">DSM Airport Business page</Link>
+              </strong>
+              .
+            </p>{" "}
+          </div>
         </div>
         <div className="airline-cards">
           <div className="airline-card">
-            <h2>American Airlines</h2>
+            <h2>American</h2>
             <a
               href="https://www.aa.com/"
               target="_blank"
@@ -110,7 +112,7 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
           <div className="airline-card">
-            <h2>Delta Air Lines</h2>
+            <h2>Delta</h2>
             <a
               href="https://www.delta.com/"
               target="_blank"
@@ -126,7 +128,7 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
           <div className="airline-card">
-            <h2>United Airlines</h2>
+            <h2>United</h2>
             <a
               href="https://www.united.com/"
               target="_blank"
@@ -142,7 +144,7 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
           <div className="airline-card">
-            <h2>Southwest USA</h2>
+            <h2>Southwest</h2>
             <a
               href="https://www.southwest.com/"
               target="_blank"
@@ -158,7 +160,7 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
           <div className="airline-card">
-            <h2>Frontier Airlines</h2>
+            <h2>Frontier</h2>
             <a
               href="https://www.flyfrontier.com/"
               target="_blank"
@@ -174,7 +176,7 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
           <div className="airline-card">
-            <h2>Allegiant Air</h2>
+            <h2>Allegiant</h2>
             <a
               href="https://www.allegiantair.com/"
               target="_blank"
@@ -190,31 +192,31 @@ const AirlineInfo = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
         </div>
-        <div className="section-links-flights-travel-container">
-          <div className="section-links-flights-travel">
+        <div className="airline-info-links-container">
+          <div className="airline-info-links">
             <div
-              className="link-item-flights-travel"
+              className="airline-info-links-item"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
-              className="link-item-flights-travel"
+              className="airline-info-links-item"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item-flights-travel"
+              className="airline-info-links-item"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item-flights-travel"
+              className="airline-info-links-item"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

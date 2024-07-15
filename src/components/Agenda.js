@@ -41,11 +41,6 @@ const Agenda = () => {
       category: "Agenda",
     },
     {
-      title: "March 12, 2024, Meeting Minutes",
-      date: "April 15, 2024",
-      category: "Minutes",
-    },
-    {
       title: "March 1, 2024, Des Moines Airport Authority Board Meeting Agenda",
       date: "March 1, 2024",
       category: "Agenda",
@@ -67,45 +62,8 @@ const Agenda = () => {
       category: "Minutes",
     },
     {
-      title:
-        "November 14, 2023, Des Moines Airport Authority Board Meeting Agenda",
-      date: "November 7, 2023",
-      category: "Agenda",
-    },
-    {
       title: "October 10, 2023, Meeting Minutes",
       date: "October 15, 2023",
-      category: "Minutes",
-    },
-    {
-      title:
-        "September 12, 2023, Des Moines Airport Authority Board Meeting Agenda",
-      date: "September 7, 2023",
-      category: "Agenda",
-    },
-    {
-      title: "August 8, 2023, Meeting Minutes",
-      date: "August 15, 2023",
-      category: "Minutes",
-    },
-    {
-      title: "July 11, 2023, Des Moines Airport Authority Board Meeting Agenda",
-      date: "July 7, 2023",
-      category: "Agenda",
-    },
-    {
-      title: "June 13, 2023, Meeting Minutes",
-      date: "June 15, 2023",
-      category: "Minutes",
-    },
-    {
-      title: "May 9, 2023, Des Moines Airport Authority Board Meeting Agenda",
-      date: "May 5, 2023",
-      category: "Agenda",
-    },
-    {
-      title: "April 11, 2023, Meeting Minutes",
-      date: "April 15, 2023",
       category: "Minutes",
     },
   ];
@@ -130,22 +88,19 @@ const Agenda = () => {
             are open to the public.
           </p>
         </div>
-
         <br />
-        <p>
-          <strong>
-            Sign up for board meeting agenda and meeting minute notifications.
-          </strong>
-        </p>
-        <div className="newsletter-signup">
+        <h3>
+          Sign up for board meeting agenda and meeting minute notifications.
+        </h3>
+        <div className="agenda-signup">
           <input type="email" placeholder="Email Address" />
           <button>Subscribe</button>
         </div>
-        <div className="minutes-agenda">
-          <div className="news-category-container">
-            <h1 className="news-title">Minutes & Agenda</h1>
+        <div className="board-container">
+          <div className="agenda-category-container">
+            <h1 className="agenda-title">Minutes & Agenda</h1>
             <select
-              className="news-category"
+              className="agenda-category"
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
@@ -174,12 +129,12 @@ const Agenda = () => {
               </NavLink>
             </div>
           ))}
-          {visibleItems < filteredItems.length && (
-            <button className="load-more-button" onClick={loadMoreItems}>
-              Load More
-            </button>
-          )}
-        </div>
+        </div>{" "}
+        {visibleItems < filteredItems.length && (
+          <button className="load-more-button" onClick={loadMoreItems}>
+            Load More
+          </button>
+        )}
       </div>
     </div>
   );

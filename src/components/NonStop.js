@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/NonStop.css";
-import { Link } from "react-router-dom";
 import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg";
 import Hero2 from "./Hero2";
 
@@ -112,14 +111,16 @@ const NonStop = () => {
 
   return (
     <div className="nonstop-main">
-      <div className="img-container1">
+      <div className="img-container2">
         <img
           src="https://www.flydsm.com/filesimages/FLIGHTS%20AND%20TRAVEL/non-stop-destinations/NonStopMap.png"
           alt=""
         />
       </div>
       <div className="hero1-container">
-        <h1>NonStop Flights</h1>
+        <div className="nonHero">
+          <h1>NonStop Flights</h1>
+        </div>
 
         <div className="carousel-container">
           <button

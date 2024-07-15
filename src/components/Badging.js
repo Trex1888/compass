@@ -90,31 +90,31 @@ const Badging = ({ scrollToSection, openPopup }) => {
         )}
         <Outlet />
       </div>
-      <div className="section-links-container3">
-        <div className="section-links3">
+      <div className="badging-links-container">
+        <div className="badging-links">
           <div
-            className="link-item3"
+            className="badging-item"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item3"
+            className="badging-item"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item3"
+            className="badging-item"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item3"
+            className="badging-item"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

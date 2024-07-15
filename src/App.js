@@ -137,6 +137,7 @@ const AppContent = ({
       "/traveler-info/faq": travlerImage,
       "/traveler-info/real-id": travlerImage,
       "/at-the-airport": airportBusinessImage,
+      "/airport-business/tenant-resources": airportBusinessImage,
       "/at-the-airport/parking": parkingImage,
       "/at-the-airport/shuttle-tracking": peopleImage,
       "/at-the-airport/ground-transportation": groundImage,
@@ -159,12 +160,43 @@ const AppContent = ({
       "/airport-business/bid-procurement-rfps": parkingImage,
       "/airport-business/contractor-resources": parkingImage,
       "/lift-dsm": flyDsmImage,
+      "/contact": "red",
+      "/about-us/careers": "red",
+      "/about-us/authority-leadership": "red",
+      "/about-us/authority-leadership/board-agendas-minutes": "red",
+      "/about-us/authority-leadership/staff": "red",
+      "/at-the-airport/stop-human-trafficking": "red",
+      "/traveler-info/lost-and-found/lost-item-report": "red",
+      "/airport-business/badging/badge-applications-renewal": "red",
+      "/airport-business/badging/badge-faqs": "red",
+      "/airport-business/operations/unmanned-aerial-systems": "red",
+      "/airport-business/operations/airport-driver-training": "red",
+      "/airport-business/operations/rules-regulations": "red",
+      "/airport-business/operations/aircraft-noise-program": "red",
+      "/about-us/authority-leadership/board-agendas-minutes/agenda/june-11-2024-des-moines-airport-authority-board-meeting-agenda":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/agenda/april-9-2024-des-moines-airport-authority-board-meeting-agenda":
+        "red",
+      "about-us/authority-leadership/board-agendas-minutes/agenda/april-9-2024-des-moines-airport-authority-board-meeting-agenda":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/agenda/march-1-2024-des-moines-airport-authority-board-meeting-agenda":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/agenda/january-15-2024-des-moines-airport-authority-board-meeting-agenda":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/minutes/may-14-2024-meeting-minutes":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/minutes/february-13-2024-meeting-minutes":
+        "red",
+      "about-us/authority-leadership/board-agendas-minutes/minutes/december-12-2023-meeting-minutes":
+        "red",
+      "/about-us/authority-leadership/minutes-agenda/may-14-2024-meeting-minutes":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/minutes/december-12-2023-meeting-minutes":
+        "red",
+      "/about-us/authority-leadership/board-agendas-minutes/minutes/october-10-2023-meeting-minutes":
+        "red",
       "/": homeImage,
     };
-
-    if (path === "/contact" || path === "/about-us/careers") {
-      return { backgroundColor: "#e9e9e9" };
-    }
 
     return { backgroundImage: `url(${backgroundImages[path] || homeImage})` };
   };
@@ -175,14 +207,14 @@ const AppContent = ({
     "about-us/news/june-2024-airport-traffic-statistics"
   );
 
-  const RouteWrapper = ({ children, scrollToSection, openPopup }) => {
-    return React.cloneElement(children, { scrollToSection, openPopup });
-  };
-
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
       <Header isTrafficStatistics={isTrafficStatistics} />
-      <Top backgroundStyle={backgroundStyle} />
+      <Top
+        backgroundStyle={backgroundStyle}
+        scrollToSection={scrollToSection}
+        openPopup={openPopup}
+      />
       <div className="main-container">
         <div className="content">
           <Popup
@@ -210,149 +242,122 @@ const AppContent = ({
               <Route
                 path="shuttle-tracking"
                 element={
-                  <RouteWrapper
+                  <Shuttle
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Shuttle />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
-                path="ground-transportation"
+                path="ground-transportation/*"
                 element={
-                  <RouteWrapper
+                  <Ground
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Ground />
-                  </RouteWrapper>
+                  />
                 }
               >
                 <Route
                   path="buses-paratransit"
                   element={
-                    <RouteWrapper
+                    <Buses
                       scrollToSection={scrollToSection}
                       openPopup={openPopup}
-                    >
-                      <Buses />
-                    </RouteWrapper>
+                    />
                   }
                 />
                 <Route
                   path="ride-share-taxis"
                   element={
-                    <RouteWrapper
+                    <RideShare
                       scrollToSection={scrollToSection}
                       openPopup={openPopup}
-                    >
-                      <RideShare />
-                    </RouteWrapper>
+                    />
                   }
                 />
                 <Route
                   path="rental-cars"
                   element={
-                    <RouteWrapper
+                    <Rentals
                       scrollToSection={scrollToSection}
                       openPopup={openPopup}
-                    >
-                      <Rentals />
-                    </RouteWrapper>
+                    />
                   }
                 />
                 <Route
                   path="hotel-shuttles"
                   element={
-                    <RouteWrapper
+                    <ShuttleCar
                       scrollToSection={scrollToSection}
                       openPopup={openPopup}
-                    >
-                      <ShuttleCar />
-                    </RouteWrapper>
+                    />
                   }
                 />
               </Route>
               <Route
                 path="maps-directions"
                 element={
-                  <RouteWrapper
+                  <Maps
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Maps />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
                 path="dining"
                 element={
-                  <RouteWrapper
+                  <Dining
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Dining />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
                 path="services-amenities"
                 element={
-                  <RouteWrapper
+                  <Services
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Services />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
                 path="accessibility"
                 element={
-                  <RouteWrapper
+                  <Accessibility
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Accessibility />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
                 path="general-aviation"
                 element={
-                  <RouteWrapper
+                  <General
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <General />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
                 path="stop-human-trafficking"
                 element={
-                  <RouteWrapper
+                  <Human
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Human />
-                  </RouteWrapper>
+                  />
                 }
               />
               <Route
                 path="title-vi-airport-nondiscrimination-program"
                 element={
-                  <RouteWrapper
+                  <Title9
                     scrollToSection={scrollToSection}
                     openPopup={openPopup}
-                  >
-                    <Title9 />
-                  </RouteWrapper>
+                  />
                 }
               />
             </Route>
-
             <Route
               path="/about-us"
               element={
@@ -401,7 +406,6 @@ const AppContent = ({
               element={<Staff />}
             />
             <Route path="/about-us/news/:title" element={<TrafficStats />} />
-
             <Route
               path="/contact"
               element={
@@ -510,7 +514,6 @@ const AppContent = ({
               path="/flights-and-travel/nonstop-destinations"
               element={<NonStop />}
             />
-
             <Route
               path="/airport-business/*"
               element={
@@ -539,7 +542,7 @@ const AppContent = ({
                 }
               />
               <Route
-                path="badging"
+                path="badging/*"
                 element={
                   <Badging
                     scrollToSection={scrollToSection}
@@ -567,7 +570,7 @@ const AppContent = ({
                 />
               </Route>
               <Route
-                path="operations"
+                path="operations/*"
                 element={
                   <Operations
                     scrollToSection={scrollToSection}
@@ -622,7 +625,7 @@ const AppContent = ({
                 }
               />
               <Route
-                path="tenant-resources"
+                path="tenant-resources/*"
                 element={
                   <Tenants
                     scrollToSection={scrollToSection}
@@ -641,10 +644,7 @@ const AppContent = ({
                 />
               </Route>
             </Route>
-            <Route
-              path="/lift-dsm"
-              element={<LiftDSM backgroundStyle={backgroundStyle} />}
-            />
+            <Route path="/lift-dsm" element={<LiftDSM />} />
           </Routes>
         </div>
       </div>

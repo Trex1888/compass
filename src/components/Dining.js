@@ -32,11 +32,13 @@ const Dining = ({ scrollToSection, openPopup }) => {
   return (
     <div>
       <div className="about-header">
-        <h1>Restaurants & Dining</h1>
-        <p>
-          DSM looks forward to serving you at one of our seven food and beverage
-          locations the next time you travel through the airport.
-        </p>
+        <div className="dining-header">
+          <h1>Restaurants & Dining</h1>
+          <p>
+            DSM looks forward to serving you at one of our seven food and
+            beverage locations the next time you travel through the airport.
+          </p>{" "}
+        </div>
       </div>
       <div className="dining-section purple">
         <img
@@ -45,7 +47,7 @@ const Dining = ({ scrollToSection, openPopup }) => {
           className="dining-image"
         />
         <div className="dining-content">
-          <h2>BERK & CHESTERS Kitchen + Bar</h2>
+          <h3>BERK & CHESTERS Kitchen + Bar</h3>
           <p>
             Pre-security, Berk & Chesters offers travelers an opportunity to
             grab a drink and a light "on the go" snack before or after heading
@@ -53,9 +55,10 @@ const Dining = ({ scrollToSection, openPopup }) => {
             selection of tap, bottled, and canned beers, wine, crafty cocktails
             and margaritas. An expansive variety of seating options are
             available to accommodate families, business meetings and sport
-            teams. Open 10 a.m. to 7 p.m. daily, excluding Saturday's when it
-            closes at 3:30 p.m. *Berk & Chesters currently offers a limited menu
-            including a few sandwiches and a salad.
+            teams. <br /> <br /> Open 10 a.m. to 7 p.m. daily, excluding
+            Saturday's when it closes at 3:30 p.m. <br /> <br />
+            *Berk & Chesters currently offers a limited menu including a few
+            sandwiches and a salad.
           </p>
         </div>
       </div>
@@ -68,11 +71,13 @@ const Dining = ({ scrollToSection, openPopup }) => {
             afternoon - coffee. Hungry, too? Made to order breakfast sandwiches
             and a variety of yogurt, salads, fresh fruit and other quick snacks
             gives Friedrichs' customers tasty convenience at their fingertips.
-            Plus, Friedrichs has a wide selection of health-conscious smoothies.
-            Friedrichs is located on the secure side of the airport terminal,
-            immediately after the TSA Checkpoint. It opens daily at 4:00 a.m.
-            and closes 30 minutes before the departure of the last flight of the
-            day.
+            <br />
+            <br /> Plus, Friedrichs has a wide selection of health-conscious
+            smoothies. <br />
+            <br /> Friedrichs is located on the secure side of the airport
+            terminal, immediately after the TSA Checkpoint. It opens daily at
+            4:00 a.m. and closes 30 minutes before the departure of the last
+            flight of the day.
           </p>
         </div>
         <img
@@ -97,11 +102,11 @@ const Dining = ({ scrollToSection, openPopup }) => {
             breakfast items plus flatbreads made to order. Choose from a
             selection of flavored waters from the Barrillitos ® Aguas Frescas
             line. Arugula & Rye also offers a variety of wine and beer on
-            display at the deli counter. Arugula & Rye is located on the secure
-            side of the airport. Following the TSA Security Checkpoint, it is
-            beyond the police security desk to your left. Service begins daily
-            at 4:30 a.m. and closes 30 minutes before the departure of the last
-            flight of the day.
+            display at the deli counter. <br /> <br /> Arugula & Rye is located
+            on the secure side of the airport. Following the TSA Security
+            Checkpoint, it is beyond the police security desk to your left.
+            Service begins daily at 4:30 a.m. and closes 30 minutes before the
+            departure of the last flight of the day.
           </p>
         </div>
       </div>
@@ -120,10 +125,11 @@ const Dining = ({ scrollToSection, openPopup }) => {
             Iowa’s very own craft beer scene. Flights are available for those
             who venture to try more than one. Beer not your scene? Portermill
             also offers an extensive wine list, Iowa-crafted cocktails, and one
-            of the best Bloody Marys around! Portermill is located on the secure
-            side of the airport following the TSA Security Checkpoint straight
-            ahead. Portermill opens daily at 5:00 a.m. and closes 30 minutes
-            before the departure of the last flight of the day.
+            of the best Bloody Marys around! <br /> <br /> Portermill is located
+            on the secure side of the airport following the TSA Security
+            Checkpoint straight ahead. Portermill opens daily at 5:00 a.m. and
+            closes 30 minutes before the departure of the last flight of the
+            day.
           </p>
         </div>
         <img
@@ -146,9 +152,9 @@ const Dining = ({ scrollToSection, openPopup }) => {
             yogurt parfaits, salads, and yogurt provide travelers with healthy
             and tasty grab-and-go options. Muffins and cookies satisfy your
             sweet tooth, and our selection of bottled beverages provides
-            everybody something to quench their thirst! Mill Supply Co. is
-            located on the secure side of the airport at the start of the A
-            Concourse. It opens daily at 5:00 a.m.
+            everybody something to quench their thirst! <br /> <br /> Mill
+            Supply Co. is located on the secure side of the airport at the start
+            of the A Concourse. It opens daily at 5:00 a.m.
           </p>
         </div>
       </div>
@@ -160,7 +166,10 @@ const Dining = ({ scrollToSection, openPopup }) => {
             gate, and grab a drink and quick snack at Coffee & Bar. Coffee & Bar
             offers a limited menu from Portermill along with coffee and canned
             and bottled alcoholic beverages. Alcoholic beverages will be served
-            Monday through Saturday 6:00 a.m. to close and on Sundays 8:00 a.m.
+            Monday through Saturday 6:00 a.m. to close and on Sundays 8:00 a.m.{" "}
+            <br /> <br /> The Coffee & Bar is open seven days a week from 4:00
+            a.m. daily and closes 30 minutes before the departure of the last
+            flight of the day from the C Concourse.
           </p>
         </div>
         <img
@@ -169,31 +178,31 @@ const Dining = ({ scrollToSection, openPopup }) => {
           className="dining-image"
         />
       </div>{" "}
-      <div className="section-links-container3">
-        <div className="section-links3">
+      <div className="dining-links-container">
+        <div className="dining-links">
           <div
-            className="link-item3"
+            className="dining-item"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item3"
+            className="dining-item"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item3"
+            className="dining-item"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item3"
+            className="dining-item"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

@@ -2,48 +2,85 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  margin-left: 25px;
+  width: 1000px;
 }
 
 .aviation-service img {
-  max-width: 150px;
+  max-width: 160px;
   height: auto;
-  margin-right: 50px;
+  margin-right: 20px;
+  margin-left: 50px;
 }
 
-.aviation-service div {
+.contact-info1 {
   display: flex;
   flex-direction: column;
 }
 
-.aviation-service p {
+.contact-info1 div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 800px;
+}
+
+.contact-info1 p {
   margin: 5px 0;
+  margin-left: 40px;
 }
 
-.aviation-service .contact-info {
-  display: flex;
-  flex-direction: column;
+.phones {
+  margin-left: 50px;
 }
 
-.aviation-service .contact-info div {
-  display: flex;
-  align-items: center;
+.phone-numbers {
+  margin-left: 50px;
 }
 
-.aviation-service .phone-numbers {
-  margin-left: 20px;
+.website {
+  margin-left: 40px;
 }
 
-.aviation-service .website {
-  margin-left: 20px;
+.website a {
+  margin-left: 90px;
 }
 
 .aviation-service a {
-  color: #5c3c90;
+  color: black;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
 }
 
-.aviation-service a:hover {
-  text-decoration: underline;
+.general-links-container {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.general-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.general-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+}
+
+.general-item:hover {
+  color: #be5a0e;
+}
+
+.general-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
 }

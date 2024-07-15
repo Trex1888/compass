@@ -1,0 +1,19 @@
+.real-container {
+  text-align: left;
+}
+
+.real-container a {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.real-container ul {
+  margin-left: -20px;
+}
+
+.real-container h2 {
+  margin-left: 0 !important;
+  font-weight: 500;
+  margin-top: 0px;
+}

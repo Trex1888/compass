@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   gap: 100px;
   justify-content: flex-start;
+  margin-top: 75px;
 }
 
 .airline-card {
@@ -16,22 +17,30 @@
   text-align: center;
 }
 
+.airline-card:hover {
+  transform: scale(1.02);
+}
+
+.airline-info-top a {
+  color: black;
+  text-decoration: none;
+}
+
 .airline-card h2 {
   font-size: 1.5em;
   color: #333;
   font-weight: 500;
   margin-bottom: 10px;
   margin-top: -5px;
+  text-align: center;
+  margin-left: 0 !important;
 }
 
 .airline-card p {
   font-size: 0.9em;
   color: #666;
   margin-bottom: -15px;
-}
-
-.airline-card strong {
-  color: black;
+  text-align: center;
 }
 
 .airline-card a {
@@ -40,23 +49,15 @@
 }
 
 .airline-card a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-.section-links-flights-travel-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  gap: 40px;
-  height: 200px;
-  width: 100%;
-  margin-top: 100px;
-  margin-bottom: -90px;
+.airline-info-links-container {
+  margin-top: 125px;
+  margin-bottom: 100px;
 }
 
-.section-links-flights-travel {
+.airline-info-links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +65,7 @@
   margin-top: 20px;
 }
 
-.link-item-flights-travel {
+.airline-info-links-item {
   display: flex;
   width: 120px;
   flex-direction: column;
@@ -72,14 +73,16 @@
   color: #3a3b5a;
   font-size: 1rem;
   box-shadow: 0 0 0px 2px #e9e9e9;
+  transition: all 0.3s ease-out 0.3s;
 }
 
-.link-item-flights-travel:hover .icon,
-.section-links-flights-travel:hover,
-.link-item-flights-travel:hover p {
-  color: #d96e2d;
+.airline-info-links-item:hover {
+  color: #be5a0e;
+}
+
+.airline-info-links-item:hover {
   cursor: pointer;
-  transition: color 0.3s ease-in-out;
+  color: #be5a0e;
 }
 
 /* Responsive Design */

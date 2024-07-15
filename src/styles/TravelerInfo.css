@@ -1,3 +1,21 @@
+.travel-information {
+  text-align: left;
+  margin-left: 0 !important;
+}
+
+.travel-information h2 {
+  margin-left: 0 !important;
+}
+
+.travel-information a {
+  color: black;
+  text-decoration: none;
+}
+
+.travel-information ol {
+  margin-left: -20px !important;
+}
+
 .section-links-container4 {
   position: relative;
   display: flex;
@@ -8,7 +26,7 @@
   height: 200px;
   width: 100%;
   margin-top: 80px;
-  margin-bottom: -150px;
+  margin-bottom: -25px;
 }
 
 .section-links4 {

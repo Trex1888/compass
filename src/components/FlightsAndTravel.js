@@ -148,31 +148,31 @@ const FlightsAndTravel = ({ scrollToSection, openPopup }) => {
             </div>
           </div>
         </div>
-        <div className="section-links-container-flights">
-          <div className="section-links-flights">
+        <div className="flightsAndTravel-links-container">
+          <div className="flightsAndTravel-links">
             <div
-              className="link-item-flights"
+              className="flightsAndTravel-item"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
               <p>Flight Status</p>
             </div>
             <div
-              className="link-item-flights"
+              className="flightsAndTravel-item"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item-flights"
+              className="flightsAndTravel-item"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item-flights"
+              className="flightsAndTravel-item"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

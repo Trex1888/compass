@@ -91,31 +91,31 @@ const Operations = ({ scrollToSection, openPopup }) => {
         )}
         <Outlet />
       </div>
-      <div className="section-links-container3">
-        <div className="section-links3">
+      <div className="operations-links-container">
+        <div className="operations-links">
           <div
-            className="link-item3"
+            className="operations-item"
             onClick={() => handleButtonClick("Flight-Status")}
           >
             <AiOutlineFolderOpen className="icon" />
-            <p>Flight Status</p>
+            <p>Status</p>
           </div>
           <div
-            className="link-item3"
+            className="operations-item"
             onClick={() => handleButtonClick("Departures")}
           >
             <GiAirplaneDeparture className="icon" />
             <p>Departures</p>
           </div>
           <div
-            className="link-item3"
+            className="operations-item"
             onClick={() => handleButtonClick("Arrivals")}
           >
             <GiAirplaneArrival className="icon" />
             <p>Arrivals</p>
           </div>
           <div
-            className="link-item3"
+            className="operations-item"
             onClick={() => handleButtonClick("Parking")}
           >
             <CiParking1 className="icon" />

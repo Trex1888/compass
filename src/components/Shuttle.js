@@ -54,37 +54,36 @@ const Shuttle = ({ scrollToSection, openPopup }) => {
             alt="Shuttle Map"
           />
         </div>
-
-        <div className="section-links-container3">
-          <div className="section-links3">
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Flight-Status")}
-            >
-              <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
-            </div>
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Departures")}
-            >
-              <GiAirplaneDeparture className="icon" />
-              <p>Departures</p>
-            </div>
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Arrivals")}
-            >
-              <GiAirplaneArrival className="icon" />
-              <p>Arrivals</p>
-            </div>
-            <div
-              className="link-item3"
-              onClick={() => handleButtonClick("Parking")}
-            >
-              <CiParking1 className="icon" />
-              <p>Parking</p>
-            </div>
+      </div>{" "}
+      <div className="shuttle-links-container">
+        <div className="shuttle-links">
+          <div
+            className="shuttle-item"
+            onClick={() => handleButtonClick("Flight-Status")}
+          >
+            <AiOutlineFolderOpen className="icon" />
+            <p>Status</p>
+          </div>
+          <div
+            className="shuttle-item"
+            onClick={() => handleButtonClick("Departures")}
+          >
+            <GiAirplaneDeparture className="icon" />
+            <p>Departures</p>
+          </div>
+          <div
+            className="shuttle-item"
+            onClick={() => handleButtonClick("Arrivals")}
+          >
+            <GiAirplaneArrival className="icon" />
+            <p>Arrivals</p>
+          </div>
+          <div
+            className="shuttle-item"
+            onClick={() => handleButtonClick("Parking")}
+          >
+            <CiParking1 className="icon" />
+            <p>Parking</p>
           </div>
         </div>
       </div>

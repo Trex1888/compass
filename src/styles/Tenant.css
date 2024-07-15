@@ -1,0 +1,66 @@
+.tenant-container a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.tenant-container h2 {
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+
+.button-links {
+  display: flex;
+  gap: 10px;
+}
+
+.work-order-request,
+.video-request-form {
+  padding: 10px 20px;
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-out 0.3s;
+  width: 300px;
+  font-size: 16px;
+}
+
+.work-order-request:hover,
+.video-request-form:hover {
+  background-color: #390d68;
+  color: white !important;
+}
+
+.tenant-links-container {
+  margin-top: 125px;
+  margin-bottom: 100px;
+}
+
+.tenant-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.tenant-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  box-shadow: 0 0 0px 2px #e9e9e9;
+}
+
+.tenants-item:hover {
+  color: #be5a0e;
+}
+
+.tenants-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
+}

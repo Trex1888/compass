@@ -91,7 +91,6 @@ const About = ({ scrollToSection, openPopup }) => {
           src="https://www.flydsm.com/filesimages/ABOUT%20US/Old%20Terminal.png"
           alt=""
         />
-
         <div className="about-section">
           <h2>DSM History</h2>
           <p>
@@ -152,31 +151,31 @@ const About = ({ scrollToSection, openPopup }) => {
           </p>
         </div>
 
-        <div className="section-links-container1">
-          <div className="section-links1">
+        <div className="about-links-container">
+          <div className="about-links">
             <div
-              className="link-item1"
+              className="about-item"
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
-              className="link-item1"
+              className="about-item"
               onClick={() => handleButtonClick("Departures")}
             >
               <GiAirplaneDeparture className="icon" />
               <p>Departures</p>
             </div>
             <div
-              className="link-item1"
+              className="about-item"
               onClick={() => handleButtonClick("Arrivals")}
             >
               <GiAirplaneArrival className="icon" />
               <p>Arrivals</p>
             </div>
             <div
-              className="link-item1"
+              className="about-item"
               onClick={() => handleButtonClick("Parking")}
             >
               <CiParking1 className="icon" />

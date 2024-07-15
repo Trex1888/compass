@@ -63,7 +63,7 @@ const Rules = ({ scrollToSection, openPopup }) => {
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
               className="link-item3"

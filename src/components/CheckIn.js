@@ -34,37 +34,41 @@ const CheckIn = ({ scrollToSection, openPopup }) => {
     <div>
       <div className="about-header">
         <h1>Check-in Information</h1>
-        <p>
-          Check-in for most airlines begins at least 24-hours before the
-          departing flight. Passengers can check-in online, at the airport
-          ticketing kiosks (except for Allegiant), or at the airline ticket
-          counter.
-        </p>
-        <p>
-          Airlines recommend arriving at the airport at least a hour and an half
-          to two hours before your flight’s scheduled departure. If you are
-          checking luggage, you can use the self-bag tagging kiosk for all
-          airlines except Allegiant and Southwest, or stop at your airline’s
-          ticket counter to check your bag. DSM does not have curbside check-in
-          for luggage. If you plan to use carry-on luggage only, be sure to
-          check with your airline on the size and weight allowance and any
-          associated fees with carry-on luggage. When traveling around holidays,
-          it is suggested that additional time for ticketing and screening is
-          allowed.
-        </p>
-        <p>
-          Ticket counters are in the north end of the main terminal except for
-          Southwest Airlines which is in the south end of the terminal near the
-          baggage claim. Each airline opens its ticket counters based on their
-          flight schedules. Please work directly with your airline to determine
-          when their ticket counter will be open.
-        </p>
-        <div className="image-container">
-          <img
-            src="https://www.flydsm.com/filesimages/TRAVELER%20INFO/Ticketing%20-%20busy.jpg"
-            alt="Check-in Kiosk"
-            className="checkin-image"
-          />
+        <div className="check-content-with-image">
+          <div className="check-content">
+            <p>
+              Check-in for most airlines begins at least 24-hours before the
+              departing flight. Passengers can check-in online, at the airport
+              ticketing kiosks (except for Allegiant), or at the airline ticket
+              counter.
+            </p>
+            <p>
+              Airlines recommend arriving at the airport at least a hour and an
+              half to two hours before your flight’s scheduled departure. If you
+              are checking luggage, you can use the self-bag tagging kiosk for
+              all airlines except Allegiant and Southwest, or stop at your
+              airline’s ticket counter to check your bag. DSM does not have
+              curbside check-in for luggage. If you plan to use carry-on luggage
+              only, be sure to check with your airline on the size and weight
+              allowance and any associated fees with carry-on luggage. When
+              traveling around holidays, it is suggested that additional time
+              for ticketing and screening is allowed.
+            </p>
+            <p>
+              Ticket counters are in the north end of the main terminal except
+              for Southwest Airlines which is in the south end of the terminal
+              near the baggage claim. Each airline opens its ticket counters
+              based on their flight schedules. Please work directly with your
+              airline to determine when their ticket counter will be open.
+            </p>
+          </div>
+          <div className="check-image-container">
+            <img
+              src="https://www.flydsm.com/filesimages/TRAVELER%20INFO/Ticketing%20-%20busy.jpg"
+              alt="Check-in Kiosk"
+              className="check-image"
+            />
+          </div>
         </div>
         <div className="cancellations-section">
           <h2>Cancellations & Delays</h2>
@@ -76,11 +80,11 @@ const CheckIn = ({ scrollToSection, openPopup }) => {
           </p>
           <Link
             to="/flights-and-travel/airline-information"
-            className="contact-button"
+            className="contact-button1"
           >
             Contact Your Airline
           </Link>
-        </div>{" "}
+        </div>
         <div className="section-links-container1">
           <div className="section-links1">
             <div
@@ -88,7 +92,7 @@ const CheckIn = ({ scrollToSection, openPopup }) => {
               onClick={() => handleButtonClick("Flight-Status")}
             >
               <AiOutlineFolderOpen className="icon" />
-              <p>Flight Status</p>
+              <p>Status</p>
             </div>
             <div
               className="link-item1"
