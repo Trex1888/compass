@@ -102,7 +102,6 @@
   background-color: #f39200;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .airport-business-content {
     padding: 10px;
