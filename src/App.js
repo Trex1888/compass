@@ -34,7 +34,7 @@ import RealId from "./components/RealId";
 import TsaPre from "./components/TsaPre";
 import LostItem from "./components/LostItem";
 import Contractor from "./components/Contractor";
-import Procurement from "./components/Procurement";
+// import Procurement from "./components/Procurement";
 import Badging from "./components/Badging";
 import BadgeApp from "./components/BadgeApp";
 import BadgeFaqs from "./components/BadgeFaqs";
@@ -532,7 +532,7 @@ const AppContent = ({
                   />
                 }
               />
-              <Route
+              {/* <Route
                 path="bid-procurement-rfps"
                 element={
                   <Procurement
@@ -540,7 +540,7 @@ const AppContent = ({
                     openPopup={openPopup}
                   />
                 }
-              />
+              /> */}
               <Route
                 path="badging/*"
                 element={
