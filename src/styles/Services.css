@@ -1,14 +1,11 @@
-.services-container {
-  padding: 20px;
-}
-
 .services-container h1 {
   color: #36294a;
   margin-bottom: 20px;
+  margin-left: 0 !important;
 }
 
 .services-container p {
-  margin: 10px 0;
+  margin-bottom: 90px;
 }
 
 .button-links {
@@ -24,7 +21,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px;
+  padding-bottom: 10px;
+  margin-top: -15px;
   background: white;
   color: #36294a;
   outline: none;
@@ -33,7 +31,6 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  margin-top: 5px;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
@@ -64,13 +61,14 @@
 .section button:hover {
   background: #36294a;
   color: white;
-  transform: scale(1.05);
+  transform: scaleX(1.01);
 }
 
 .section button .plus-sign {
-  font-size: 24px;
+  font-size: 40px;
   color: #36294a;
   transition: transform 0.3s;
+  font-weight: normal;
 }
 
 .section button.active .plus-sign {

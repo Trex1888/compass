@@ -1,3 +1,7 @@
+import React from "react";
+import { BsPersonWalking } from "react-icons/bs";
+import { IoBusOutline } from "react-icons/io5";
+import { MdLocationOn } from "react-icons/md";
 import "../styles/Parking.css";
 
 const Parking = () => {
@@ -11,32 +15,47 @@ const Parking = () => {
   return (
     <div className="about-header">
       <div className="parking-container">
-        <h1>Airport Parking</h1>
-        <p>
-          DSM offers convenient onsite parking starting at $7 per day along with
-          free shuttles to the terminal from economy lots. The economy lots are
-          surface lots and are uncovered. The parking garage provides covered
-          parking starting at $20/day. Reserved parking is not an option;
-          however, shuttles run continuously to the Grey, Red, and Blue Lots
-          ensure no matter which lot you park in you have swift access to the
-          terminal. Track the{" "}
-          <a
-            href="https://buswhere.com/dsm/routes/grey-blue_route"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>Grey-Blue Route</strong>
-          </a>{" "}
-          and the{" "}
-          <a
-            href="https://buswhere.com/dsm/routes/red_route"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <strong>Red Route</strong>
-          </a>
-          .
-        </p>
+        <h1
+          style={{
+            fontWeight: 300,
+            marginTop: "75px",
+            marginBottom: "2px",
+            fontSize: "34px",
+          }}
+        >
+          Airport Parking
+        </h1>
+        <div className="parking-header">
+          <p>
+            DSM offers convenient onsite parking starting at $7 per day along
+            with free shuttles to the terminal from economy lots. The economy
+            lots are surface lots and are uncovered. The parking garage provides
+            covered parking starting at $20/day. Reserved parking is not an
+            option; however, shuttles run continuously to the Grey, Red, and
+            Blue Lots ensure no matter which lot you park in you have swift
+            access to the terminal. Track the{" "}
+            <a
+              href="https://buswhere.com/dsm/routes/grey-blue_route"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>Grey-Blue Route</strong>
+            </a>{" "}
+            and the{" "}
+            <a
+              href="https://buswhere.com/dsm/routes/red_route"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>Red Route</strong>
+            </a>
+            .
+          </p>
+          <img
+            src="https://www.flydsm.com/filesimages/AT%20THE%20AIRPORT/DSMAirport_ParkDSM-Color.png"
+            alt="Park DSM"
+          />
+        </div>
         <h3>Cell Phone Waiting Lot </h3>
         <p>
           Use the convenient{" "}
@@ -69,6 +88,7 @@ const Parking = () => {
         </p>
         <div className="button-container">
           <button
+            style={{ width: "300px" }}
             className="btn"
             onClick={() =>
               window.open(
@@ -91,7 +111,7 @@ const Parking = () => {
             Parking Estimator
           </button>
         </div>
-        <h2>Real-time Parking Availability</h2>
+        <h3>Real-time Parking Availability</h3>
         <table className="parking-table">
           <thead>
             <tr>
@@ -104,69 +124,149 @@ const Parking = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Garage Hourly</td>
               <td>
-                First 20 minutes Free <br />
-                $2 per hour
+                <span className="dot dot-green"></span>Garage Hourly
+                <span className="park-icons">
+                  <MdLocationOn className="park-icon" />
+                  <BsPersonWalking className="park-icon" />
+                </span>
+              </td>
+              <td>
+                <div className="main-text">
+                  First 20 minutes Free
+                  <span className="small-text">$2 per hour</span>
+                </div>
               </td>
               <td>$48/day</td>
               <td>43%</td>
               <td>197</td>
             </tr>
             <tr>
-              <td>Garage Daily (Long Term)</td>
-              <td>$1 every 20 minutes</td>
+              <td>
+                <span className="dot dot-red"></span>Garage Daily (Long Term)
+                <span className="park-icons">
+                  <MdLocationOn className="park-icon" />
+                  <BsPersonWalking className="park-icon" />
+                </span>
+              </td>
+              <td>
+                <div className="main-text">
+                  $1 every 20 minutes
+                  <span className="small-text">$20/day</span>
+                </div>
+              </td>
               <td>$20/day</td>
               <td>83%</td>
               <td>240</td>
             </tr>
             <tr>
-              <td>Blue Economy Lot</td>
-              <td>$2 per hour</td>
+              <td>
+                <span className="dot dot-red"></span>Blue Economy Lot
+                <span className="park-icons">
+                  <MdLocationOn className="park-icon" />
+                  <BsPersonWalking className="park-icon" />
+                  <IoBusOutline className="park-icon" />
+                </span>
+              </td>
+              <td>
+                <div className="main-text">
+                  $2 per hour
+                  <span className="small-text">$12/day</span>
+                </div>
+              </td>
               <td>$12/day</td>
               <td>96%</td>
               <td>22</td>
             </tr>
             <tr>
-              <td>Red Economy Lot</td>
-              <td>$2 per hour</td>
+              <td>
+                <span className="dot dot-green"></span>Red Economy Lot
+                <span className="park-icons">
+                  <MdLocationOn className="park-icon" />
+                  <IoBusOutline className="park-icon" />
+                </span>
+              </td>
+              <td>
+                <div className="main-text">
+                  $2 per hour
+                  <span className="small-text">$8/day</span>
+                </div>
+              </td>
               <td>$8/day</td>
               <td>40%</td>
               <td>446</td>
             </tr>
             <tr>
-              <td>Grey Economy Lot</td>
-              <td>$2 per hour</td>
+              <td>
+                <span className="dot dot-green"></span>Grey Economy Lot
+                <span className="park-icons">
+                  <MdLocationOn className="park-icon" />
+                  <IoBusOutline className="park-icon" />
+                </span>
+              </td>
+              <td>
+                <div className="main-text">
+                  $2 per hour
+                  <span className="small-text">$7/day</span>
+                </div>
+              </td>
               <td>$7/day</td>
               <td>64%</td>
               <td>622</td>
             </tr>
           </tbody>
         </table>
-        <h2 id="parking-estimator">Estimate Your Parking Costs</h2>
+        <h2
+          style={{
+            marginTop: "60px",
+            marginBottom: "-5px",
+          }}
+          id="parking-estimator"
+        >
+          Estimate Your Parking Costs
+        </h2>
         <p>
           Enter your entry and exit date below to calculate your estimated
           parking costs.
         </p>
         <form className="parking-form">
           <label>
-            Entry Date
+            <span className="label-text">
+              Entry Date<span className="required-asterisk">*</span>
+            </span>
             <input type="date" required />
           </label>
           <label>
-            Entry Time
-            <input type="time" required />
-          </label>
-          <label>
-            Exit Date
-            <input type="date" required />
-          </label>
-          <label>
-            Exit Time
+            <span className="label-text">
+              Entry Time<span className="required-asterisk">*</span>
+            </span>
             <input type="time" required />
           </label>
         </form>
-        <h2>Estimated Parking Costs</h2>
+
+        <form className="parking-form">
+          <label>
+            <span className="label-text">
+              Exit Date<span className="required-asterisk">*</span>
+            </span>
+            <input type="date" required />
+          </label>
+          <label>
+            <span className="label-text">
+              Exit Time<span className="required-asterisk">*</span>
+            </span>
+            <input type="time" required />
+          </label>
+        </form>
+
+        <h2
+          style={{
+            marginTop: "60px",
+            marginBottom: "40px",
+          }}
+        >
+          Estimated Parking Costs
+        </h2>
         <table className="estimated-cost-table">
           <thead>
             <tr>
@@ -197,7 +297,24 @@ const Parking = () => {
             </tr>
           </tbody>
         </table>
-        <h2>Parking Map</h2>
+        <p
+          style={{
+            fontSize: "12px",
+            fontStyle: "italic",
+            marginTop: "70px",
+            marginBottom: "70px",
+            lineHeight: "2",
+          }}
+        >
+          Parking estimates based on entry and exit times provided above, actual
+          parking charges will be based upon your actual entry and exit from the
+          parking lot based on currently posted parking rates.
+        </p>
+
+        <h2 style={{ fontWeight: "bold", marginBottom: "-20px" }}>
+          Parking Map
+        </h2>
+
         <p>
           Quickly locate the lot of your choice with this color-coded{" "}
           <a
@@ -218,8 +335,8 @@ const Parking = () => {
           does not offer or accept coupons.
         </p>
 
-        <p>
-          <strong>Construction Alert:</strong> During construction of the new
+        <p style={{ marginBottom: "75px" }}>
+          <strong>*CONSTRUCTION ALERT:</strong> During construction of the new
           parking garage there will be impacts to several airport lots. The Cell
           Phone Waiting Lot is across from the Blue Lot. While surface lot
           parking will be impacted temporarily during construction, over 1,100
@@ -235,7 +352,7 @@ const Parking = () => {
           website.
         </p>
         <h2>Car Trouble?</h2>
-        <p style={{ marginBottom: "20px" }}>
+        <p style={{ marginBottom: "75px", marginTop: "-10px" }}>
           If you are parked in an airport parking lot and experience car issues,
           please contact{" "}
           <a href="tel:5152565000" className="link">

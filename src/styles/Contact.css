@@ -44,15 +44,39 @@
 select.contact-input {
   margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid black !important;
+  border: 2px solid black !important;
   border-radius: 1px;
   color: black;
   font-size: 1.1em;
-  transition: box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.contact-textarea {
+.contact-form .contact-textarea {
+  border: 2px solid black !important;
+}
+
+.contact-form input {
+  border: 2px solid black !important;
+}
+
+.contact-form input {
+  border: 2px solid black !important;
+}
+
+.contact-form input:hover {
+  border-color: #be5a0e !important;
+}
+
+.contact-form textarea:hover {
+  border-color: #be5a0e !important;
+}
+
+.contact-form select:hover {
+  border-color: #be5a0e !important;
+}
+
+.contact-textarea input {
   font-size: 30px;
+  border: 2px solid black !important;
 }
 
 .contact-input::placeholder,
@@ -68,12 +92,14 @@ select.contact-input {
 
 .contact-input:hover,
 .contact-input:focus,
+.contact-input:active,
 .contact-textarea:hover,
 .contact-textarea:focus,
+.contact-textarea:active,
 select.contact-input:hover,
-select.contact-input:focus {
+select.contact-input:focus,
+select.contact-input:active {
   color: black;
-  box-shadow: 0 0 5px 2px #be5a0e;
   border-color: #be5a0e;
 }
 
@@ -81,7 +107,7 @@ select.contact-input:focus {
 .contact-textarea,
 select.contact-input {
   box-shadow: none;
-  border-color: #ddd;
+  border-color: black;
 }
 
 .contact-textarea {
@@ -93,19 +119,19 @@ select.contact-input {
 }
 
 .contact-button {
-  background-color: #be5a0e !important;
-  color: white !important;
-  border: none !important;
-  padding: 15px !important;
-  font-size: 1.2em !important;
-  border-radius: 1px !important;
-  cursor: pointer !important;
-  transition: background-color 0.35s ease !important;
+  background-color: #be5a0e;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.2em;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
 }
 
 .contact-button:hover {
-  background-color: #390d68 !important;
-  color: white !important;
+  background-color: #390d68;
+  color: white;
 }
 
 .contact-info {
@@ -124,7 +150,7 @@ select.contact-input {
   margin-top: 80px;
   font-size: 22px;
   color: #4a4a4a;
-  margin-left: 20px;
+  margin-left: 20px !important;
   margin-bottom: -5px;
 }
 
@@ -212,7 +238,7 @@ select.contact-input {
 }
 
 select.contact-input {
-  color: black !important;
+  color: black;
   font-style: normal;
   cursor: pointer;
 }

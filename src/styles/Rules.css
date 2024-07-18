@@ -1,0 +1,10 @@
+.documents-list {
+  margin-bottom: 325px;
+}
+
+.documents-list h2 {
+  margin-left: 0 !important;
+  font-weight: 500;
+  margin-top: -5px;
+  margin-bottom: 50px;
+}

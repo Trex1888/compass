@@ -1,14 +1,5 @@
-body {
-  color: #4a4a4a;
-}
-
-.hero2-section {
-  padding: 50px 20px;
-  background-color: white;
-}
-
 .hero2-container {
-  max-width: 1200px;
+  max-width: 1275px;
   margin: 0 auto;
 }
 
@@ -16,7 +7,7 @@ body {
   font-size: 36px;
   color: black;
   font-weight: 500;
-  margin-top: -25px;
+  margin-top: 35px;
 }
 
 .hero2-container h2 {
@@ -40,7 +31,7 @@ body {
 .accordion-item {
   margin-bottom: 0;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 1px;
   overflow: hidden;
 }
 
@@ -50,12 +41,11 @@ body {
   align-items: center;
   cursor: pointer;
   background-color: #ffffff;
-  padding: 10px 15px;
+  padding-left: 20px;
 }
 
 .accordion-header span {
   font-size: 30px;
-  font-weight: 500;
   margin-right: 5px;
 }
 
@@ -68,17 +58,17 @@ body {
 
 .accordion-header .header-content h4 {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 15px;
   flex: 1;
+  font-weight: 500;
 }
 
 .accordion-header .header-content p {
   margin: 0 !important;
-  padding-left: 20px;
+  margin-left: -88px !important;
   text-align: left;
   flex: 2;
 }
-
 .accordion-content {
   padding: 15px;
   display: flex;
@@ -94,27 +84,29 @@ body {
   margin-right: 40px;
 }
 
-.accordion-content p {
-  margin-bottom: 10px;
-  margin-left: 60px;
+.accordion-text-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .accordion-content a {
   color: #be5a0e;
   font-weight: bold;
-  margin-left: 60px;
+  margin-bottom: 10px;
 }
 
 .accordion-content h5 {
   margin-bottom: 5px;
   font-weight: bold;
-  margin-left: 60px;
 }
 
-.table-header {
+.accordion-content p {
+  margin-bottom: 10px;
+}
+
+.table-header1 {
   display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
   border: 1px solid #ddd;
   border-bottom: none;
@@ -123,8 +115,12 @@ body {
   color: #4a4a4a;
 }
 
-.table-header span:first-child {
-  margin-right: 200px;
+.table-header1 span {
+  padding-left: 45px;
+}
+
+.table-header1 span:first-child {
+  margin-right: 210px;
 }
 
 .select-airline {
@@ -142,17 +138,17 @@ body {
 
 .select-airline select {
   width: 200px;
-  height: 50px;
+  height: 45px;
   font-size: 16px;
   padding-left: 5px;
   color: gray;
-  width: 225px;
-  border: 2px solid darkblue;
+  width: 240px;
+  border: 1px solid darkblue;
   cursor: pointer;
 }
 
 .select-airline select:focus {
-  border: 2px solid darkblue !important;
+  border: 1px solid darkblue !important;
 }
 
 .accordion-item.active {

@@ -7,6 +7,8 @@ import { CiParking1 } from "react-icons/ci";
 
 const Unmanned = ({ scrollToSection, openPopup }) => {
   const [showAirplane, setShowAirplane] = useState(false);
+  const [idOpen, setIdOpen] = useState(false);
+  const [checkpointOpen, setCheckpointOpen] = useState(false);
   const location = useLocation();
   const isMainPage = location.pathname === "/airport-business/operations";
 
@@ -43,7 +45,7 @@ const Unmanned = ({ scrollToSection, openPopup }) => {
           Moines International Airport Air Traffic Control Tower at (515)
           974-8010 during normal business hours.
         </p>
-        <p>
+        <p style={{ marginBottom: "100px" }}>
           To help you on your UAS flying journey, check out the{" "}
           <a
             href="https://www.faa.gov/"
@@ -64,38 +66,72 @@ const Unmanned = ({ scrollToSection, openPopup }) => {
           educational website for recreational users, business users, and public
           entities to learn how to fly responsibly.
         </p>
-        <div className="regulation-section">
-          <h2>FAA Drone Regulations</h2>
-          <p>
-            When you fly a UAS or Drone in the United States, it is your
-            responsibility to understand and abide by the rules and regulations.
-            Review the{" "}
-            <a
-              href="https://www.faa.gov/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              FAA's DroneZone website
-            </a>{" "}
-            to stay up-to-date.
-          </p>
-        </div>
-        <div className="regulation-section">
-          <h2>LAANC Online Airport Notification and Authorization</h2>
-          <p>
-            LAANC (Low Altitude Authorization and Notification Capability)
-            automates the application and approval process for UAS or{" "}
-            <a
-              href="https://www.faa.gov/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Drone flight authorization
-            </a>{" "}
-            at the Des Moines International Airport. LAANC provides access to
-            controlled airspace near airports through real-time processing of
-            flight authorizations in controlled airspace.
-          </p>
+        <div className="tips-section">
+          <div className="button-links">
+            <div className="section">
+              <button
+                className={idOpen ? "active" : ""}
+                onClick={() => setIdOpen(!idOpen)}
+              >
+                FAA Drone Regulations
+                <span className="plus-sign">{idOpen ? "-" : "+"}</span>
+              </button>
+              <div className={`section-content ${idOpen ? "open" : ""}`}>
+                <p>
+                  When you fly a UAS or Drone in the United States, it is your
+                  responsibility to understand and abide by the rules and
+                  regulations. Review the{" "}
+                  <a
+                    href="https://www.faa.gov/uas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    FAA's DroneZone website
+                  </a>
+                  . to stay up-to-date.
+                </p>
+              </div>
+            </div>
+            <div className="section" style={{ marginBottom: "225px" }}>
+              <button
+                className={checkpointOpen ? "active" : ""}
+                onClick={() => setCheckpointOpen(!checkpointOpen)}
+              >
+                LAANC Online Airport Notification and Authorization
+                <span className="plus-sign">{checkpointOpen ? "-" : "+"}</span>
+              </button>
+              <div
+                className={`section-content ${checkpointOpen ? "open" : ""}`}
+              >
+                <p>
+                  LAANC (Low Altitude Authorization and Notification Capability)
+                  automates the application and approval process for UAS or{" "}
+                  <a
+                    href="https://www.faa.gov/uas/programs_partnerships/data_exchange"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Drone flight authorization
+                  </a>{" "}
+                  at the Des Moines International Airport. LAANC provides access
+                  to controlled airspace near airports through real-time
+                  processing of flight authorizations in controlled airspace.
+                  LAANC also provides FAA's Air Traffic visibility into where
+                  and when planned drone operations will take place.
+                  <p>
+                    {" "}
+                    <a
+                      href="https://faa.maps.arcgis.com/apps/webappviewer/index.html?id=9c2e4406710048e19806ebf6a06754ad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Des Moines Airport Airspace UAS Facility Map
+                    </a>{" "}
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {isMainPage && (

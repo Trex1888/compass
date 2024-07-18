@@ -40,10 +40,17 @@ const Contact = ({ scrollToSection, openPopup }) => {
           comments or to request a tour, please fill out the below comment box.
           For specific inquiries regarding media, lost and found, or airline
           information, please see the contact information below. Please review
-          the
-          <a href="airport-business/operations/aircraft-noise-program">
-            <strong> Aircraft Noise Program </strong>
-          </a>
+          the{" "}
+          <a
+            href="airport-business/operations/aircraft-noise-program"
+            style={{
+              color: "black",
+              fontWeight: "bold",
+              textDecoration: "none",
+            }}
+          >
+            Aircraft Noise Program
+          </a>{" "}
           for comments related to noise.
         </p>
         <p>Thank you for flying DSM.</p>
@@ -90,14 +97,14 @@ const Contact = ({ scrollToSection, openPopup }) => {
         </form>
 
         <div className="contact-info">
-          <div className="top">
+          <div className="contact-info-top">
             <h2>General Contact Information</h2>
             <p>Des Moines International Airport</p>
             <p>5800 Fleur Drive, Suite 207</p>
             <p>Des Moines, Iowa 50321</p>
           </div>
 
-          <div className="middle">
+          <div className="contact-info-middle">
             <p>
               <strong>General:</strong> 515-256-5050
             </p>
@@ -106,7 +113,7 @@ const Contact = ({ scrollToSection, openPopup }) => {
             </p>
           </div>
 
-          <div className="bottom">
+          <div className="contact-info-bottom">
             <a
               href="https://www.google.com/maps/place/Des+Moines+International+Airport/@41.5739738,-93.7487149,12z/data=!3m1!5s0x87eea211d4253329:0x6a181194b3c68f7c!4m6!3m5!1s0x87eea1f80909570b:0x80179b8d59f567a!8m2!3d41.532841!4d-93.6586392!16zL20vMDR4amh2?entry=ttu"
               target="_blank"

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import "../styles/News.css";
-import eventsImage from "../images/news1.jpg";
 import pressImage from "../images/news.jpg";
 import statsImage from "../images/minutes.jpg";
 
@@ -10,13 +9,6 @@ const News = () => {
   const navigate = useNavigate();
 
   const newsData = {
-    Events: [
-      {
-        title: "Latest Event",
-        date: "January 12, 2024",
-        image: eventsImage,
-      },
-    ],
     "Passenger Statistics": [
       {
         title: "June 2024 Airport Traffic Statistics",
@@ -81,12 +73,19 @@ const News = () => {
         image: pressImage,
       },
     ],
+    Events: [
+      {
+        title: "Latest Event",
+        date: "January 12, 2024",
+        image: statsImage,
+      },
+    ],
   };
 
   const allNews = [
-    ...newsData.Events,
     ...newsData["Passenger Statistics"],
     ...newsData["Press Releases"],
+    ...newsData.Events,
   ];
 
   const filteredNews =
@@ -136,7 +135,7 @@ const News = () => {
       <div className="news-category-container">
         <h1 className="news-title">News</h1>
         <select
-          className="news-category"
+          className="category-dropdown"
           value={selectedCategory}
           onChange={handleCategoryChange}
         >

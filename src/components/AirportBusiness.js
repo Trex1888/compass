@@ -266,7 +266,7 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
                 own with several tenants, business units, and projects being
                 implemented across the 2,600 acre airport campus.
               </p>
-              <p>
+              <p style={{ marginBottom: "30px" }}>
                 Read below for information on business opportunities at the
                 airport including advertising, air cargo operations, charter
                 operations, T-Hangar leases, and more.
@@ -295,11 +295,39 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
                       </p>
                     </div>
                   </div>
-                ))}{" "}
-                For Des Moines Airport Authority Board approved rates and
-                charges, click here. To review the Independent Registered
-                Municipal Advisor letter click here. For additional inquiries,
-                call Airport Administration at (515) 256-5100.
+                ))}
+                <p>
+                  For Des Moines Airport Authority Board approved rates and
+                  charges,{" "}
+                  <a
+                    href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/Board%20Rates%20and%20Charges.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "black",
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                    }}
+                  >
+                    click here
+                  </a>
+                  . To review the Independent Registered Municipal Advisor
+                  letter{" "}
+                  <a
+                    href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/IRMA%20Letter_12.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "black",
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                    }}
+                  >
+                    click here
+                  </a>
+                  . For additional inquiries, call Airport Administration at
+                  (515) 256-5100.
+                </p>
               </div>
             </div>
             <div className="section-links-container1">
@@ -336,7 +364,9 @@ const AirportBusiness = ({ scrollToSection, openPopup }) => {
             </div>
           </div>
         ) : (
-          <Outlet />
+          <div className="bid-procurement-outlet">
+            <Outlet />
+          </div>
         )}
       </div>
     </div>

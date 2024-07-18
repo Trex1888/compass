@@ -85,7 +85,10 @@ const CheckIn = ({ scrollToSection, openPopup }) => {
             Contact Your Airline
           </Link>
         </div>
-        <div className="section-links-container1">
+        <div
+          className="section-links-container1"
+          style={{ marginBottom: "50px" }}
+        >
           <div className="section-links1">
             <div
               className="link-item1"

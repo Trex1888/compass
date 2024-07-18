@@ -34,7 +34,7 @@ import RealId from "./components/RealId";
 import TsaPre from "./components/TsaPre";
 import LostItem from "./components/LostItem";
 import Contractor from "./components/Contractor";
-// import Procurement from "./components/Procurement";
+import Procurement from "./components/Procurement";
 import Badging from "./components/Badging";
 import BadgeApp from "./components/BadgeApp";
 import BadgeFaqs from "./components/BadgeFaqs";
@@ -154,11 +154,13 @@ const AppContent = ({
         amenitiesImage,
       "/airport-business/tenant-resources/air-service-development": tenantImage,
       "/about-us/news": newsImage,
-      "/airport-business": parkingImage,
+      "/airport-business": airportBusinessImage,
       "/airport-business/badging": parkingImage,
       "/airport-business/operations": parkingImage,
       "/airport-business/bid-procurement-rfps": parkingImage,
       "/airport-business/contractor-resources": parkingImage,
+      "/airport-business/contractor": parkingImage,
+      "/airport-business/permits-forms": airportBusinessImage,
       "/lift-dsm": flyDsmImage,
       "/contact": "red",
       "/about-us/careers": "red",
@@ -532,7 +534,7 @@ const AppContent = ({
                   />
                 }
               />
-              {/* <Route
+              <Route
                 path="bid-procurement-rfps"
                 element={
                   <Procurement
@@ -540,7 +542,7 @@ const AppContent = ({
                     openPopup={openPopup}
                   />
                 }
-              /> */}
+              />
               <Route
                 path="badging/*"
                 element={

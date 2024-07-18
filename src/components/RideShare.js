@@ -15,7 +15,7 @@ const RideShare = () => {
         <button className="ride-share-button lyft">Lyft</button>
       </div>
 
-      <h2>Taxi Service</h2>
+      <h1>Taxi Service</h1>
       <p>Taxis are located out of the baggage claim exit when leaving DSM.</p>
       <table className="taxi-service-table">
         <thead>
@@ -32,19 +32,13 @@ const RideShare = () => {
         </tbody>
       </table>
 
-      <h2>Limousines</h2>
+      <h1>Limousines</h1>
       <p>
         Several limo companies serve the airport and region. For more
         information or to arrange service, contact the company directly.
       </p>
       <table className="limo-service-table">
-        <thead>
-          <tr>
-            <th>Limousine Company</th>
-            <th>Phone Number</th>
-            <th>Website</th>
-          </tr>
-        </thead>
+        <thead></thead>
         <tbody>
           <tr>
             <td>Chauffeurs of Distinction</td>

@@ -9,7 +9,6 @@ const Operations = ({ scrollToSection, openPopup }) => {
   const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
   const isMainPage = location.pathname === "/airport-business/operations";
-  const [openSections, setOpenSections] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,20 +32,6 @@ const Operations = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
 
-  const toggleSection = (section) => {
-    if (openSections.includes(section)) {
-      setOpenSections(openSections.filter((sec) => sec !== section));
-    } else {
-      setOpenSections([...openSections, section]);
-    }
-  };
-
-  const operationsSections = [
-    "Operations Team",
-    "Safety Management System (SMS)",
-    "Work Order Requests",
-  ];
-
   return (
     <div>
       <div className="about-header">
@@ -59,34 +44,71 @@ const Operations = ({ scrollToSection, openPopup }) => {
               responsible for safety throughout the terminal and on the airport
               campus. The operations team offers public tours when time allows.
               If you are interested in requesting a tour, please fill out a{" "}
-              <a href="tour-request-form-url">tour request form</a>.
+              <a
+                href="https://flydsm.formstack.com/forms/tour_request_form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                tour request form
+              </a>
+              .
             </p>
-            <div className="button-links">
-              {operationsSections.map((section, index) => (
-                <div key={index} className="section">
-                  <button
-                    className={openSections.includes(section) ? "active" : ""}
-                    onClick={() => toggleSection(section)}
-                  >
-                    {section}
-                    <span className="plus-sign">
-                      {openSections.includes(section) ? "-" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`section-content ${
-                      openSections.includes(section) ? "open" : ""
-                    }`}
-                  >
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <h2>Operations Team</h2>
+            <p>
+              The airport operations team is onsite and available 24 hours a
+              day, every day throughout the year.
+            </p>
+            <p>Airport Operations Center - (515) 256-5000</p>
+            <h2>Safety Management System (SMS)</h2>
+            <p>
+              To report a non-emergency safety concern identified at Des Moines
+              International Airport (DSM), please use the Confidential Report
+              Form at www.safety.dsmairport.com. This form is not intended for
+              reporting emergencies. If the safety concern is an emergency, call
+              911 immediately.
+            </p>
+            <h2>Work Order Requests</h2>
+            <p>
+              Airport employees and tenants in need of assistance can submit a
+              work request through the Work Order Request Portal. Use the video
+              request form to request video footage
+            </p>
+            <div className="operations-buttons">
+              <button
+                className="work-button"
+                onClick={() =>
+                  window.open(
+                    "https://flydsm.formstack.com/forms/tour_request_form",
+                    "_blank"
+                  )
+                }
+              >
+                Work Order Request Portal
+              </button>
+              <button
+                className="video-button"
+                onClick={() =>
+                  window.open(
+                    "https://flydsm.formstack.com/workflows/security_cctv_request",
+                    "_blank"
+                  )
+                }
+              >
+                Video Request Form
+              </button>{" "}
             </div>
+            <p style={{ marginBottom: "-25px" }}>
+              Des Moines Airport Authority Rules, Regulations, Policies and
+              Procedures can be found{" "}
+              <a
+                href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/Airport%20Rules%20and%20Regulations-compressed.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Here
+              </a>
+              .
+            </p>
           </div>
         )}
         <Outlet />

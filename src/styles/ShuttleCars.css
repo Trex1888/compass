@@ -1,12 +1,11 @@
-.shuttles-container {
-  padding: 20px;
-  font-family: "Montserrat", sans-serif;
+.shuttles-information h2 {
+  margin-left: 0 !important;
 }
 
-.shuttles-container h1,
-.shuttles-container h2 {
-  color: #5c3c90;
-  margin-bottom: 20px;
+.shuttles-information a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .shuttles-container p {
@@ -27,24 +26,44 @@
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  margin-top: -10px;
 }
 
 .shuttle-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 75px;
+  margin-top: 40px;
 }
 
 .shuttle-table th,
 .shuttle-table td {
-  border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
 .shuttle-table th {
-  background-color: #5c3c90;
-  color: white;
+  border-top: 1px solid black;
+}
+
+.shuttle-table td {
+  background-color: white;
+}
+
+.shuttle-table tr:nth-child(odd) td {
+  background-color: white;
+}
+
+.shuttle-table tr:nth-child(even) td {
+  background-color: #f0f0f0;
+}
+
+.shuttle-table tr:last-child td {
+  border-bottom: 1px solid black;
+}
+
+.shuttle-table tr:first-child td {
+  border-top: 1px solid black;
 }
 
 /* Responsive Design */

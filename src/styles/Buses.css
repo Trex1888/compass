@@ -1,38 +1,51 @@
-.buses-container h1,
-.buses-container h2,
-.buses-container h3 {
-  color: #390d68;
-  margin-bottom: 20px;
+.bus-transporation h2 {
+  margin-left: 0 !important;
 }
 
-.buses-container p {
-  margin-bottom: 20px;
-  line-height: 1.6;
+.bus-transporation h3 {
+  color: #be5a0e;
+  margin-bottom: -15px;
+  font-size: 20px;
 }
 
-.buses-container .link {
-  color: #5c3c90;
+.bus-transporation a {
+  color: black;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.buses-container .link:hover {
+.buses-container a:hover {
   text-decoration: underline;
 }
 
 .bus-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 85px;
 }
 
 .bus-table th,
 .bus-table td {
-  border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
 .bus-table th {
-  background-color: #5c3c90;
-  color: white;
+  border-top: 1px solid black;
+}
+
+.bus-table tr:nth-child(odd) td {
+  background-color: white;
+}
+
+.bus-table tr:nth-child(even) td {
+  background-color: #f0f0f0;
+}
+
+.bus-table tr:last-child td {
+  border-bottom: 1px solid black;
+}
+
+.bus-table tr:first-child td {
+  border-top: 1px solid black;
 }

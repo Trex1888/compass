@@ -291,20 +291,20 @@ const Hero2 = () => {
           with individual airlines when booking your travel.
         </p>
         <p>
-          <button
-            onClick={() =>
-              handleNavigation("/flights-and-travel/airline-information")
-            }
+          <a
+            href="/flights-and-travel/airline-information"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation("/flights-and-travel/airline-information");
+            }}
             style={{
+              color: "black",
+              textDecoration: "none",
               cursor: "pointer",
-              background: "none",
-              border: "none",
-              color: "blue",
-              textDecoration: "underline",
             }}
           >
             Learn more
-          </button>{" "}
+          </a>{" "}
           about the airlines offering air service from the Des Moines
           International Airport.
         </p>
@@ -331,7 +331,7 @@ const Hero2 = () => {
             <option value="frontier">Frontier</option>
           </select>
         </div>
-        <div className="table-header">
+        <div className="table-header1">
           <span>Destination</span>
           <span>Airport</span>
         </div>
@@ -356,8 +356,7 @@ const Hero2 = () => {
               {activeIndex === index && (
                 <div className="accordion-content">
                   <img src={destination.img} alt={destination.city} />
-                  <div>
-                    <p>{destination.description}</p>
+                  <div className="accordion-text-content">
                     <a
                       href={destination.url}
                       target="_blank"
@@ -366,9 +365,12 @@ const Hero2 = () => {
                       {destination.airport}
                     </a>
                     <h5>Book Flight:</h5>
-                    {destination.airlines.map((airline, i) => (
-                      <p key={i}>{airline}</p>
-                    ))}
+                    <p>{destination.description}</p>
+                    <div>
+                      {destination.airlines.map((airline, i) => (
+                        <p key={i}>{airline}</p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -380,59 +382,65 @@ const Hero2 = () => {
           <p>
             As you prepare for your trip, find everything you need to know about
             traveling out of the Des Moines International Airport. View{" "}
-            <button
-              onClick={() =>
-                handleNavigation("/at-the-airport/maps-directions")
-              }
+            <a
+              href="/at-the-airport/maps-directions"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/at-the-airport/maps-directions");
+              }}
               style={{
+                color: "black",
+                textDecoration: "none",
                 cursor: "pointer",
-                background: "none",
-                border: "none",
-                color: "blue",
-                textDecoration: "underline",
               }}
             >
               maps and directions
-            </button>
+            </a>
             , and read about short term and long term{" "}
-            <button
-              onClick={() => handleNavigation("/at-the-airport/parking")}
+            <a
+              href="/at-the-airport/parking"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/at-the-airport/parking");
+              }}
               style={{
+                color: "black",
+                textDecoration: "none",
                 cursor: "pointer",
-                background: "none",
-                border: "none",
-                color: "blue",
-                textDecoration: "underline",
               }}
             >
               parking at the airport
-            </button>
+            </a>
             . Explore additional travel resources and{" "}
-            <button
-              onClick={() => handleNavigation("/traveler-info")}
+            <a
+              href="/traveler-info"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/traveler-info");
+              }}
               style={{
+                color: "black",
+                textDecoration: "none",
                 cursor: "pointer",
-                background: "none",
-                border: "none",
-                color: "blue",
-                textDecoration: "underline",
               }}
             >
               trip preparation information
-            </button>
+            </a>
             , and{" "}
-            <button
-              onClick={() => handleNavigation("/contact")}
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/contact");
+              }}
               style={{
+                color: "black",
+                textDecoration: "none",
                 cursor: "pointer",
-                background: "none",
-                border: "none",
-                color: "blue",
-                textDecoration: "underline",
               }}
             >
               reach out to us
-            </button>{" "}
+            </a>{" "}
             if you have any questions about traveling from DSM.
           </p>
           <h2>What airlines fly out of DSM?</h2>

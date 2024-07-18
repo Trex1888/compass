@@ -110,7 +110,7 @@ const NonStop = () => {
   ];
 
   return (
-    <div className="nonstop-main">
+    <div>
       <div className="img-container2">
         <img
           src="https://www.flydsm.com/filesimages/FLIGHTS%20AND%20TRAVEL/non-stop-destinations/NonStopMap.png"
@@ -119,10 +119,52 @@ const NonStop = () => {
       </div>
       <div className="hero1-container">
         <div className="nonHero">
+          {" "}
           <h1>NonStop Flights</h1>
-        </div>
-
+        </div>{" "}
         <div className="carousel-container">
+          <button
+            className="arrow left"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+          >
+            <CgArrowLongLeft />
+          </button>
+          <div className="carousel" style={{ marginTop: "-50px" }}>
+            {images.map((image, index) => (
+              <div className="carousel-item" key={index}>
+                <img src={image.src} alt={image.alt} />
+                <br />
+                <p>{image.alt}</p>
+                <div className="overlay">
+                  <h3>Book a Flight</h3>
+                  <a
+                    href={image.airlines[0]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    American
+                  </a>
+                  <a
+                    href={image.airlines[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Delta
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button
+            className="arrow right"
+            onClick={handleNext}
+            disabled={currentIndex >= images.length - 5}
+          >
+            <CgArrowLongRight />
+          </button>
+        </div>
+        {/* <div className="carousel-container">
           <button
             className="arrow left"
             onClick={handlePrev}
@@ -165,7 +207,7 @@ const NonStop = () => {
           >
             <CgArrowLongRight />
           </button>
-        </div>
+        </div> */}
       </div>
       <Hero2 />
     </div>

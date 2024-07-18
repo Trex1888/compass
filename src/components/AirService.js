@@ -39,7 +39,7 @@ const AirService = ({ scrollToSection, openPopup }) => {
       {isMainPage && (
         <div className="service-header">
           <h1>Air Service Development</h1>
-          <p>
+          <p style={{ marginBottom: "250px" }}>
             The Des Moines Airport Authority works to grow and improve
             connectivity to and from Iowa through its air service development
             program. Airport Authority staff meet with new airlines to discuss
@@ -48,8 +48,15 @@ const AirService = ({ scrollToSection, openPopup }) => {
             serving the market to increase frequency in flights, up-gauge
             aircraft to offer more seats, and add new, nonstop destinations. To
             support growth in the market, the Airport Authority offers an{" "}
-            <a href="/">Airline Incentive Policy</a> to support the initial
-            investment necessary for airlines to add service to a market.
+            <a
+              href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/Air%20Service%20Incentive%20Policy%20-%20AMENDMENT%203.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Airline Incentive Policy
+            </a>{" "}
+            to support the initial investment necessary for airlines to add
+            service to a market.
           </p>
         </div>
       )}

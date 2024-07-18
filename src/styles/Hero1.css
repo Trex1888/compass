@@ -1,6 +1,6 @@
 .img-container1 {
   position: absolute;
-  top: -150px;
+  top: -250px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -36,10 +36,12 @@
   margin-top: -50px;
   font-weight: 500;
   margin-bottom: -15px;
+  padding-top: 15px;
 }
 
 .hero1-container h3 {
   font-weight: 600;
+  text-decoration: none !important;
 }
 
 .hero1-container a {
@@ -59,7 +61,8 @@
   position: relative;
   margin-right: 40px;
   margin-left: 30px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  margin-top: -75px;
 }
 
 .carousel {
@@ -133,14 +136,16 @@
   font-size: 18px;
   margin-top: -55px;
   color: black;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 .overlay a {
   width: 80%;
   margin-top: 5px;
   font-size: 20px;
-  color: blue;
+  padding: 5px;
+  color: blue !important;
+  text-decoration: none;
   border: 1px solid rgb(177, 166, 166);
   height: 12%;
   background-color: white;
@@ -181,7 +186,7 @@
   justify-content: center;
   position: relative;
   height: 1000px;
-  margin-top: -125px;
+  margin-top: -230px;
   z-index: 1;
 }
 

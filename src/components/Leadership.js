@@ -76,9 +76,16 @@ const Leadership = ({ scrollToSection, openPopup }) => {
             The DSM Airport Authority Board holds regular meetings on the 2nd
             Tuesday of each month at 9:00 a.m. CT in the Board Room, 2nd Floor,
             Main Terminal. See the schedule below, call Mary Benson at (515)
-            256-5100, or
-            <a href="/">
-              <strong> send us a message</strong>
+            256-5100, or{" "}
+            <a
+              href="/"
+              style={{
+                color: "black",
+                fontWeight: "bold",
+                textDecoration: "none",
+              }}
+            >
+              send us a message
             </a>
             .
           </p>

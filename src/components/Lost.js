@@ -92,7 +92,11 @@ const Lost = ({ scrollToSection, openPopup }) => {
         </ul>
       </div>
       <div></div>{" "}
-      <div className="section-links-container1">
+      <div
+        className="section-links-container1"
+        style={{ marginBottom: "50px" }}
+      >
+        {" "}
         <div className="section-links1">
           <div
             className="link-item1"

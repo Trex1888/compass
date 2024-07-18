@@ -3,10 +3,8 @@ import "../styles/Top.css";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
 import { CiParking1 } from "react-icons/ci";
 import { AiOutlineFolderOpen } from "react-icons/ai";
-import { useEffect, useState } from "react";
 
 const Top = ({ scrollToSection, openPopup, backgroundStyle }) => {
-  const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
   const isHomeRoute = location.pathname === "/";
   const isNonstopRoute =
@@ -15,23 +13,6 @@ const Top = ({ scrollToSection, openPopup, backgroundStyle }) => {
   const statusRoute = location.pathname === "/flights-and-travel/flight-status";
   // const agendaRoute =
   //   location.pathname === "about-us/authority-leadership/minutes-agenda";
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = window.innerHeight / 2;
-      if (window.scrollY > scrollThreshold) {
-        setShowAirplane(true);
-      } else {
-        setShowAirplane(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const handleButtonClick = (sectionId) => {
     scrollToSection(sectionId);
@@ -49,6 +30,9 @@ const Top = ({ scrollToSection, openPopup, backgroundStyle }) => {
       : statusRoute
       ? "450px"
       : "350px",
+    clipPath: isHomeRoute
+      ? "polygon(0 0, 100% 0, 100% 77%, 0 100%)"
+      : undefined,
   };
 
   return (

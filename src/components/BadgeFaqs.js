@@ -1,37 +1,8 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import "../styles/BadgeFaqs.css";
-import { AiOutlineFolderOpen } from "react-icons/ai";
-import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
-import { CiParking1 } from "react-icons/ci";
 
-const BadgeFaqs = ({ scrollToSection, openPopup }) => {
-  const [showAirplane, setShowAirplane] = useState(false);
+const BadgeFaqs = () => {
   const [openSections, setOpenSections] = useState([]);
-  const location = useLocation();
-  const isMainPage = location.pathname === "/your-main-badge-faqs-path"; // Replace with the actual path
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = window.innerHeight / 2;
-      if (window.scrollY > scrollThreshold) {
-        setShowAirplane(true);
-      } else {
-        setShowAirplane(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [showAirplane]);
-
-  const handleButtonClick = (sectionId) => {
-    scrollToSection(sectionId);
-    openPopup();
-  };
 
   const toggleSection = (section) => {
     if (openSections.includes(section)) {
@@ -82,40 +53,6 @@ const BadgeFaqs = ({ scrollToSection, openPopup }) => {
           ))}
         </div>
       </div>
-      {isMainPage && (
-        <div className="badge-faq-links-container">
-          <div className="badge-faq-links">
-            <div
-              className="badge-item"
-              onClick={() => handleButtonClick("Flight-Status")}
-            >
-              <AiOutlineFolderOpen className="icon" />
-              <p>Status</p>
-            </div>
-            <div
-              className="badge-item"
-              onClick={() => handleButtonClick("Departures")}
-            >
-              <GiAirplaneDeparture className="icon" />
-              <p>Departures</p>
-            </div>
-            <div
-              className="badge-item"
-              onClick={() => handleButtonClick("Arrivals")}
-            >
-              <GiAirplaneArrival className="icon" />
-              <p>Arrivals</p>
-            </div>
-            <div
-              className="badge-item"
-              onClick={() => handleButtonClick("Parking")}
-            >
-              <CiParking1 className="icon" />
-              <p>Parking</p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

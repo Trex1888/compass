@@ -85,7 +85,9 @@ const Accessibility = ({ scrollToSection, openPopup }) => {
             </div>
           ))}
         </div>
-        <h2>Title VI Airport Nondiscrimination Program</h2>
+        <h2 style={{ marginBottom: "-5px" }}>
+          Title VI Airport Nondiscrimination Program
+        </h2>
         <p>
           Title VI of the Civil Rights Act of 1964, 42 U.S.C. § 2000d, and the
           Civil Rights Restoration Act of 1987, Pub. L. No. 100-259, 102 Stat.

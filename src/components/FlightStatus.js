@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import flightsAndTravelImage from "../images/mainPlane.png";
 import "../styles/FlightStatus.css";
 import { FaPlane } from "react-icons/fa";
@@ -488,12 +488,17 @@ const FlightStatus = () => {
             <FaPlane className="in-air-icon" />
             <p>Click to track flight</p>
           </div>
-          <Link
-            to="/flights-and-travel/airline-information"
+          <a
+            href="/flights-and-travel/airline-information"
             onClick={() => window.scrollTo(0, 0)}
+            style={{
+              color: "#be5a0e",
+              fontWeight: "700",
+              textDecoration: "none",
+            }}
           >
-            <p>Contact an Airline</p>
-          </Link>
+            Contact an Airline
+          </a>
         </div>
       </div>
       {selectedFlight && (

@@ -1,3 +1,19 @@
+.parking-container {
+  position: relative;
+}
+
+.parking-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.parking-header img {
+  width: 350px;
+  height: auto;
+  margin-top: -50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .parking-container .link {
   color: black;
   font-weight: bold;
@@ -19,11 +35,18 @@
   font-weight: 500;
 }
 
+.parking-container h3 {
+  color: #be5a0e;
+  font-size: 20px;
+}
+
 .button-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 5px;
+  margin-top: 20px;
+  margin-left: 2px;
+  margin-bottom: 25px;
 }
 
 .btn {
@@ -34,7 +57,7 @@
   border-radius: 1px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
+  width: 250px;
   transition: all 0.3s ease-out 0.3s;
 }
 
@@ -42,25 +65,129 @@
   background-color: #390d68;
 }
 
-.parking-table,
 .estimated-cost-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-.parking-table th,
-.estimated-cost-table th,
-.parking-table td,
+.parking-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+
+.parking-table th {
+  padding: 12px 20px;
+  text-align: left;
+  background-color: #36294a;
+  color: white;
+  border: none;
+}
+
+.parking-table td {
+  padding: 25px 20px;
+  text-align: left;
+  border-left: none;
+  border-right: none;
+  position: relative;
+}
+
+.parking-table tr {
+  color: black;
+  font-weight: bold;
+}
+
+.parking-table tr:nth-child(1) td {
+  border-bottom: 5px solid green;
+}
+
+.parking-table tr:nth-child(2) td {
+  border-bottom: 5px solid #d23e30;
+}
+
+.parking-table tr:nth-child(3) td {
+  border-bottom: 5px solid #d23e30;
+}
+
+.parking-table tr:nth-child(4) td {
+  border-bottom: 5px solid green;
+}
+
+.parking-table tr:nth-child(5) td {
+  border-bottom: 5px solid green;
+}
+
+.parking-table tr:nth-child(6) td {
+  border-bottom: 5px solid green;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dot-green {
+  background-color: green;
+}
+
+.dot-red {
+  background-color: #d23e30;
+}
+
+.park-icons {
+  margin-left: 2px;
+}
+
+.park-icon {
+  margin-top: -2px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small-text {
+  font-size: 1em;
+  font-weight: normal;
+  color: #000;
+  margin-top: 2px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dot-green {
+  background-color: green;
+}
+
+.dot-red {
+  background-color: #d23e30;
+}
+
 .estimated-cost-table td {
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
-.parking-table th,
-.estimated-cost-table th {
-  background-color: #390d68;
+.parking-table th {
+  background-color: #36294a;
   color: white;
 }
 
@@ -75,17 +202,29 @@
   flex: 1 1 200px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.parking-form label span {
+  display: inline;
+  margin-bottom: 5px;
+}
+
+.parking-form .label-text {
+  display: flex;
+  align-items: center;
 }
 
 .parking-form input {
-  padding: 5px;
+  padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 1px;
+  background-color: rgb(206, 205, 205);
 }
 
-.estimated-cost-table th {
-  background-color: #390d68;
-  color: white;
+.required-asterisk {
+  color: red;
+  margin-left: 5px;
 }
 
 /* Responsive Design */
@@ -125,5 +264,17 @@
   .parking-table td,
   .estimated-cost-table td {
     padding: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parking-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .parking-header img {
+    margin-left: 0;
+    margin-top: 20px;
   }
 }

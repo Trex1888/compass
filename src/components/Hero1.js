@@ -111,9 +111,16 @@ const Hero1 = () => {
 
   return (
     <div className="hero1-container">
-      <h1>NonStop Flights</h1>
-      <Link to="/flights-and-travel/nonstop-destinations">
-        <h3>View All</h3>
+      <h1 style={{ textDecoration: "none", marginTop: "50px" }}>
+        NonStop Flights
+      </h1>
+      <Link
+        style={{ textDecoration: "none", marginBottom: "50px" }}
+        to="/flights-and-travel/nonstop-destinations"
+      >
+        <h3 style={{ textDecoration: "none", marginBottom: "50px" }}>
+          View All
+        </h3>
       </Link>
       <div className="carousel-container">
         <button

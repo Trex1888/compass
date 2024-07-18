@@ -9,7 +9,6 @@ const Tenant = ({ scrollToSection, openPopup }) => {
   const [showAirplane, setShowAirplane] = useState(false);
   const location = useLocation();
   const isMainPage = location.pathname === "/airport-business/tenant-resources";
-  const [openSections, setOpenSections] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,23 +32,6 @@ const Tenant = ({ scrollToSection, openPopup }) => {
     openPopup();
   };
 
-  const toggleSection = (section) => {
-    if (openSections.includes(section)) {
-      setOpenSections(openSections.filter((sec) => sec !== section));
-    } else {
-      setOpenSections([...openSections, section]);
-    }
-  };
-
-  const tenantSections = [
-    "Storm Water Pollution Prevention Plan",
-    "Des Moines Airport Authority ACDBE Program",
-    "FY19-21 ACDBE Goal",
-    "DSM Airport DBE Program",
-    "DSM Public Notice DBE Renewal 2021-2023",
-    "Charter Deicing and Overweight Waivers",
-  ];
-
   return (
     <div className="about-header">
       {isMainPage && (
@@ -65,43 +47,51 @@ const Tenant = ({ scrollToSection, openPopup }) => {
             </Link>
             .
           </p>
-          <h2>Work Order Requests</h2>
+          <h2 style={{ marginBottom: "-5px" }}>Work Order Requests</h2>
           <p>
             Airport tenants in need of assistance can submit a work request
             through the Work Order Request Portal.{" "}
           </p>
-          <div className="button-links">
+          <a
+            href="https://portal.aerosimple.com/forms/us/9739df36-1d4a-11ec-accf-0a58a9feac02"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="work-order-request">
               Work Order Request Portal
             </button>
+          </a>
+          <a
+            href="https://flydsm.formstack.com/workflows/security_cctv_request"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="video-request-form">Video Request Form</button>
-          </div>
-          <div className="resources">
-            {tenantSections.map((section, index) => (
-              <div key={index} className="section">
-                <button
-                  className={openSections.includes(section) ? "active" : ""}
-                  onClick={() => toggleSection(section)}
-                >
-                  {section}
-                  <span className="plus-sign">
-                    {openSections.includes(section) ? "-" : "+"}
-                  </span>
-                </button>
-                <div
-                  className={`section-content ${
-                    openSections.includes(section) ? "open" : ""
-                  }`}
-                >
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          </a>
+          <h2>Resources</h2>
+          <table style={{ marginBottom: "50px" }} className="tenant-table">
+            <thead></thead>
+            <tbody>
+              <tr>
+                <td>Storm Water Pollution Prevention Plan</td>
+              </tr>
+              <tr>
+                <td>Des Moines Airport Authority ACDBE Program</td>
+              </tr>
+              <tr>
+                <td>FY19-21 ACDBE Goal</td>
+              </tr>
+              <tr>
+                <td>DSM Airport DBE Program</td>
+              </tr>
+              <tr>
+                <td>DSM Public Notice DBE Renewal 2021-2023</td>
+              </tr>
+              <tr>
+                <td>Charter Deicing and Overweight Waivers</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
       <Outlet />

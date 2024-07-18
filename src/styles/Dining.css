@@ -15,10 +15,6 @@
   margin-left: -15px !important;
   margin-bottom: 25px;
 }
-.dining-section.purple h3,
-p {
-  padding: 5px 15px;
-}
 
 .dining-section.purple h3 {
   margin-bottom: -10px;
@@ -51,10 +47,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.dining-header p {
-  margin-left: -25px;
 }
 
 .dining-content h2 {

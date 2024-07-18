@@ -107,7 +107,11 @@ const RealId = ({ scrollToSection, openPopup }) => {
           <li>DHS trusted traveler card (i.e. Global Entry)</li>
         </ul>
         <div> </div>{" "}
-        <div className="section-links-container1">
+        <div
+          className="section-links-container1"
+          style={{ marginBottom: "50px" }}
+        >
+          {" "}
           <div className="section-links1">
             <div
               className="link-item1"

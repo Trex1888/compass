@@ -1,7 +1,7 @@
 .careers-button {
   background-color: #be5a0e;
   color: white !important;
-  padding: 14px 20px;
+  padding: 12px 18px;
   border: none;
   border-radius: 2px;
   cursor: pointer;
@@ -9,10 +9,10 @@
   margin-left: 5px;
   margin-bottom: 35px;
   width: 290px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
-.careers-button:hover:active {
+.careers-button:hover {
   background-color: #390d68;
   color: white !important;
 }

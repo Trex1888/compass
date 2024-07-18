@@ -1,11 +1,13 @@
 .nonstop-main {
-  position: relative;
-  margin-top: -185px;
+}
+
+.nonHero h1 {
+  padding-top: -75px;
 }
 
 .img-container2 {
   position: absolute;
-  top: -150px;
+  top: 115px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -24,8 +26,8 @@
 }
 
 .nonHero h1 {
-  margin-top: 175px;
-  margin-bottom: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   font-size: 36px;
   font-weight: 500;
 }

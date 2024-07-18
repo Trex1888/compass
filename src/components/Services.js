@@ -52,36 +52,40 @@ const Services = ({ scrollToSection, openPopup }) => {
 
   return (
     <div className="about-header">
-      <h1>Services & Amenities</h1>
-      <p>
-        DSM offers our travelers services and amenities to make their travel
-        more comfortable. When passing through the terminal, you will have the
-        opportunity to shop, eat, and get work done using our free Wi-Fi.
-      </p>
-      <div className="button-links">
-        {services.map((service, index) => (
-          <div key={index} className="section">
-            <button
-              className={openSections.includes(service) ? "active" : ""}
-              onClick={() => toggleSection(service)}
-            >
-              {service}
-              <span className="plus-sign">
-                {openSections.includes(service) ? "-" : "+"}
-              </span>
-            </button>
-            <div
-              className={`section-content ${
-                openSections.includes(service) ? "open" : ""
-              }`}
-            >
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+      {" "}
+      <div className="services-container">
+        <h1>Services & Amenities</h1>
+
+        <p>
+          DSM offers our travelers services and amenities to make their travel
+          more comfortable. When passing through the terminal, you will have the
+          opportunity to shop, eat, and get work done using our free Wi-Fi.
+        </p>
+        <div className="button-links">
+          {services.map((service, index) => (
+            <div key={index} className="section">
+              <button
+                className={openSections.includes(service) ? "active" : ""}
+                onClick={() => toggleSection(service)}
+              >
+                {service}
+                <span className="plus-sign">
+                  {openSections.includes(service) ? "-" : "+"}
+                </span>
+              </button>
+              <div
+                className={`section-content ${
+                  openSections.includes(service) ? "open" : ""
+                }`}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}{" "}
+        </div>
       </div>
       <div className="amenity-links-container">
         <div className="amenity-links">

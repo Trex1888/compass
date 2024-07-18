@@ -35,21 +35,33 @@ const Rules = ({ scrollToSection, openPopup }) => {
   return (
     <div>
       <div className="about-header">
-        <h1>Rules, Regulations, Policies & Procedures</h1>
-        <h2>Airport Documents</h2>
+        <h1>Rules, Regulations, Policies & Procedures</h1>{" "}
         <div className="documents-list">
+          <h2>Airport Documents</h2>
           <p>
-            <a href="/documents/airport-authority-rules-and-regulations">
+            <a
+              href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/Airport%20Rules%20and%20Regulations-compressed.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Airport Authority Rules and Regulations
             </a>
           </p>
           <p>
-            <a href="/documents/airport-minimum-standards">
+            <a
+              href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/Minimum%20Standards.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Airport Minimum Standards
             </a>
           </p>
           <p>
-            <a href="/documents/tarmac-delay-contingency-plan">
+            <a
+              href="https://www.flydsm.com/filesimages/AIRPORT%20BUSINESS/Tarmac%20Delay%20Contingency%20Plan.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Tarmac Delay Contingency Plan
             </a>
           </p>

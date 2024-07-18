@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "../styles/Home.css";
 import Hero from "./Hero";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
@@ -7,25 +6,6 @@ import { AiOutlineFolderOpen } from "react-icons/ai";
 import Hero1 from "./Hero1";
 
 const Home = ({ scrollToSection, openPopup }) => {
-  const [showAirplane, setShowAirplane] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = window.innerHeight / 2;
-      if (window.scrollY > scrollThreshold) {
-        setShowAirplane(true);
-      } else {
-        setShowAirplane(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const handleButtonClick = (sectionId) => {
     if (typeof scrollToSection === "function") {
       scrollToSection(sectionId);

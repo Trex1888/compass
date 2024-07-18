@@ -63,7 +63,7 @@ const Faqs = ({ scrollToSection, openPopup }) => {
 
   return (
     <div className="about-header">
-      <h1>Frequently Asked Questions</h1>
+      <h1 style={{ marginBottom: "90px" }}>Frequently Asked Questions</h1>
       <div className="button-links">
         {faqItems.map((item, index) => (
           <div key={index} className="section">
@@ -89,7 +89,10 @@ const Faqs = ({ scrollToSection, openPopup }) => {
           </div>
         ))}
       </div>
-      <div className="section-links-container1">
+      <div
+        className="section-links-container1"
+        style={{ marginBottom: "50px" }}
+      >
         <div className="section-links1">
           <div
             className="link-item1"

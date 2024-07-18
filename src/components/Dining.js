@@ -32,13 +32,11 @@ const Dining = ({ scrollToSection, openPopup }) => {
   return (
     <div>
       <div className="about-header">
-        <div className="dining-header">
-          <h1>Restaurants & Dining</h1>
-          <p>
-            DSM looks forward to serving you at one of our seven food and
-            beverage locations the next time you travel through the airport.
-          </p>{" "}
-        </div>
+        <h1>Restaurants & Dining</h1>
+        <p>
+          DSM looks forward to serving you at one of our seven food and beverage
+          locations the next time you travel through the airport.
+        </p>{" "}
       </div>
       <div className="dining-section purple">
         <img
