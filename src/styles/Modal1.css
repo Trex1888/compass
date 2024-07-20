@@ -1,46 +1,97 @@
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+.modal1-overlay {
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-content {
+.modal1-overlay:hover {
+  cursor: pointer;
+}
+
+.modal1-content {
   background-color: white;
-  margin: 3% auto;
-  width: 1000px;
-  height: 500px;
+  width: 56%;
+  height: 63%;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 10px;
-  overflow: hidden;
-  margin-top: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
+  margin-bottom: 90px;
+  text-align: left;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.modal1-content h1 {
+  font-weight: 500;
+  color: #36294a;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.modal1-content h3 {
+  font-weight: 500;
+  color: #36294a;
+  margin-bottom: -15px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.modal1-content p {
+  margin-bottom: -10px;
+  display: flex;
+  margin-left: 25px;
+}
+
+.modal1-content p strong {
+  flex-shrink: 0;
+  width: 150px;
+}
+
+.modal1-content p span {
+  margin-left: 10px;
+  flex: 1;
   text-align: left;
 }
 
-.modal-close {
-  background: none;
+.modal1-close {
+  color: white;
+  background-color: #36294a;
   border: none;
-  font-size: 24px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  right: 5px;
+  top: 5px;
+  font-size: 30px;
+  font-weight: 500;
   cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-section {
-  margin-bottom: 20px;
-  margin-left: 15px;
+.modal1-content::-webkit-scrollbar {
+  width: 8px;
 }
 
-.modal-section h3,
-h2 {
-  margin-left: 30px !important;
+.modal1-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.modal1-content::-webkit-scrollbar-thumb {
+  background-color: #be5a0e;
+  border-radius: 10px;
 }

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Header.css";
 import { IoIosSearch } from "react-icons/io";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = ({ backgroundStyle }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const [showSubmenu, setShowSubmenu] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -18,10 +20,37 @@ const Header = ({ backgroundStyle }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleSearch = (e) => {
+    e.stopPropagation();
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("click", closeSearch);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", closeSearch);
+    };
   }, []);
+
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
+
+  const handleSubmenuToggle = (e, submenu) => {
+    e.preventDefault();
+    setShowSubmenu(submenu);
+  };
+
+  const handleBackToMainMenu = (e) => {
+    e.preventDefault();
+    setShowSubmenu(null);
+  };
 
   const menuItems = {
     "at-the-airport": [
@@ -168,24 +197,20 @@ const Header = ({ backgroundStyle }) => {
     ],
   };
 
-  const handleSubmenuToggle = (e, submenu) => {
-    e.preventDefault();
-    setShowSubmenu(submenu);
-  };
-
-  const handleBackToMainMenu = (e) => {
-    e.preventDefault();
-    setShowSubmenu(null);
-  };
-
   return (
-    <div className="header-container" style={backgroundStyle}>
+    <div
+      className={`header-container ${isSearchOpen ? "search-open" : ""}`}
+      style={backgroundStyle}
+      onClick={stopPropagation}
+    >
       <div className="hamburger-menu" onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+        <RxHamburgerMenu className="hamburger-icon" />
       </div>
-      <nav className={`top-nav ${isScrolled ? "hidden" : ""}`}>
+      <nav
+        className={`top-nav ${isScrolled ? "hidden" : ""} ${
+          isSearchOpen ? "search-open" : ""
+        }`}
+      >
         <ul>
           <li>
             <NavLink
@@ -219,10 +244,16 @@ const Header = ({ backgroundStyle }) => {
               Contact
             </NavLink>
           </li>
-          <li>
+          <li onClick={toggleSearch}>
             <IoIosSearch className="search-icon" />
           </li>
         </ul>
+        {isSearchOpen && (
+          <div className="search-bar" onClick={stopPropagation}>
+            <span>find something...</span>
+            <IoIosSearch className="search-icon" />
+          </div>
+        )}
       </nav>
 
       <nav

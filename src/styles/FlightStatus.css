@@ -14,6 +14,7 @@
 }
 
 .mainContainer img {
+  margin-top: px;
   width: 800px;
   position: relative;
   transition: transform 0.5s ease;

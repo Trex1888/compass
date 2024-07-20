@@ -33,8 +33,8 @@ const TravelerInfo = ({ scrollToSection, openPopup }) => {
   };
 
   return (
-    <div className="about-container">
-      <div className="about-sidebar">
+    <div className="travelerinfo-container">
+      <div className="travelerinfo-sidebar">
         <ul>
           <li>
             <Link
@@ -133,9 +133,9 @@ const TravelerInfo = ({ scrollToSection, openPopup }) => {
         </ul>
       </div>
 
-      <div className="about-content">
+      <div className="travelerinfo-content">
         {isMainPage ? (
-          <div className="about-header">
+          <div className="travelerinfo-header">
             <div className="travel-information">
               <h1>Travel Information</h1>
               <p>

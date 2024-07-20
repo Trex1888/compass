@@ -1,3 +1,228 @@
+.travelerinfo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.travelerinfo-sidebar {
+  width: 29%;
+  margin-left: 25px;
+  margin-top: 38px;
+  margin-right: 30px;
+}
+
+.travelerinfo-sidebar ul {
+  list-style: none;
+  max-width: 195px;
+}
+
+.travelerinfo-sidebar ul ul {
+  margin-left: -25px;
+}
+
+.travelerinfo-sidebar a {
+  color: #636363;
+  margin-right: -50px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.travelerinfo-sidebar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 2%;
+  bottom: 1px;
+  height: 2px;
+  background-color: #faf8f8;
+}
+
+.travelerinfo-sidebar a.active {
+  font-weight: bold;
+  color: #36294a;
+}
+
+.travelerinfo-sidebar a.active::after {
+  background-color: black;
+  left: 0;
+  right: 2%;
+}
+
+.travelerinfo-sidebar a:hover {
+  color: rgb(114, 114, 120);
+  transition: all 0.1s ease-out 0.1s;
+}
+
+.travelerinfo-sidebar a.active:hover {
+  color: #9090a0;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.1s ease-out 0.1s;
+}
+
+.travelerinfo-sidebar a.active-sub {
+  color: black;
+  font-weight: bold;
+}
+
+.travelerinfo-sidebar a.active-sub:hover {
+  color: #9090a0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.travelerinfo-content {
+  width: 66%;
+  background-color: #ffffff;
+  text-align: left;
+  margin-left: -115px;
+  padding-right: 20px; /* Added padding for better spacing */
+  padding-left: 10px; /* Adjusted padding for better alignment */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+.travelerinfo-header {
+  margin-top: 45px;
+}
+
+.travelerinfo-header h1 {
+  font-size: 36px;
+  color: black;
+  font-weight: 500;
+}
+
+.travelerinfo-header h2 {
+  color: black;
+  font-weight: 400;
+  margin-top: 35px;
+}
+
+.travelerinfo-section h2 {
+  color: black;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0 !important;
+}
+
+.travelerinfo-content img {
+  margin: 40px 0;
+}
+
+.travelerinfo-button {
+  background-color: #be5a0e;
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  margin-left: 5px;
+  width: 240px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.travelerinfo-button:hover {
+  background-color: #390d68;
+}
+
+.second-button {
+  background-color: #be5a0e;
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  width: 400px;
+  font-size: 16px;
+  margin-left: 60px;
+}
+
+.second-button:hover {
+  background-color: #390d68;
+}
+
+.travelerinfo-section p {
+  color: #2d2d2d;
+  font-weight: normal;
+}
+
+.travelerinfo-header img {
+  margin: 40px 0;
+}
+
+.travelerinfo-links-container {
+  margin-top: 125px;
+  margin-bottom: 100px;
+}
+
+.travelerinfo-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.travelerinfo-item {
+  display: flex;
+  width: 120px;
+  flex-direction: column;
+  align-items: center;
+  color: #3a3b5a;
+  font-size: 1rem;
+  transition: all 0.3s ease-out 0.3s;
+  border: 1px solid rgb(180, 178, 178);
+}
+
+.travelerinfo-item:hover {
+  color: #be5a0e;
+}
+
+.travelerinfo-item:hover {
+  cursor: pointer;
+  color: #be5a0e;
+}
+
+@media (max-width: 768px) {
+  .travelerinfo-sidebar {
+    display: none;
+  }
+
+  .travelerinfo-content {
+    width: 100%;
+    padding: 20px 10px; /* Adding left and right padding for smaller screens */
+    margin-left: 0;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  }
+
+  .travelerinfo-content p {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .travelerinfo-content {
+    padding: 20px 10px; /* Adding left and right padding for smaller screens */
+    margin-left: 0;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  }
+
+  .travelerinfo-content p {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .travel-information li {
+    margin-left: 10px;
+  }
+}
+
 .travel-information {
   text-align: left;
   margin-left: 0 !important;
@@ -26,7 +251,7 @@
   height: 200px;
   width: 100%;
   margin-top: 80px;
-  margin-bottom: -25px;
+  margin-bottom: 40px; /* Add margin at the bottom of the entire container */
 }
 
 .section-links4 {
@@ -34,6 +259,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap; /* Ensure items flex and do not stack */
 }
 
 .link-item4 {
@@ -46,6 +272,28 @@
   transition: transform 0.3s, color 0.3s;
   transition: all 0.5s ease-out 0.25s;
   border: 1px solid rgb(180, 178, 178);
+}
+
+@media (max-width: 768px) {
+  .section-links4 {
+    gap: 10px; /* Adjust the gap for smaller screens */
+    justify-content: center; /* Center the items */
+  }
+
+  .link-item4 {
+    margin-right: 0; /* Remove right margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-links4 {
+    gap: 5px; /* Adjust the gap for smaller screens */
+    justify-content: center; /* Center the items */
+  }
+
+  .link-item4 {
+    margin-right: 0; /* Remove right margin */
+  }
 }
 
 .link-item4:hover {

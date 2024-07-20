@@ -657,3 +657,528 @@ const AppContent = ({
 };
 
 export default App;
+// import "../styles/Popup.css";
+// import { useState } from "react";
+// import { Link } from "react-router-dom";
+// import { AiOutlineFolderOpen } from "react-icons/ai";
+// import { CiParking1 } from "react-icons/ci";
+// import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+// import { MdOutlineClose } from "react-icons/md"; // Import the close icon
+
+// const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
+//   const [navPosition, setNavPosition] = useState(false); // false for bottom, true for top
+
+//   const handleVerticalIconClick = (section) => {
+//     scrollToSection(section);
+//     setNavPosition(true);
+//     if (!isPopupVisible && window.innerWidth >= 980) {
+//       togglePopup();
+//     }
+//   };
+
+//   const handleBottomNavClick = (section) => {
+//     scrollToSection(section);
+//     setNavPosition(false);
+//     if (!isPopupVisible && window.innerWidth < 980) {
+//       togglePopup();
+//     }
+//   };
+
+//   const handleClose = () => {
+//     setNavPosition(false);
+//     togglePopup();
+//   };
+
+//   return (
+//     <div className={isPopupVisible ? "popup-visible" : ""}>
+//       <div className="popup">
+//         <div className="popup-content">
+//           <div id="Flight-Status">
+//             <select>
+//               <option value="">Filter by Airline</option>
+//               <option value="airline1">Allegiant Air</option>
+//               <option value="airline2">American Airlines</option>
+//               <option value="airline1">Delta Air Lines</option>
+//               <option value="airline2">United Airlines</option>
+//               <option value="airline2">Southwest Airlines</option>
+//             </select>
+//             <select>
+//               <option value="">Filter by City</option>
+//               <option value="new-york">New York</option>
+//               <option value="los-angeles">Los Angeles</option>
+//               <option value="chicago">Chicago</option>
+//               <option value="houston">Houston</option>
+//               <option value="phoenix">Phoenix</option>
+//               <option value="philadelphia">Philadelphia</option>
+//             </select>
+//             <div className="filter-container">
+//               <input type="text" placeholder="Search Flight #" />
+//               <button>Filter</button>
+//             </div>
+//           </div>
+//           <div className="popup-section" id="Departures">
+//             <Link
+//               to="flights-and-travel/flight-status?flights=departures"
+//               className="view-all"
+//               onClick={togglePopup}
+//             >
+//               <h2>Departures</h2>
+//               <div className="table-row table-header">
+//                 <span className="dot-header"></span>
+//                 <span>Flight #</span>
+//                 <span>To</span>
+//                 <span>Updated Time</span>
+//                 <span>Gate</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>AA2326</span>
+//                 <span>(DFW)</span>
+//                 <span className="time green-time">5:00 AM</span>
+//                 <span>C6</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot orange-dot"></span>
+//                 <span>AA1795</span>
+//                 <span>(PHX)</span>
+//                 <span className="time orange-time">5:40 AM</span>
+//                 <span>C4</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot orange-dot"></span>
+//                 <span>AA3418</span>
+//                 <span>(ORD)</span>
+//                 <span className="time orange-time">5:54 AM</span>
+//                 <span>C4</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>WN2762</span>
+//                 <span>(STL)</span>
+//                 <span className="time green-time">5:55 AM</span>
+//                 <span>C6</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>DL488</span>
+//                 <span>(ATL)</span>
+//                 <span className="time green-time">5:56 AM</span>
+//                 <span>C3</span>
+//               </div>
+//               <span className="view-all">View All Departures</span>
+//             </Link>
+//           </div>
+
+//           <div className="popup-section" id="Arrivals">
+//             <Link
+//               to="flights-and-travel/flight-status?flights=arrivals"
+//               className="view-all"
+//               onClick={togglePopup}
+//             >
+//               <h2>Arrivals</h2>
+//               <div className="table-row table-header">
+//                 <span className="dot-header"></span>
+//                 <span>Flight #</span>
+//                 <span>From</span>
+//                 <span>Updated Time</span>
+//                 <span>Gate</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>AA1536</span>
+//                 <span>(DFW)</span>
+//                 <span className="time green-time">8:54 AM</span>
+//                 <span>C7</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>AA6172</span>
+//                 <span>(ORD)</span>
+//                 <span className="time green-time">9:29 AM</span>
+//                 <span>C5</span>
+//               </div>
+//               <div className="table-row">
+//                 <span className="dot orange-dot"></span>
+//                 <span>DL1704</span>
+//                 <span>(ATL)</span>
+//                 <span className="time orange-time">10:10 AM</span>
+//                 <span>C3</span>
+//               </div>
+//               <span className="view-all">View All Arrivals</span>
+//             </Link>
+//           </div>
+
+//           <div className="popup-section" id="Parking">
+//             <Link
+//               to="at-the-airport/parking"
+//               className="view-all"
+//               onClick={togglePopup}
+//             >
+//               <h2>Parking</h2>
+//               <div className="table-row table-header">
+//                 <span>Parking Lot</span> <span>%Full</span> <span>Open</span>
+//               </div>
+//               <div className="table-row green-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>Garage Hourly</span> <span>19%</span> <span>278</span>
+//                 <div className="progress-bar" style={{ width: "19%" }}></div>
+//               </div>
+//               <div className="table-row orange-row">
+//                 <span className="dot orange-dot"></span>
+//                 <span>Garage Daily (Long Term)</span> <span>59%</span>
+//                 <span>567</span>
+//                 <div className="progress-bar" style={{ width: "59%" }}></div>
+//               </div>
+//               <div className="table-row orange-row">
+//                 <span className="dot orange-dot"></span>
+//                 <span>Blue Economy Lot</span> <span>86%</span> <span>85</span>
+//                 <div className="progress-bar" style={{ width: "86%" }}></div>
+//               </div>
+//               <div className="table-row orange-row">
+//                 <span className="dot orange-dot"></span>
+//                 <span>Red Economy Lot</span> <span>40%</span> <span>449</span>
+//                 <div className="progress-bar" style={{ width: "40%" }}></div>
+//               </div>
+//               <div className="table-row green-row">
+//                 <span className="dot green-dot"></span>
+//                 <span>Grey Economy Lot</span> <span>50%</span> <span>869</span>
+//                 <div className="progress-bar" style={{ width: "50%" }}></div>
+//               </div>
+//               <span className="view-all">View Parking & Shuttle Tracker</span>
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//       <div className={`vertical-icons-container ${navPosition ? "top" : ""}`}>
+//         <div className="vertical-icons">
+//           <Link onClick={() => handleVerticalIconClick("Flight-Status")}>
+//             <AiOutlineFolderOpen />
+//           </Link>
+//           <Link onClick={() => handleVerticalIconClick("Departures")}>
+//             <GiAirplaneDeparture />
+//           </Link>{" "}
+//           <button onClick={handleClose} className="popup-toggle-button">
+//             {isPopupVisible ? ">" : "<"}
+//           </button>
+//           <Link onClick={() => handleVerticalIconClick("Arrivals")}>
+//             <GiAirplaneArrival />
+//           </Link>
+//           <Link onClick={() => handleVerticalIconClick("Parking")}>
+//             <CiParking1 />
+//           </Link>
+//           <div className="close-button">
+//             <MdOutlineClose onClick={handleClose} />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Popup;
+
+/* .popup {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: right 0.3s;
+}
+
+.popup-visible .popup {
+  right: 0;
+  scrollbar-color: #be5a0e #f5f5f5;
+  scrollbar-width: thin;
+}
+
+.popup-content {
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.popup-content h3 {
+  margin-top: 10px;
+  color: #3a3b5a;
+  font-weight: 600;
+}
+
+.popup-content h2 {
+  font-weight: 500;
+  color: #36294a;
+  margin-left: 15px !important;
+}
+
+.popup-content select,
+.popup-content input,
+.popup-content button {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: -5px;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #36294a;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px #36294a;
+  color: #36294a;
+  font-weight: bold;
+}
+
+.popup-content select:hover,
+.popup-content select:focus {
+  cursor: pointer;
+}
+
+.popup-section a {
+  color: #be5a0e;
+  font-weight: 600;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container input[type="text"] {
+  flex-grow: 1;
+  flex: 0.6;
+  margin-right: 5px;
+  padding: 8px;
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #36294a;
+  border-radius: 5px;
+}
+
+.filter-container button {
+  padding: 8px 12px;
+  flex: 0.4;
+  cursor: pointer;
+  color: white;
+  background-color: #36294a;
+  font-weight: 400;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.filter-container button:hover {
+  background-color: #be5a0e;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.popup-section {
+  margin-top: 20px;
+}
+
+.popup-section .table-header,
+.popup-section .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.popup-section .table-row span {
+  color: #3a3b5a;
+  font-weight: bold;
+}
+
+.popup-section .table-row span.time.green-time {
+  color: #4caf50;
+}
+
+.popup-section .table-row span.time.orange-time {
+  color: #be5a0e;
+}
+
+.popup-section .table-row span.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.popup-section .table-row span.green-dot {
+  background-color: #4caf50;
+}
+
+.popup-section .table-row span.orange-dot {
+  background-color: #be5a0e;
+}
+
+.view-all {
+  color: #be5a0e;
+  text-decoration: none;
+}
+
+.vertical-icons-container {
+  position: fixed;
+  top: 0;
+  right: -10px;
+  height: 100%;
+  width: 60px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  transition: right 0.3s;
+  border-left: 2px solid lightgrey;
+}
+
+.close-button {
+  display: none;
+}
+
+.popup-visible .vertical-icons-container {
+  right: 450px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.popup-toggle-button {
+  background-color: white !important;
+  color: #be5a0e !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  transition: color 0.5s ease-in-out !important;
+  background-color: 0.5s ease-in-out !important;
+  border-radius: 100% !important;
+  margin-bottom: 10px !important;
+  margin-right: 70px !important;
+  font-size: 34px !important;
+  border: none !important;
+  margin-top: -30px !important;
+  margin-bottom: -30px !important;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.1) 0px -4px 8px rgba(0, 0, 0, 0.1) 0px
+    4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.vertical-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 35px;
+}
+
+.vertical-icons a {
+  text-decoration: none;
+  color: #3a3b5a;
+  transition: color 0.3s;
+}
+
+.vertical-icons a:hover {
+  color: #be5a0e;
+  cursor: pointer;
+}
+
+.table-row {
+  text-align: left;
+  padding-right: -20px;
+}
+
+.table-row .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: transparent;
+}
+
+.table-row.green-row .progress-bar {
+  background-color: #4caf50;
+}
+
+.table-row.orange-row .progress-bar {
+  background-color: #be5a0e;
+}
+
+@media (max-width: 980px) {
+  .vertical-icons-container {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    border-left: none;
+    border-top: 2px solid lightgrey;
+  }
+
+  .vertical-icons-container.top {
+    top: 0;
+    bottom: auto;
+    border-top: none;
+    border-bottom: 2px solid lightgrey;
+  }
+
+  .popup-visible .vertical-icons-container {
+    right: 0;
+  }
+
+  .vertical-icons {
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 34px;
+    width: 100%;
+    padding: 0;
+    margin-top: 5px;
+  }
+
+  .vertical-icons-container.top .vertical-icons {
+    justify-content: space-evenly;
+  }
+
+  .popup-toggle-button {
+    display: none;
+  }
+
+  .vertical-icons a {
+    margin: 0;
+  }
+
+  .close-button {
+    display: none;
+  }
+
+  .close-button:hover {
+    cursor: pointer;
+  }
+
+  .vertical-icons-container.top .close-button {
+    display: block;
+  }
+
+  .popup {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media (min-width: 981px) {
+  .vertical-icons-container {
+    display: flex;
+  }
+
+  .vertical-icons-container.bottom {
+    display: none;
+  }
+} */

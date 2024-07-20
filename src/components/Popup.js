@@ -1,10 +1,27 @@
 import "../styles/Popup.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { CiParking1 } from "react-icons/ci";
 import { GiAirplaneArrival, GiAirplaneDeparture } from "react-icons/gi";
+import { MdOutlineClose } from "react-icons/md"; // Import the close icon
 
 const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
+  const [navPosition, setNavPosition] = useState(false); // false for bottom, true for top
+
+  const handleVerticalIconClick = (section) => {
+    scrollToSection(section);
+    setNavPosition(true);
+    if (!isPopupVisible && window.innerWidth >= 980) {
+      togglePopup();
+    }
+  };
+
+  const handleClose = () => {
+    setNavPosition(false);
+    togglePopup();
+  };
+
   return (
     <div className={isPopupVisible ? "popup-visible" : ""}>
       <div className="popup">
@@ -38,7 +55,7 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
               className="view-all"
               onClick={togglePopup}
             >
-              <h3>Departures</h3>
+              <h2>Departures</h2>
               <div className="table-row table-header">
                 <span className="dot-header"></span>
                 <span>Flight #</span>
@@ -91,7 +108,7 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
               className="view-all"
               onClick={togglePopup}
             >
-              <h3>Arrivals</h3>
+              <h2>Arrivals</h2>
               <div className="table-row table-header">
                 <span className="dot-header"></span>
                 <span>Flight #</span>
@@ -130,7 +147,7 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
               className="view-all"
               onClick={togglePopup}
             >
-              <h3>Parking</h3>
+              <h2>Parking</h2>
               <div className="table-row table-header">
                 <span>Parking Lot</span> <span>%Full</span> <span>Open</span>
               </div>
@@ -165,23 +182,26 @@ const Popup = ({ isPopupVisible, togglePopup, scrollToSection }) => {
           </div>
         </div>
       </div>
-      <div className="vertical-icons-container">
+      <div className={`vertical-icons-container ${navPosition ? "top" : ""}`}>
         <div className="vertical-icons">
-          <Link onClick={() => scrollToSection("Flight-Status")}>
+          <Link onClick={() => handleVerticalIconClick("Flight-Status")}>
             <AiOutlineFolderOpen />
           </Link>
-          <Link onClick={() => scrollToSection("Departures")}>
+          <Link onClick={() => handleVerticalIconClick("Departures")}>
             <GiAirplaneDeparture />
-          </Link>
-          <button onClick={togglePopup} className="popup-toggle-button">
+          </Link>{" "}
+          <button onClick={handleClose} className="popup-toggle-button">
             {isPopupVisible ? ">" : "<"}
           </button>
-          <Link onClick={() => scrollToSection("Arrivals")}>
+          <Link onClick={() => handleVerticalIconClick("Arrivals")}>
             <GiAirplaneArrival />
           </Link>
-          <Link onClick={() => scrollToSection("Parking")}>
+          <Link onClick={() => handleVerticalIconClick("Parking")}>
             <CiParking1 />
           </Link>
+          <div className="close-button">
+            <MdOutlineClose onClick={handleClose} />
+          </div>
         </div>
       </div>
     </div>

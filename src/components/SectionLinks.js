@@ -47,6 +47,7 @@ const SectionLinks = () => {
           <p>Contact</p>
         </Link>
       </div>
+      <div className="spacer"></div>
       <div className="social-icons">
         <RiTwitterXLine className="social-icon" />
         <GrFacebookOption className="social-icon" />
