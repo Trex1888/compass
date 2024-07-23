@@ -5,7 +5,7 @@
   width: 450px;
   height: 100%;
   background: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+
   z-index: 1000;
   overflow-y: auto;
   transition: right 0.3s;
@@ -153,7 +153,7 @@
   top: 0;
   right: -10px;
   height: 100%;
-  width: 60px;
+  width: 50px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -170,7 +170,7 @@
 
 .popup-visible .vertical-icons-container {
   right: 450px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Right-side shadow */
 }
 
 .popup-toggle-button {
@@ -237,18 +237,23 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 60px;
+    height: 50px;
     flex-direction: row;
     justify-content: space-around;
     border-left: none;
-    border-top: 2px solid lightgrey;
+    border-top: 1px solid lightgrey;
   }
 
   .vertical-icons-container.top {
     top: 0;
     bottom: auto;
     border-top: none;
-    border-bottom: 2px solid lightgrey;
+
+    border-bottom: 1px solid lightgrey;
+  }
+
+  .vertical-icons-container.top a {
+    margin: 15px;
   }
 
   .popup-visible .vertical-icons-container {
@@ -273,7 +278,7 @@
   }
 
   .vertical-icons a {
-    margin: 0;
+    margin: 30px;
   }
 
   .close-button {

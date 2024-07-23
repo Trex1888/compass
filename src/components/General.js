@@ -55,14 +55,16 @@ const General = ({ scrollToSection, openPopup }) => {
       <div className="aviation-service">
         <img src={desmoinesFlyingServiceLogo} alt="Des Moines Flying Service" />
         <div className="contact-info1">
-          <div>
+          <div className="contact-address">
             <p>6307 SW 28th Street</p>
             <p>Des Moines, IA</p>
           </div>
-          <div>
+          <div className="phones">
             <p className="phone-numbers">800-622-8311</p>
             <p className="phone-numbers">515-256-5300</p>
-            <p className="website">
+          </div>
+          <div className="website">
+            <p>
               <a
                 href="http://desmoinesflyingservice.com"
                 target="_blank"
@@ -74,17 +76,19 @@ const General = ({ scrollToSection, openPopup }) => {
           </div>
         </div>
       </div>
-      <div className="aviation-service">
+      <div className="aviation-service1">
         <img src={elliottAviationLogo} alt="Elliott Aviation" />
         <div className="contact-info1">
-          <div>
+          <div className="contact-address">
             <p>2800 SW McKinley</p>
             <p>Des Moines, IA</p>
           </div>
-          <div>
+          <div className="phones">
             <p className="phone-numbers">515-285-6555</p>
             <p className="phone-numbers">515-256-5300</p>
-            <p className="website">
+          </div>
+          <div className="website">
+            <p>
               <a
                 href="http://elliottaviation.com"
                 target="_blank"
@@ -96,17 +100,19 @@ const General = ({ scrollToSection, openPopup }) => {
           </div>
         </div>
       </div>
-      <div className="aviation-service">
+      <div className="aviation-service2">
         <img src={modernAviationLogo} alt="Modern Aviation" />
         <div className="contact-info1">
-          <div>
+          <div className="contact-address">
             <p>2700 SW McKinley</p>
             <p>Des Moines, IA</p>
           </div>
           <div className="phones">
             <p className="phone-numbers">515-285-6551</p>
             <p className="phone-numbers">515-256-5300</p>
-            <p className="website">
+          </div>
+          <div className="website">
+            <p>
               <a
                 href="http://modern-aviation.com"
                 target="_blank"
@@ -118,17 +124,19 @@ const General = ({ scrollToSection, openPopup }) => {
           </div>
         </div>
       </div>
-      <div className="aviation-service">
+      <div className="aviation-service3">
         <img src={signatureFlightSupportLogo} alt="Signature Flight Support" />
         <div className="contact-info1">
-          <div>
+          <div className="contact-address">
             <p>5600 Fleur Drive</p>
             <p>Des Moines, IA</p>
           </div>
           <div className="phones">
             <p className="phone-numbers">515-285-6551</p>
             <p className="phone-numbers">515-256-5300</p>
-            <p className="website">
+          </div>
+          <div className="website">
+            <p>
               <a
                 href="http://signatureflight.com"
                 target="_blank"

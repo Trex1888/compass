@@ -79,9 +79,9 @@
   background-color: #ffffff;
   text-align: left;
   margin-left: -115px;
-  padding-right: 20px; /* Added padding for better spacing */
-  padding-left: 10px; /* Adjusted padding for better alignment */
-  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  padding-right: 20px;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
 
 .travelerinfo-header {
@@ -195,9 +195,9 @@
 
   .travelerinfo-content {
     width: 100%;
-    padding: 20px 10px; /* Adding left and right padding for smaller screens */
+    padding: 20px 10px;
     margin-left: 0;
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    box-sizing: border-box;
   }
 
   .travelerinfo-content p {
@@ -208,9 +208,9 @@
 
 @media (max-width: 768px) {
   .travelerinfo-content {
-    padding: 20px 10px; /* Adding left and right padding for smaller screens */
+    padding: 20px 10px;
     margin-left: 0;
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    box-sizing: border-box;
   }
 
   .travelerinfo-content p {
@@ -251,7 +251,7 @@
   height: 200px;
   width: 100%;
   margin-top: 80px;
-  margin-bottom: 40px; /* Add margin at the bottom of the entire container */
+  margin-bottom: 40px;
 }
 
 .section-links4 {
@@ -259,7 +259,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  flex-wrap: wrap; /* Ensure items flex and do not stack */
+  flex-wrap: wrap;
 }
 
 .link-item4 {
@@ -276,23 +276,23 @@
 
 @media (max-width: 768px) {
   .section-links4 {
-    gap: 10px; /* Adjust the gap for smaller screens */
-    justify-content: center; /* Center the items */
+    gap: 10px;
+    justify-content: center;
   }
 
   .link-item4 {
-    margin-right: 0; /* Remove right margin */
+    margin-right: 0;
   }
 }
 
 @media (max-width: 480px) {
   .section-links4 {
-    gap: 5px; /* Adjust the gap for smaller screens */
-    justify-content: center; /* Center the items */
+    gap: 5px;
+    justify-content: center;
   }
 
   .link-item4 {
-    margin-right: 0; /* Remove right margin */
+    margin-right: 0;
   }
 }
 

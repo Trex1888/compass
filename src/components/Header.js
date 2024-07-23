@@ -7,7 +7,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const Header = ({ backgroundStyle }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-  const [showSubmenu, setShowSubmenu] = useState(null);
+  const [showSubmenu, setShowSubmenu] = useState({
+    "at-the-airport": null,
+    "traveler-info": null,
+    "airport-business": null,
+  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -42,14 +46,37 @@ const Header = ({ backgroundStyle }) => {
     e.stopPropagation();
   };
 
-  const handleSubmenuToggle = (e, submenu) => {
+  const handleSubmenuToggle = (e, menu, submenu) => {
     e.preventDefault();
-    setShowSubmenu(submenu);
+    setShowSubmenu((prev) => ({
+      ...prev,
+      [menu]: submenu,
+    }));
   };
 
-  const handleBackToMainMenu = (e) => {
+  const handleBackToMainMenu = (e, menu) => {
     e.preventDefault();
-    setShowSubmenu(null);
+    setShowSubmenu((prev) => ({
+      ...prev,
+      [menu]: null,
+    }));
+  };
+
+  const closeDropdowns = () => {
+    setHoveredLink(null);
+    setShowSubmenu({
+      "at-the-airport": null,
+      "traveler-info": null,
+      "airport-business": null,
+    });
+  };
+
+  const handleMainMenuClick = (menu) => {
+    setHoveredLink(menu);
+  };
+
+  const handleLinkClick = () => {
+    closeDropdowns();
   };
 
   const menuItems = {
@@ -277,13 +304,18 @@ const Header = ({ backgroundStyle }) => {
             <NavLink
               to="/flights-and-travel"
               className={({ isActive }) => (isActive ? "active-link" : "")}
+              onClick={() => handleMainMenuClick("flights-and-travel")}
             >
               Flights and Travel
             </NavLink>
             {hoveredLink === "flights-and-travel" && (
               <div className="dropdown-menu">
                 {menuItems["flights-and-travel"].map((item) => (
-                  <NavLink key={item.path} to={item.path}>
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={handleLinkClick}
+                  >
                     {item.label}
                   </NavLink>
                 ))}
@@ -297,28 +329,33 @@ const Header = ({ backgroundStyle }) => {
             <NavLink
               to="/traveler-info"
               className={({ isActive }) => (isActive ? "active-link" : "")}
+              onClick={() => handleMainMenuClick("traveler-info")}
             >
               Traveler Info
             </NavLink>
             {hoveredLink === "traveler-info" && (
               <div className="dropdown-menu">
-                {showSubmenu ? (
+                {showSubmenu["traveler-info"] ? (
                   <>
                     <div
                       className="submenu-header"
-                      onClick={handleBackToMainMenu}
+                      onClick={(e) => handleBackToMainMenu(e, "traveler-info")}
                     >
                       <span className="back-icon">{"<"}</span>
                       <span className="submenu-title">
-                        {showSubmenu === "tsa-security"
-                          ? "TSA & Security"
-                          : "Lost & Found"}
+                        {showSubmenu["traveler-info"]}
                       </span>
                     </div>
                     {menuItems["traveler-info"]
-                      .find((item) => item.label.toLowerCase() === showSubmenu)
+                      .find(
+                        (item) => item.label === showSubmenu["traveler-info"]
+                      )
                       ?.submenu?.map((subItem) => (
-                        <NavLink key={subItem.path} to={subItem.path}>
+                        <NavLink
+                          key={subItem.path}
+                          to={subItem.path}
+                          onClick={handleLinkClick}
+                        >
                           {subItem.label}
                         </NavLink>
                       ))}
@@ -328,18 +365,33 @@ const Header = ({ backgroundStyle }) => {
                     <div key={item.path} className="dropdown-item">
                       {item.submenu ? (
                         <div className="dropdown-item-with-submenu">
-                          <NavLink to={item.path}>{item.label}</NavLink>
-                          <span
-                            onClick={(e) =>
-                              handleSubmenuToggle(e, item.label.toLowerCase())
-                            }
-                            className="submenu-toggle show-submenu-toggle"
-                          >
-                            | &gt;
-                          </span>
+                          <NavLink to={item.path}>
+                            {item.label}{" "}
+                            <div className="right-side">
+                              {" "}
+                              |
+                              <span
+                                style={{
+                                  marginLeft: "20px",
+                                  marginRight: "10px",
+                                }}
+                                onClick={(e) =>
+                                  handleSubmenuToggle(
+                                    e,
+                                    "traveler-info",
+                                    item.label
+                                  )
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                          </NavLink>
                         </div>
                       ) : (
-                        <NavLink to={item.path}>{item.label}</NavLink>
+                        <NavLink to={item.path} onClick={handleLinkClick}>
+                          {item.label}
+                        </NavLink>
                       )}
                     </div>
                   ))
@@ -354,26 +406,33 @@ const Header = ({ backgroundStyle }) => {
             <NavLink
               to="/at-the-airport"
               className={({ isActive }) => (isActive ? "active-link" : "")}
+              onClick={() => handleMainMenuClick("at-the-airport")}
             >
               At The Airport
             </NavLink>
             {hoveredLink === "at-the-airport" && (
               <div className="dropdown-menu">
-                {showSubmenu ? (
+                {showSubmenu["at-the-airport"] ? (
                   <>
                     <div
                       className="submenu-header"
-                      onClick={handleBackToMainMenu}
+                      onClick={(e) => handleBackToMainMenu(e, "at-the-airport")}
                     >
                       <span className="back-icon">{"<"}</span>
                       <span className="submenu-title">
-                        Ground Transportation
+                        {showSubmenu["at-the-airport"]}
                       </span>
                     </div>
                     {menuItems["at-the-airport"]
-                      .find((item) => item.label === "Ground Transportation")
+                      .find(
+                        (item) => item.label === showSubmenu["at-the-airport"]
+                      )
                       ?.submenu?.map((subItem) => (
-                        <NavLink key={subItem.path} to={subItem.path}>
+                        <NavLink
+                          key={subItem.path}
+                          to={subItem.path}
+                          onClick={handleLinkClick}
+                        >
                           {subItem.label}
                         </NavLink>
                       ))}
@@ -383,16 +442,33 @@ const Header = ({ backgroundStyle }) => {
                     <div key={item.path} className="dropdown-item">
                       {item.submenu ? (
                         <div className="dropdown-item-with-submenu">
-                          <NavLink to={item.path}>{item.label}</NavLink>
-                          <span
-                            onClick={(e) => handleSubmenuToggle(e, item.label)}
-                            className="submenu-toggle show-submenu-toggle"
-                          >
-                            | &gt;
-                          </span>
+                          <NavLink to={item.path}>
+                            {item.label}{" "}
+                            <div className="right-side">
+                              {" "}
+                              |
+                              <span
+                                style={{
+                                  marginLeft: "20px",
+                                  marginRight: "10px",
+                                }}
+                                onClick={(e) =>
+                                  handleSubmenuToggle(
+                                    e,
+                                    "at-the-airport",
+                                    item.label
+                                  )
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                          </NavLink>
                         </div>
                       ) : (
-                        <NavLink to={item.path}>{item.label}</NavLink>
+                        <NavLink to={item.path} onClick={handleLinkClick}>
+                          {item.label}
+                        </NavLink>
                       )}
                     </div>
                   ))
@@ -407,24 +483,35 @@ const Header = ({ backgroundStyle }) => {
             <NavLink
               to="/airport-business"
               className={({ isActive }) => (isActive ? "active-link" : "")}
+              onClick={() => handleMainMenuClick("airport-business")}
             >
               Airport Business
             </NavLink>
             {hoveredLink === "airport-business" && (
               <div className="dropdown-menu">
-                {showSubmenu ? (
+                {showSubmenu["airport-business"] ? (
                   <>
                     <div
                       className="submenu-header"
-                      onClick={handleBackToMainMenu}
+                      onClick={(e) =>
+                        handleBackToMainMenu(e, "airport-business")
+                      }
                     >
                       <span className="back-icon">{"<"}</span>
-                      <span className="submenu-title">{showSubmenu}</span>
+                      <span className="submenu-title">
+                        {showSubmenu["airport-business"]}
+                      </span>
                     </div>
                     {menuItems["airport-business"]
-                      .find((item) => item.label === showSubmenu)
+                      .find(
+                        (item) => item.label === showSubmenu["airport-business"]
+                      )
                       ?.submenu?.map((subItem) => (
-                        <NavLink key={subItem.path} to={subItem.path}>
+                        <NavLink
+                          key={subItem.path}
+                          to={subItem.path}
+                          onClick={handleLinkClick}
+                        >
                           {subItem.label}
                         </NavLink>
                       ))}
@@ -434,16 +521,33 @@ const Header = ({ backgroundStyle }) => {
                     <div key={item.path} className="dropdown-item">
                       {item.submenu ? (
                         <div className="dropdown-item-with-submenu">
-                          <NavLink to={item.path}>{item.label}</NavLink>
-                          <span
-                            onClick={(e) => handleSubmenuToggle(e, item.label)}
-                            className="submenu-toggle show-submenu-toggle"
-                          >
-                            | &gt;
-                          </span>
+                          <NavLink to={item.path}>
+                            {item.label}{" "}
+                            <div className="right-side">
+                              {" "}
+                              |
+                              <span
+                                style={{
+                                  marginLeft: "20px",
+                                  marginRight: "10px",
+                                }}
+                                onClick={(e) =>
+                                  handleSubmenuToggle(
+                                    e,
+                                    "airport-business",
+                                    item.label
+                                  )
+                                }
+                              >
+                                &gt;
+                              </span>
+                            </div>
+                          </NavLink>
                         </div>
                       ) : (
-                        <NavLink to={item.path}>{item.label}</NavLink>
+                        <NavLink to={item.path} onClick={handleLinkClick}>
+                          {item.label}
+                        </NavLink>
                       )}
                     </div>
                   ))
@@ -458,6 +562,7 @@ const Header = ({ backgroundStyle }) => {
             <NavLink
               to="/lift-dsm"
               className={({ isActive }) => (isActive ? "active-link" : "")}
+              onClick={() => handleMainMenuClick("lift-dsm")}
             >
               Lift DSM
             </NavLink>
