@@ -289,12 +289,10 @@ const Header = ({ backgroundStyle }) => {
         }`}
       >
         <ul>
-          <li className="logo-title">
-            <NavLink to="/" className="header-link">
-              <div className="header-title">
-                <h1>DES MOINES</h1>
-                <h2>International Airport</h2>
-              </div>
+          <li className="header-title">
+            <NavLink to="/">
+              <h1>DES MOINES</h1>
+              <h2>International Airport</h2>
             </NavLink>
           </li>
           <li

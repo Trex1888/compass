@@ -99,13 +99,17 @@
   justify-content: center;
   align-items: center;
   list-style-type: none;
-  margin-right: 120px;
 }
 
 .main-nav ul li {
   position: relative;
-  margin-left: 20px;
   font-size: 1.1em;
+  padding: 0 20px;
+  margin-right: 50px;
+}
+
+.main-nav ul li:hover .dropdown-menu {
+  display: flex;
 }
 
 .main-nav ul li a {
@@ -135,18 +139,19 @@
 .main-nav ul li a.active-link {
   text-decoration: underline;
   text-decoration-color: #be5a0e;
-  text-underline-offset: 25px;
+  text-underline-offset: 20px;
   text-decoration-thickness: 5px;
+  cursor: pointer;
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 40px;
   left: 0;
   margin-top: 5px;
   background-color: white;
   z-index: 20;
-  display: flex;
+  display: none; /* Changed from flex to none */
   width: 335px;
   flex-direction: column;
   border-radius: 1px;
@@ -201,23 +206,10 @@
   margin-left: 25px;
 }
 
-.logo-title {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-  margin-left: 20px;
-}
-
 .header-title h1,
 .header-title h2 {
   margin: 0;
   color: white;
-}
-
-.header-title h2 {
-  margin-top: 5px;
-  margin-left: 30px !important;
-  font-weight: 300 !important;
 }
 
 .main-nav.sticky .header-title h1,
@@ -225,17 +217,19 @@
   color: #6f6f7b;
 }
 
+.header-title {
+  margin-right: 350px;
+}
+
 .header-title h1 {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 275px;
-  margin-bottom: -10px;
 }
 
 .header-title h2 {
   font-size: 14px;
   font-weight: normal;
-  margin-left: 20px;
+  margin-top: -5px;
 }
 
 .hamburger-menu {

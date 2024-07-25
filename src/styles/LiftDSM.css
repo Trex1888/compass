@@ -36,3 +36,34 @@
 .lift-route {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 } */
+
+.fly-container-content {
+  padding: 20px;
+}
+
+.lift-header-part {
+  margin: 0 250px;
+}
+
+.lift-header-part h1,
+.lift-bottom-part h1 {
+  color: #674574;
+}
+
+.lift-header-part h3 {
+  color: #36294a;
+  font-weight: 500;
+}
+
+.lift-header-part p {
+  color: #2d2d2d;
+}
+
+.lift-bottom-part {
+  margin: 0 250px;
+  color: #2d2d2d;
+}
+
+.lift-bottom-part h2 {
+  color: #be5a0e;
+}
